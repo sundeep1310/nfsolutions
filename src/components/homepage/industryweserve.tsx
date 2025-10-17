@@ -72,7 +72,7 @@ const IndustryWeServe: React.FC = () => {
 
                 {/* Description */}
                 <p className="leading-relaxed" style={{ color: '#dbd6d6ff', fontSize: '1.40625vw', marginTop: '1.35vw' }}>
-                  We apply our <span className="font-bold">specialized expertise</span> to projects in the world's most demanding sectors:
+                  We apply our <span className="font-bold">specialized expertise</span> to projects in the world&apos;s most demanding sectors:
                 </p>
 
                 {/* Industry List */}

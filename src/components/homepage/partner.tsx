@@ -78,7 +78,7 @@ export default function Partner() {
           <div style={{ width: isMobileOrTablet ? '100%' : '60%', paddingRight: isMobileOrTablet ? '0' : '25px', marginTop: isMobileOrTablet ? '24px' : '0' }}>
             <div className="text-white text-sm leading-relaxed">
               <p className="mb-4">
-                <strong>NF Solutions</strong> combines over <strong>15 years of specialized EPC market experience</strong> with a forward-thinking global perspective. Our integrated technical and commercial support is designed for one purpose: to make your international expansion successful. We don't just advise; we <strong>build the roadmap for your growth</strong>, incorporating crucial elements like project risk management to ensure success in the world's most demanding industries.
+                <strong>NF Solutions</strong> combines over <strong>15 years of specialized EPC market experience</strong> with a forward-thinking global perspective. Our integrated technical and commercial support is designed for one purpose: to make your international expansion successful. We don&apos;t just advise; we <strong>build the roadmap for your growth</strong>, incorporating crucial elements like project risk management to ensure success in the world&apos;s most demanding industries.
               </p>
             </div>
           </div>
