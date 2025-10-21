@@ -5,6 +5,7 @@ import Image from 'next/image';
 
 const HomepageHero: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToServices = () => {
     const servicesSection = document.getElementById('ourservices');
@@ -20,6 +21,21 @@ const HomepageHero: React.FC = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileMenuClick = (sectionId: string) => {
+    setIsMobileMenuOpen(false);
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
       });
@@ -42,6 +58,96 @@ const HomepageHero: React.FC = () => {
           50% {
             transform: scale(1.1);
           }
+        }
+
+        .hamburger-menu {
+          display: none;
+          background: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 8px;
+          margin-right: 12px;
+        }
+
+        .hamburger-line {
+          width: 24px;
+          height: 2px;
+          background-color: #FFFFFF;
+          margin: 5px 0;
+          transition: 0.3s;
+        }
+
+        .hamburger-menu.active .hamburger-line:nth-child(1) {
+          transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger-menu.active .hamburger-line:nth-child(2) {
+          opacity: 0;
+        }
+
+        .hamburger-menu.active .hamburger-line:nth-child(3) {
+          transform: rotate(45deg) translate(-5px, -6px);
+        }
+
+        .mobile-menu {
+          position: fixed;
+          top: 0;
+          left: -100%;
+          width: 80%;
+          max-width: 300px;
+          height: 100vh;
+          background-color: #000000;
+          transition: left 0.3s ease-in-out;
+          z-index: 999;
+          padding-top: 80px;
+        }
+
+        .mobile-menu.open {
+          left: 0;
+        }
+
+        .mobile-menu-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100vh;
+          background-color: rgba(0, 0, 0, 0.5);
+          display: none;
+          z-index: 998;
+        }
+
+        .mobile-menu-overlay.open {
+          display: block;
+        }
+
+        .mobile-menu a {
+          display: block;
+          color: #FFFFFF;
+          padding: 16px 24px;
+          text-decoration: none;
+          font-size: 16px;
+          font-weight: 400;
+          font-family: 'Instrument Sans', sans-serif;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          transition: background-color 0.3s;
+        }
+
+        .mobile-menu a:hover {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .mobile-menu-close {
+          position: absolute;
+          top: 20px;
+          right: 20px;
+          background: transparent;
+          border: none;
+          color: #FFFFFF;
+          font-size: 24px;
+          cursor: pointer;
+          padding: 8px;
+          z-index: 1000;
         }
 
         @media (max-width: 1024px) {
@@ -67,14 +173,28 @@ const HomepageHero: React.FC = () => {
           }
         }
 
+        /* Show hamburger only on mobile (640px and below) */
         @media (max-width: 640px) {
           .nav-links {
+            display: none !important;
+          }
+          .hamburger-menu {
+            display: block !important;
+          }
+          .cta-button {
+            display: none !important;
+          }
+        }
+
+        /* Ensure hamburger is hidden on tablet and desktop */
+        @media (min-width: 641px) {
+          .hamburger-menu {
             display: none !important;
           }
         }
       `}</style>
 
-      <div className="relative w-full overflow-hidden" style={{ minHeight: '100vh', fontFamily: 'Instrument Sans, sans-serif' }}>
+      <div className="relative w-full overflow-hidden" style={{ minHeight: '100vh', fontFamily: 'Instrument Sans, sans-serif', margin: 0, padding: 0 }}>
         {/* Background Image with Scale Animation */}
         <div 
           className="absolute inset-0 z-0"
@@ -85,6 +205,10 @@ const HomepageHero: React.FC = () => {
             position: 'absolute',
             top: 0,
             left: 0,
+            right: 0,
+            bottom: 0,
+            margin: 0,
+            padding: 0,
           }}
         >
           <div
@@ -106,6 +230,38 @@ const HomepageHero: React.FC = () => {
           </div>
         </div>
 
+        {/* Mobile Menu Overlay */}
+        <div 
+          className={`mobile-menu-overlay ${isMobileMenuOpen ? 'open' : ''}`}
+          onClick={toggleMobileMenu}
+        />
+
+        {/* Mobile Menu */}
+        <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+          <button 
+            className="mobile-menu-close"
+            onClick={toggleMobileMenu}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+          <a href="#about" onClick={() => handleMobileMenuClick('about')}>
+            About Us
+          </a>
+          <a href="#why" onClick={() => handleMobileMenuClick('why')}>
+            Why Us
+          </a>
+          <a href="#services" onClick={() => handleMobileMenuClick('services')}>
+            Our Services
+          </a>
+          <a href="#team" onClick={() => handleMobileMenuClick('team')}>
+            Our Team
+          </a>
+          <a href="#contact" onClick={() => handleMobileMenuClick('contact')}>
+            Contact Us
+          </a>
+        </div>
+
         {/* Navbar Container with Padding */}
         <div className="nav-container relative z-10 pt-[30px] px-[60px]" style={{ position: 'sticky', top: '0' }}>
           {/* Sticky Rounded Navbar */}
@@ -114,8 +270,19 @@ const HomepageHero: React.FC = () => {
             style={{ backgroundColor: '#000000', paddingTop: '20px', paddingBottom: '20px' }}
           >
             <div className="flex items-center justify-between">
-              {/* Logo Section */}
-              <div className="flex items-center gap-3" style={{ marginLeft: '40px' }}>
+              {/* Logo Section with Hamburger */}
+              <div className="flex items-center gap-3" style={{ marginLeft: '20px' }}>
+                {/* Hamburger Menu Button */}
+                <button 
+                  className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}
+                  onClick={toggleMobileMenu}
+                  aria-label="Toggle menu"
+                >
+                  <div className="hamburger-line"></div>
+                  <div className="hamburger-line"></div>
+                  <div className="hamburger-line"></div>
+                </button>
+                
                 <div className="relative bg-white rounded-full flex items-center justify-center overflow-hidden" style={{ width: '48px', height: '48px' }}>
                   <Image
                     src="/nflogo.png"
@@ -152,7 +319,7 @@ const HomepageHero: React.FC = () => {
                 onClick={scrollToContact}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
-                className="relative hover:shadow-xl bg-transparent border-0"
+                className="cta-button relative hover:shadow-xl bg-transparent border-0"
                 style={{ 
                   background: 'transparent',
                   transition: 'all 1s ease'
@@ -164,14 +331,14 @@ const HomepageHero: React.FC = () => {
                   width={180}
                   height={45}
                   className="object-contain"
-                  style={{ transition: 'opacity 1s ease-in-out', width: 'clamp(140px, 15vw, 180px)', height: 'auto' }}
+                  style={{ transition: 'opacity 1s ease-in-out', width: 'clamp(100px, 12vw, 180px)', height: 'auto' }}
                 />
                 <span 
-                  className="absolute flex items-center justify-center" 
+                  className="cta-text absolute flex items-center justify-center" 
                   style={{ 
                     color: '#EB8145', 
                     fontWeight: 600, 
-                    fontSize: 'clamp(12px, 1.2vw, 14px)',
+                    fontSize: 'clamp(9px, 1vw, 14px)',
                     fontFamily: 'Instrument Sans, sans-serif',
                     top: '50%',
                     left: '40%',

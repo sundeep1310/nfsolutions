@@ -55,12 +55,12 @@ const ContactUsPage = () => {
     <div className="min-h-screen bg-gray-100">
       {/* Header */}
       <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex items-center justify-between max-md:flex-col max-md:space-y-4">
           <div className="flex items-center space-x-3">
             <img src="nflogo1.png" alt="NF Solutions Logo" style={{ height: '54px', width: 'auto' }} />
             <span className="text-2xl sm:text-3xl font-bold text-gray-900">NF Solutions</span>
           </div>
-          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold " style={{ marginRight: '50px' }}>
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold max-md:text-center" style={{ marginRight: '50px' }}>
             <span className="text-gray-900">Contact </span>
             <span style={{ color: '#EB8145' }}>Us</span>
           </h1>
@@ -84,15 +84,15 @@ const ContactUsPage = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 space-y-6">
         {locations.map((location, index) => (
           <div key={index} className="bg-white rounded-lg shadow-md overflow-hidden">
-            <div className="flex flex-row items-start">
+            <div className="flex flex-row items-start max-[768px]:flex-col">
               {/* Map Section - 70% width with 20px padding on left and right */}
-              <div className="relative bg-gray-200 w-[70%]" style={{ padding: '20px' }}>
+              <div className="relative bg-gray-200 w-[70%] max-[768px]:w-full" style={{ padding: '20px' }}>
                 <div className="absolute z-10 bg-white rounded-lg shadow-md p-2" style={{ top: '30px', left: '30px', width: '150px' }}>
                   <img src="contactuscard.png" alt="Contact Us Card" className="w-full h-auto" />
                 </div>
                 <iframe
                   src={location.mapUrl}
-                  className="border-0 rounded"
+                  className="border-0 rounded max-[768px]:w-full"
                   style={{ height: '220px', width: '70%' }}
                   allowFullScreen
                   loading="lazy"
@@ -101,7 +101,7 @@ const ContactUsPage = () => {
               </div>
 
               {/* Contact Info Section - 30% width, left aligned */}
-              <div className="p-4 sm:p-6 md:p-8 bg-white w-[30%]" style={{ textAlign: 'left' }}>
+              <div className="p-4 sm:p-6 md:p-8 bg-white w-[30%] max-[768px]:w-full" style={{ textAlign: 'left' }}>
                 <div className="mb-4">
                   <h2 className="text-lg sm:text-xl font-bold" style={{ color: '#EB8145' }}>{location.country}</h2>
                 </div>

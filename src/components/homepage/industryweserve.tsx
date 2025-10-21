@@ -140,17 +140,138 @@ const IndustryWeServe: React.FC = () => {
           animation: scale-in-out 20s ease infinite;
         }
 
-        /* Responsive adjustments for smaller screens */
+        /* Mobile and Tablet responsive adjustments only */
         @media (max-width: 1024px) {
           section {
-            min-height: 60vw !important;
+            min-height: 65vw !important;
+            padding: 1vw 3vw 6vw 3vw !important;
+          }
+          
+          section > div {
+            max-width: 95% !important;
+            height: 65vw !important;
+            border-radius: 4vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div {
+            width: 60vw !important;
+            height: 50vw !important;
+            transform: translateX(0) !important;
+            border-radius: 3vw !important;
+            padding: 3vw !important;
+            margin: 7.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div {
+            padding: 2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div h2 {
+            font-size: 4.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div p {
+            font-size: 2.2vw !important;
+            margin-top: 2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child {
+            margin-top: 4vw !important;
+            height: 22vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div {
+            gap: 1.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div {
+            width: 4vw !important;
+            height: 4vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div img {
+            width: 2.5vw !important;
+            height: 2.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div span {
+            font-size: 1.8vw !important;
+          }
+          
+          section > div > div:nth-child(3) {
+            bottom: 3vw !important;
+            left: 3vw !important;
+          }
+          
+          section > div > div:nth-child(3) img {
+            width: 4vw !important;
           }
         }
 
         @media (max-width: 768px) {
           section {
-            min-height: 120vw !important;
+            min-height: 90vw !important;
+            padding: 2vw 4vw 8vw 4vw !important;
+          }
+          
+          section > div {
+            max-width: 100% !important;
+            height: 90vw !important;
+            border-radius: 6vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div {
+            width: 70vw !important;
+            height: 65vw !important;
+            transform: translateX(0) !important;
+            border-radius: 4vw !important;
             padding: 4vw !important;
+            margin: 12.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div {
+            padding: 3vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div h2 {
+            font-size: 6vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div p {
+            font-size: 3vw !important;
+            margin-top: 3vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child {
+            margin-top: 5vw !important;
+            height: 25vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div {
+            gap: 2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div {
+            width: 5vw !important;
+            height: 5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div img {
+            width: 3vw !important;
+            height: 3vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div span {
+            font-size: 2.5vw !important;
+          }
+          
+          section > div > div:nth-child(3) {
+            bottom: 4vw !important;
+            left: 4vw !important;
+          }
+          
+          section > div > div:nth-child(3) img {
+            width: 6vw !important;
           }
         }
       `}</style>

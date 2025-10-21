@@ -140,17 +140,140 @@ const SystemsExpertise: React.FC = () => {
           animation: scale-in-out 20s ease-in-out infinite;
         }
 
-        /* Responsive adjustments for smaller screens */
+        /* Mobile and Tablet responsive adjustments only */
         @media (max-width: 1024px) {
           section {
             min-height: 65vw !important;
+            padding: 2vw 2vw 1vw 2vw !important;
+          }
+          
+          section > div {
+            max-width: 95% !important;
+            height: 65vw !important;
+            border-radius: 4vw !important;
+          }
+          
+          section > div > div:nth-child(2) {
+            padding: 5vw 3vw 3vw 3vw !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          
+          section > div > div:nth-child(2) > div {
+            justify-content: center !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child {
+            width: 50vw !important;
+            height: auto !important;
+            transform: translateX(0) translateY(0) !important;
+            border-radius: 3vw !important;
+            padding: 2vw !important;
+            margin: 12.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child h2 {
+            font-size: 3.2vw !important;
+            margin-bottom: 1.2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child p {
+            font-size: 1.5vw !important;
+            margin-bottom: 2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div {
+            gap: 1vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div {
+            gap: 0.8vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div > div {
+            width: 3vw !important;
+            height: 3vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div > div img {
+            width: 1.8vw !important;
+            height: 1.8vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div span {
+            font-size: 1.3vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:last-child {
+            display: none !important;
           }
         }
 
         @media (max-width: 768px) {
           section {
-            min-height: 130vw !important;
-            padding: 4vw !important;
+            min-height: 90vw !important;
+            padding: 2vw 2vw 2vw 2vw !important;
+          }
+          
+          section > div {
+            max-width: 100% !important;
+            height: 90vw !important;
+            border-radius: 6vw !important;
+          }
+          
+          section > div > div:nth-child(2) {
+            padding: 8vw 2vw 2vw 2vw !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          
+          section > div > div:nth-child(2) > div {
+            justify-content: center !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child {
+            width: 60vw !important;
+            height: auto !important;
+            transform: translateX(0) translateY(0) !important;
+            border-radius: 4vw !important;
+            padding: 3vw !important;
+            margin: 15vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child h2 {
+            font-size: 4.2vw !important;
+            margin-bottom: 2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child p {
+            font-size: 2vw !important;
+            margin-bottom: 2.5vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div {
+            gap: 1.2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div {
+            gap: 1.2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div > div {
+            width: 4vw !important;
+            height: 4vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div > div img {
+            width: 2.2vw !important;
+            height: 2.2vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:first-child > div > div span {
+            font-size: 1.7vw !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div:last-child {
+            display: none !important;
           }
         }
       `}</style>

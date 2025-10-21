@@ -38,19 +38,145 @@ const AboutUs = () => {
         :global(.animate-scale-loop) {
           animation: scaleLoop 8s ease-in-out infinite;
         }
+        
+        @media (max-width: 1023px) {
+          .desktop-grid {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 2rem !important;
+          }
+          .desktop-padding {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+          }
+          .content-order {
+            order: 1 !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            text-align: center !important;
+            margin-bottom: 2rem !important;
+          }
+          .image-order {
+            order: 2 !important;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+            padding-top: 0 !important;
+          }
+          .mobile-title {
+            font-size: 2rem !important;
+            margin-bottom: 1.5rem !important;
+          }
+          .mobile-text {
+            font-size: 0.875rem !important;
+            gap: 1rem !important;
+          }
+          .mobile-image-container {
+            width: 100% !important;
+            max-width: 350px !important;
+          }
+          .mobile-image {
+            height: 350px !important;
+            border-radius: 20px !important;
+          }
+          .mobile-orange-container {
+            width: 320px !important;
+            height: 110px !important;
+            bottom: -60px !important;
+            transform: translateX(-50%) !important;
+          }
+          .mobile-orange-padding {
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+          }
+          .mobile-feature-icon {
+            width: 3rem !important;
+            height: 3rem !important;
+            margin-bottom: 0.75rem !important;
+            border-radius: 0.75rem !important;
+          }
+          .mobile-feature-text {
+            font-size: 0.6875rem !important;
+          }
+          .mobile-arrow-left {
+            left: 0.5rem !important;
+            bottom: 60px !important;
+            opacity: 0.5 !important;
+            width: 60px !important;
+            height: 120px !important;
+          }
+          .mobile-arrow-right {
+            right: 0.5rem !important;
+            bottom: 120px !important;
+            opacity: 0.5 !important;
+            width: 15px !important;
+            height: 120px !important;
+          }
+        }
+        
+        @media (min-width: 640px) and (max-width: 1023px) {
+          .desktop-padding {
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+          }
+          .content-order {
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+          }
+          .image-order {
+            padding-left: 2rem !important;
+            padding-right: 2rem !important;
+          }
+          .mobile-title {
+            font-size: 2.5rem !important;
+          }
+          .mobile-text {
+            font-size: 0.9375rem !important;
+          }
+          .mobile-image-container {
+            max-width: 400px !important;
+          }
+          .mobile-image {
+            height: 400px !important;
+          }
+          .mobile-orange-container {
+            width: 400px !important;
+            bottom: -70px !important;
+          }
+          .mobile-feature-icon {
+            width: 3.5rem !important;
+            height: 3.5rem !important;
+          }
+          .mobile-feature-text {
+            font-size: 0.75rem !important;
+          }
+          .mobile-arrow-left {
+            left: 0.75rem !important;
+            bottom: 70px !important;
+            opacity: 0.75 !important;
+            width: 80px !important;
+            height: 160px !important;
+          }
+          .mobile-arrow-right {
+            right: 0.75rem !important;
+            bottom: 150px !important;
+            opacity: 0.65 !important;
+            width: 18px !important;
+            height: 160px !important;
+          }
+        }
       `}</style>
 
-      <div className="max-w-[1600px] mx-auto px-16" style={{ paddingBottom: '4rem' }}>
-        <div className="grid grid-cols-2 gap-20 items-start">
+      <div className="max-w-[1600px] mx-auto px-16 desktop-padding" style={{ paddingBottom: '4rem' }}>
+        <div className="grid grid-cols-2 gap-20 items-start desktop-grid">
           {/* Left Half - Content */}
-          <div className="flex flex-col justify-start pr-10 pl-[50px]">
+          <div className="flex flex-col justify-start pr-10 pl-[50px] content-order">
             {/* Title */}
-            <h2 className="text-[60px] font-bold mb-10 text-black">
+            <h2 className="text-[60px] font-bold mb-10 text-black mobile-title">
               About <span className="text-[#EB8145]">Us</span>
             </h2>
 
             {/* Paragraphs */}
-            <div className="space-y-6 text-gray-700 leading-relaxed text-[16px]">
+            <div className="space-y-6 text-gray-700 leading-relaxed text-[16px] mobile-text">
               <p>
                 NF Solutions is a <strong className="text-gray-700 font-normal">premier advisory and consulting firm</strong> dedicated to navigating
                 the complexities of the <strong className="text-gray-700 font-normal">global Engineering, Procurement, and Construction
@@ -75,10 +201,10 @@ const AboutUs = () => {
           </div>
 
           {/* Right Half - Image */}
-          <div className="relative flex justify-center pr-[50px] pt-[60px]">
-            <div className="relative" style={{ width: '450px' }}>
+          <div className="relative flex justify-center pr-[50px] pt-[60px] image-order">
+            <div className="relative mobile-image-container" style={{ width: '450px' }}>
               <div 
-                className="relative w-full h-[475px] rounded-[30px] overflow-hidden shadow-2xl transition-transform duration-100 ease-out"
+                className="relative w-full h-[475px] rounded-[30px] overflow-hidden shadow-2xl transition-transform duration-100 ease-out mobile-image"
                 style={{ transform: `translateY(${imageOffset}px)` }}
               >
                 <Image
@@ -91,9 +217,9 @@ const AboutUs = () => {
               </div>
 
               {/* Orange Rectangle with Features */}
-              <div className="absolute left-1/2 z-20" style={{ width: '570px', height: '120px', bottom: 'calc(-28px - 50px)', transform: 'translateX(calc(-50% - 120px))' }}>
+              <div className="absolute left-1/2 z-20 mobile-orange-container" style={{ width: '570px', height: '120px', bottom: 'calc(-28px - 50px)', transform: 'translateX(calc(-50% - 120px))' }}>
                 <div 
-                  className="relative px-16 h-full flex items-center"
+                  className="relative px-16 h-full flex items-center mobile-orange-padding"
                   style={{
                     background: '#EB8145',
                     boxShadow: '0px 3.38px 3.38px 0px #00000040',
@@ -104,26 +230,26 @@ const AboutUs = () => {
                   <div className="flex items-center justify-around w-full">
                     {/* Proven Track Record */}
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 mb-4 bg-white rounded-2xl flex items-center justify-center shadow-md">
+                      <div className="w-16 h-16 mb-4 bg-white rounded-2xl flex items-center justify-center shadow-md mobile-feature-icon">
                         <Image src="/trackrecord.svg" alt="Track Record" width={32} height={32} />
                       </div>
-                      <span className="text-sm font-semibold whitespace-nowrap" style={{ color: '#FFFFFF' }}>Proven Track Record</span>
+                      <span className="text-sm font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF' }}>Proven Track Record</span>
                     </div>
 
                     {/* EPC Market Expertise */}
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 mb-4 bg-white rounded-2xl flex items-center justify-center shadow-md">
+                      <div className="w-16 h-16 mb-4 bg-white rounded-2xl flex items-center justify-center shadow-md mobile-feature-icon">
                         <Image src="/expertise.svg" alt="Expertise" width={32} height={32} />
                       </div>
-                      <span className="text-sm font-semibold whitespace-nowrap" style={{ color: '#FFFFFF' }}>EPC Market Expertise</span>
+                      <span className="text-sm font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF' }}>EPC Market Expertise</span>
                     </div>
 
                     {/* Global Operations */}
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-16 h-16 mb-4 bg-white rounded-2xl flex items-center justify-center shadow-md">
+                      <div className="w-16 h-16 mb-4 bg-white rounded-2xl flex items-center justify-center shadow-md mobile-feature-icon">
                         <Image src="/operations.svg" alt="Global Operations" width={32} height={32} />
                       </div>
-                      <span className="text-sm font-semibold whitespace-nowrap" style={{ color: '#FFFFFF' }}>Global Operations</span>
+                      <span className="text-sm font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF' }}>Global Operations</span>
                     </div>
                   </div>
                 </div>
@@ -135,13 +261,13 @@ const AboutUs = () => {
 
       {/* Decorative Arrows with Parallax */}
       <div 
-        className="absolute left-4 bottom-[80px] opacity-200 transition-transform duration-100 ease-out"
+        className="absolute left-4 bottom-[80px] opacity-200 transition-transform duration-100 ease-out mobile-arrow-left"
         style={{ transform: `translateY(${arrowLeftOffset}px)` }}
       >
         <Image src="/aboutus_leftb.png" alt="Left Arrow" width={100} height={200} />
       </div>
       <div 
-        className="absolute bottom-[180px] opacity-100 transition-transform duration-100 ease-out"
+        className="absolute bottom-[180px] opacity-100 transition-transform duration-100 ease-out mobile-arrow-right"
         style={{ right: '16px', transform: `translateY(${arrowRightOffset}px)` }}
       >
         <Image src="/aboutus_rightb.png" alt="Right Arrow" width={20} height={200} />
