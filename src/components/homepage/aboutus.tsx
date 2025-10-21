@@ -4,21 +4,6 @@ import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 const AboutUs = () => {
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrollY(window.scrollY);
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  // Calculate parallax offsets
-  const imageOffset = scrollY * 0.05;
-  const arrowLeftOffset = scrollY * 0.03;
-  const arrowRightOffset = scrollY * 0.04;
 
   return (
     <section 
@@ -37,6 +22,13 @@ const AboutUs = () => {
         }
         :global(.animate-scale-loop) {
           animation: scaleLoop 8s ease-in-out infinite;
+        }
+        
+        /* Orange container base styles */
+        .orange-container {
+          position: absolute;
+          left: 50%;
+          z-index: 20;
         }
         
         @media (max-width: 1023px) {
@@ -61,6 +53,8 @@ const AboutUs = () => {
             padding-left: 1rem !important;
             padding-right: 1rem !important;
             padding-top: 0 !important;
+            display: flex !important;
+            overflow: visible !important;
           }
           .mobile-title {
             font-size: 2rem !important;
@@ -73,20 +67,28 @@ const AboutUs = () => {
           .mobile-image-container {
             width: 100% !important;
             max-width: 350px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            position: relative !important;
           }
           .mobile-image {
             height: 350px !important;
             border-radius: 20px !important;
+            width: 100% !important;
+            display: block !important;
+            position: relative !important;
+            overflow: hidden !important;
+            z-index: 10 !important;
           }
-          .mobile-orange-container {
-            width: 320px !important;
-            height: 110px !important;
+          .orange-container {
+            width: 298px !important;
+            height: 100px !important;
             bottom: -60px !important;
             transform: translateX(-50%) !important;
           }
           .mobile-orange-padding {
-            padding-left: 2rem !important;
-            padding-right: 2rem !important;
+            padding-left: 1.5rem !important;
+            padding-right: 1.5rem !important;
           }
           .mobile-feature-icon {
             width: 3rem !important;
@@ -125,6 +127,10 @@ const AboutUs = () => {
           .image-order {
             padding-left: 2rem !important;
             padding-right: 2rem !important;
+            display: flex !important;
+            justify-content: center !important;
+            align-items: center !important;
+            overflow: visible !important;
           }
           .mobile-title {
             font-size: 2.5rem !important;
@@ -134,13 +140,24 @@ const AboutUs = () => {
           }
           .mobile-image-container {
             max-width: 400px !important;
+            margin: 0 auto !important;
+            display: block !important;
+            position: relative !important;
+            padding-left: 80px !important;
           }
           .mobile-image {
             height: 400px !important;
+            width: 100% !important;
+            display: block !important;
+            position: relative !important;
+            overflow: hidden !important;
+            z-index: 10 !important;
           }
-          .mobile-orange-container {
-            width: 400px !important;
+          .orange-container {
+            width: 450px !important;
             bottom: -70px !important;
+            transform: translateX(-50%) !important;
+            padding-left: 80px !important;
           }
           .mobile-feature-icon {
             width: 3.5rem !important;
@@ -164,10 +181,25 @@ const AboutUs = () => {
             height: 160px !important;
           }
         }
+
+        @media (min-width: 1024px) {
+          .laptop-desktop-width {
+            width: 450px !important;
+          }
+          .laptop-image-offset {
+            transform: translateY(7px) !important;
+          }
+          .orange-container {
+            width: 570px !important;
+            height: 120px !important;
+            bottom: calc(-28px - 50px) !important;
+            transform: translateX(calc(-50% - 120px)) !important;
+          }
+        }
       `}</style>
 
-      <div className="max-w-[1600px] mx-auto px-16 desktop-padding" style={{ paddingBottom: '4rem' }}>
-        <div className="grid grid-cols-2 gap-20 items-start desktop-grid">
+      <div className="max-w-[1600px] mx-auto px-16 desktop-padding" style={{ paddingBottom: '4rem', overflow: 'visible' }}>
+        <div className="grid grid-cols-2 gap-20 items-start desktop-grid" style={{ overflow: 'visible' }}>
           {/* Left Half - Content */}
           <div className="flex flex-col justify-start pr-10 pl-[50px] content-order">
             {/* Title */}
@@ -202,22 +234,23 @@ const AboutUs = () => {
 
           {/* Right Half - Image */}
           <div className="relative flex justify-center pr-[50px] pt-[60px] image-order">
-            <div className="relative mobile-image-container" style={{ width: '450px' }}>
+            <div className="relative w-full max-w-[450px] mobile-image-container laptop-desktop-width laptop-image-offset">
               <div 
-                className="relative w-full h-[475px] rounded-[30px] overflow-hidden shadow-2xl transition-transform duration-100 ease-out mobile-image"
-                style={{ transform: `translateY(${imageOffset}px)` }}
+                className="relative w-full h-[475px] rounded-[30px] overflow-hidden shadow-2xl mobile-image"
               >
                 <Image
                   src="/aboutus.png"
                   alt="About NF Solutions"
-                  fill
-                  className="object-cover animate-scale-loop"
+                  width={450}
+                  height={475}
+                  className="object-cover animate-scale-loop w-full h-full"
                   style={{ borderRadius: '10px' }}
+                  priority
                 />
               </div>
 
               {/* Orange Rectangle with Features */}
-              <div className="absolute left-1/2 z-20 mobile-orange-container" style={{ width: '570px', height: '120px', bottom: 'calc(-28px - 50px)', transform: 'translateX(calc(-50% - 120px))' }}>
+              <div className="orange-container">
                 <div 
                   className="relative px-16 h-full flex items-center mobile-orange-padding"
                   style={{
@@ -259,16 +292,15 @@ const AboutUs = () => {
         </div>
       </div>
 
-      {/* Decorative Arrows with Parallax */}
+      {/* Decorative Arrows */}
       <div 
-        className="absolute left-4 bottom-[80px] opacity-200 transition-transform duration-100 ease-out mobile-arrow-left"
-        style={{ transform: `translateY(${arrowLeftOffset}px)` }}
+        className="absolute left-4 bottom-[80px] opacity-100 mobile-arrow-left"
       >
         <Image src="/aboutus_leftb.png" alt="Left Arrow" width={100} height={200} />
       </div>
       <div 
-        className="absolute bottom-[180px] opacity-100 transition-transform duration-100 ease-out mobile-arrow-right"
-        style={{ right: '16px', transform: `translateY(${arrowRightOffset}px)` }}
+        className="absolute bottom-[180px] opacity-100 mobile-arrow-right"
+        style={{ right: '16px' }}
       >
         <Image src="/aboutus_rightb.png" alt="Right Arrow" width={20} height={200} />
       </div>
