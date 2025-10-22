@@ -49,6 +49,9 @@ const HomepageHero: React.FC = () => {
           overflow-x: hidden;
           width: 100%;
           position: relative;
+          margin: 0;
+          padding: 0;
+          overscroll-behavior: none;
         }
 
         @keyframes slowZoom {
@@ -194,14 +197,19 @@ const HomepageHero: React.FC = () => {
         }
       `}</style>
 
-      <div className="relative w-full overflow-hidden" style={{ minHeight: '100vh', fontFamily: 'Instrument Sans, sans-serif', margin: 0, padding: 0 }}>
+      <div className="relative w-full" style={{ 
+        height: '100vh', 
+        fontFamily: 'Instrument Sans, sans-serif', 
+        margin: 0, 
+        padding: 0,
+        overflow: 'hidden'
+      }}>
         {/* Background Image with Scale Animation */}
         <div 
           className="absolute inset-0 z-0"
           style={{
             width: '100%',
             height: '100%',
-            minHeight: '100vh',
             position: 'absolute',
             top: 0,
             left: 0,
@@ -314,7 +322,7 @@ const HomepageHero: React.FC = () => {
                 </a>
               </div>
 
-              {/* Digital Solutions CTA - Image with Text Overlay and Hover Effect */}
+              {/* Digital Solutions CTA */}
               <button 
                 onClick={scrollToContact}
                 onMouseEnter={() => setIsHovered(true)}
