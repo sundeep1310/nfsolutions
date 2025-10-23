@@ -1,10 +1,8 @@
 "use client";
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import Image from 'next/image';
 
 const IndustryWeServe: React.FC = () => {
-  const parallaxRef = useRef<HTMLDivElement>(null);
-
   const industryItems = [
     'Oil & Gas',
     'Refining',
@@ -13,31 +11,12 @@ const IndustryWeServe: React.FC = () => {
     'Renewable Industries'
   ];
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (parallaxRef.current) {
-        const scrolled = window.scrollY;
-        const element = parallaxRef.current;
-        const elementTop = element.offsetTop;
-        const parallaxSpeed = 0.5;
-        
-        if (scrolled > elementTop - window.innerHeight && scrolled < elementTop + element.offsetHeight) {
-          const yPos = -(scrolled - elementTop) * parallaxSpeed;
-          element.style.transform = `translateY(${yPos}px)`;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <section className="relative w-full bg-white" style={{ minHeight: '50vw', paddingTop: '4vw', paddingBottom: '4vw', paddingLeft: '2vw', paddingRight: '2vw' }}>
+    <section className="relative w-full bg-white" style={{ minHeight: '50vw', paddingTop: '4vw', paddingBottom: '4vw', paddingLeft: '2vw', paddingRight: 'calc(2vw + 10px)', fontFamily: 'Instrument Sans, sans-serif' }}>
       {/* Container with rounded corners */}
       <div className="relative mx-auto" style={{ maxWidth: '88%', height: '50vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
         {/* Background Image with Scale Animation */}
-        <div ref={parallaxRef} className="absolute inset-0 w-full h-full animate-scale-in-out">
+        <div className="absolute inset-0 w-full h-full animate-scale-in-out">
           <Image
             src="/industry_bg.png"
             alt="Industry Background"
@@ -79,27 +58,18 @@ const IndustryWeServe: React.FC = () => {
                 <div className="flex flex-col justify-between" style={{ marginTop: '3.375vw', height: '15.75vw' }}>
                   {industryItems.map((item, index) => (
                     <div key={index} className="flex items-center" style={{ gap: '0.675vw' }}>
-                      <div 
-                        className="flex-shrink-0 rounded-full flex items-center justify-center" 
+                      {/* SVG icon without orange container */}
+                      <Image
+                        src={`/industryweserve${index + 1}.svg`}
+                        alt={item}
+                        width={48}
+                        height={48}
+                        className="object-contain flex-shrink-0"
                         style={{ 
-                          backgroundColor: '#EB8145',
-                          width: '3.15vw',
-                          height: '3.15vw'
+                          width: '2.5vw',
+                          height: '2.5vw'
                         }}
-                      >
-                        {/* SVG icon */}
-                        <Image
-                          src={`/industryweserve${index + 1}.svg`}
-                          alt={item}
-                          width={30}
-                          height={30}
-                          className="object-contain"
-                          style={{ 
-                            width: '1.9125vw',
-                            height: '1.9125vw'
-                          }}
-                        />
-                      </div>
+                      />
                       <span className="font-medium" style={{ color: '#ffffff', fontSize: '1.06875vw' }}>{item}</span>
                     </div>
                   ))}
@@ -140,6 +110,17 @@ const IndustryWeServe: React.FC = () => {
           animation: scale-in-out 20s ease infinite;
         }
 
+        /* 2xl screens and larger - reduce image width by 10% */
+        @media (min-width: 1536px) {
+          section > div {
+            max-width: 78.2% !important;
+          }
+          
+          section > div > div:nth-child(2) > div > div {
+            transform: translateX(calc(15vw + 85px)) !important;
+          }
+        }
+
         /* Mobile and Tablet responsive adjustments only */
         @media (max-width: 1024px) {
           section {
@@ -151,6 +132,13 @@ const IndustryWeServe: React.FC = () => {
             max-width: 95% !important;
             height: 65vw !important;
             border-radius: 4vw !important;
+            padding: 0 18px !important;
+          }
+          
+          section > div > div:nth-child(1) {
+            left: 18px !important;
+            right: 18px !important;
+            width: calc(100% - 36px) !important;
           }
           
           section > div > div:nth-child(2) > div > div {
@@ -184,14 +172,9 @@ const IndustryWeServe: React.FC = () => {
             gap: 1.5vw !important;
           }
           
-          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div {
-            width: 4vw !important;
-            height: 4vw !important;
-          }
-          
-          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div img {
-            width: 2.5vw !important;
-            height: 2.5vw !important;
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div img {
+            width: 3.3vw !important;
+            height: 3.3vw !important;
           }
           
           section > div > div:nth-child(2) > div > div > div > div:last-child > div span {
@@ -218,6 +201,13 @@ const IndustryWeServe: React.FC = () => {
             max-width: 100% !important;
             height: 90vw !important;
             border-radius: 6vw !important;
+            padding: 0 18px !important;
+          }
+          
+          section > div > div:nth-child(1) {
+            left: 18px !important;
+            right: 18px !important;
+            width: calc(100% - 36px) !important;
           }
           
           section > div > div:nth-child(2) > div > div {
@@ -251,14 +241,9 @@ const IndustryWeServe: React.FC = () => {
             gap: 2vw !important;
           }
           
-          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div {
-            width: 5vw !important;
-            height: 5vw !important;
-          }
-          
-          section > div > div:nth-child(2) > div > div > div > div:last-child > div > div img {
-            width: 3vw !important;
-            height: 3vw !important;
+          section > div > div:nth-child(2) > div > div > div > div:last-child > div img {
+            width: 3.96vw !important;
+            height: 3.96vw !important;
           }
           
           section > div > div:nth-child(2) > div > div > div > div:last-child > div span {

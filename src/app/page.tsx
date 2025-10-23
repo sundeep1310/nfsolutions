@@ -7,12 +7,14 @@ import OurTeamPage from '@/components/homepage/ourteam';
 import IndustryWeServe from '@/components/homepage/industryweserve';
 import Partner from '@/components/homepage/partner';
 import ContactUsPage from '@/components/homepage/contact-us';
+import Navbar from '@/components/navbar';
 
 
 
 export default function Homepage() {
   return (
     <div>
+      <Navbar/>
       <HomepageHero />
       <AboutUs />
       <Partner />

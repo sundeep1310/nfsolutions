@@ -3,19 +3,22 @@ import React from 'react';
 
 const OurTeamPage = () => {
   return (
-    <div className="relative min-h-screen bg-black text-white overflow-hidden">
+    <div 
+    id="team" 
+    className="relative min-h-screen bg-black text-white overflow-hidden"
+    style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
       {/* Background Image */}
       <div className="absolute inset-0 z-0 w-full h-full">
         <img
           src="/ourteam_bg.png"
           alt="Background"
-          className="w-full h-full object-cover opacity-100"
+          className="w-full h-full object-fill opacity-100"
           style={{ minHeight: '100%', minWidth: '100%', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
         />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20">
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 main-content-wrapper">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4" style={{ color: 'white' }}>
@@ -26,12 +29,12 @@ const OurTeamPage = () => {
           </p>
         </div>
 
-        {/* Wrapped Container with Images and Text - EXACTLY AS ORIGINAL */}
-        <div className="mx-auto" style={{ maxWidth: '1200px' }}>
-          <div style={{ backgroundColor: 'black', padding: '20px 35px', borderRadius: '24px' }}>
-            {/* Images Section - 2 Photos - Always in Row - EXACTLY AS ORIGINAL */}
+        {/* Wrapped Container with Images and Text */}
+        <div className="mx-auto team-container">
+          <div className="team-inner-container" style={{ backgroundColor: 'black', padding: '20px 35px', borderRadius: '24px' }}>
+            {/* Images Section */}
             <div className="flex flex-row mb-6 justify-start items-start team-images-container" style={{ gap: '32px' }}>
-              {/* Left Large Image - EXACTLY AS ORIGINAL */}
+              {/* Left Large Image */}
               <div className="relative bg-gray-700 flex-shrink-0 team-image-left" style={{ width: '800px', height: '240px', overflow: 'hidden', borderRadius: '24px' }}>
                 <img
                   src="/ourteam1.png"
@@ -41,7 +44,7 @@ const OurTeamPage = () => {
                 />
               </div>
 
-              {/* Right Small Image - EXACTLY AS ORIGINAL */}
+              {/* Right Small Image */}
               <div className="relative bg-gray-700 flex-shrink-0 team-image-right" style={{ width: '280px', height: '240px', overflow: 'hidden', borderRadius: '24px' }}>
                 <img
                   src="/ourteam2.png"
@@ -52,39 +55,45 @@ const OurTeamPage = () => {
               </div>
             </div>
 
-            {/* Team Attributes - EXACTLY AS ORIGINAL */}
+            {/* Team Attributes  */}
             <div className="space-y-0">
-              {/* Engineer-Led - EXACTLY AS ORIGINAL */}
-              <div className="flex flex-row items-start border-t border-gray-600 py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
-                  ENGINEER-LED AND MANAGED
-                </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
-                  Our leadership has decades of hands-on experience in machinery, packages, and complex EPC projects.
-                </p>
+              {/* Engineer-Led  */}
+              <div className="border-t border-gray-600 py-3 team-attribute">
+                <div className="flex flex-row items-center team-attribute-with-bottom-line" style={{ gap: '80px', display: 'inline-flex' }}>
+                  <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                    ENGINEER-LED AND MANAGED
+                  </h3>
+                  <p className="team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>
+                    Our leadership has decades of hands-on experience in machinery, packages, and complex EPC projects.
+                  </p>
+                </div>
               </div>
 
-              {/* Proven Track Record - EXACTLY AS ORIGINAL */}
-              <div className="flex flex-row items-start border-t border-gray-600 py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
-                  PROVEN GLOBAL TRACK RECORD
-                </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
-                  We have proven success working alongside major EPC contractors and end-users in key markets like the Middle East, India, and Singapore.
-                </p>
+              {/* Proven Track Record */}
+              <div className="border-t border-gray-600 py-3 team-attribute">
+                <div className="flex flex-row items-center team-attribute-with-bottom-line" style={{ gap: '80px', display: 'inline-flex' }}>
+                  <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                    PROVEN GLOBAL TRACK RECORD
+                  </h3>
+                  <p className="team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>
+                    We have proven success working alongside major EPC contractors and end-users in key markets like the Middle East, India, and Singapore.
+                  </p>
+                </div>
               </div>
 
-              {/* Relationship-Focused - EXACTLY AS ORIGINAL */}
-              <div className="flex flex-row items-start border-t border-gray-600 py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
-                  RELATIONSHIP-FOCUSED
-                </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
-                  We leverage our extensive networks and commercial expertise to build strong, long-term partnerships.
-                </p>
+              {/* Relationship-Focused */}
+              <div className="border-t border-gray-600 py-3 team-attribute">
+                <div className="flex flex-row items-center team-attribute-with-bottom-line" style={{ gap: '80px', display: 'inline-flex' }}>
+                  <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                    RELATIONSHIP-FOCUSED
+                  </h3>
+                  <p className="team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>
+                    We leverage our extensive networks and commercial expertise to build strong, long-term partnerships.
+                  </p>
+                </div>
               </div>
 
-              {/* Tenacious & Professional - EXACTLY AS ORIGINAL */}
+              {/* Tenacious & Professional  */}
               <div className="flex flex-row items-start border-t border-gray-600 py-3 team-attribute" style={{ gap: '80px' }}>
                 <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
                   TENACIOUS & PROFESSIONAL
@@ -111,6 +120,66 @@ const OurTeamPage = () => {
 
         .animate-scale-loop {
           animation: scaleLoop 8s ease-in-out infinite;
+        }
+
+        /* Default max-width for all screens */
+        .team-container {
+          max-width: 1200px;
+        }
+
+        /* Style for team attributes with bottom line */
+        .team-attribute-with-bottom-line {
+          border-bottom: 1px solid white;
+          padding-bottom: 8px;
+          width: fit-content;
+        }
+
+        /* Laptop screens only - 1024px to 1535px */
+        @media (min-width: 1024px) and (max-width: 1535px) {
+          .team-container {
+            margin-bottom: 50px;
+          }
+        }
+
+        /* 2XL screens and above - Bigger container */
+        @media (min-width: 1536px) {
+          #team {
+            display: flex;
+            align-items: stretch;
+          }
+
+          .main-content-wrapper {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            padding-bottom: 20px !important;
+          }
+
+          .team-container {
+            max-width: 1700px;
+            margin-right: 10px;
+            margin-bottom: 50px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .team-inner-container {
+            padding: 40px 60px 60px 60px !important;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+          }
+          
+          .team-image-left {
+            width: 950px !important;
+            height: 300px !important;
+          }
+          
+          .team-image-right {
+            width: 350px !important;
+            height: 300px !important;
+          }
         }
 
         /* Mobile and Tablet ONLY - Below 1024px */

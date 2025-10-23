@@ -35,7 +35,7 @@ const SystemsExpertise: React.FC = () => {
   }, []);
 
   return (
-    <section className="relative w-full bg-white" style={{ minHeight: '56vw', paddingTop: '2vw', paddingBottom: '2vw', paddingLeft: '2vw', paddingRight: '2vw' }}>
+    <section className="relative w-full bg-white" style={{ minHeight: '56vw', paddingTop: '2vw', paddingBottom: '2vw', paddingLeft: '2vw', paddingRight: '2vw', fontFamily: 'Instrument Sans, sans-serif' }}>
       {/* Container with rounded corners - LARGER */}
       <div className="relative mx-auto" style={{ maxWidth: '90%', height: '50vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
         {/* Background Image with Scale Animation */}
@@ -70,7 +70,7 @@ const SystemsExpertise: React.FC = () => {
               </h2>
 
               {/* Description */}
-              <p className="leading-relaxed" style={{ color: '#ffffff', fontSize: '0.76125vw', marginBottom: '1.74vw' }}>
+              <p className="leading-relaxed" style={{ color: '#ffffff', fontSize: '0.68vw', marginBottom: '1.74vw' }}>
                 Our strategic advantage is our <span className="font-bold">deep, practical knowledge</span> of the core equipment and products that define EPC projects. This familiarity enables us to provide <span className="font-bold">effective, real-world solutions</span> and strengthens our collaboration across the contractor ecosystem. Our expertise includes:
               </p>
 
@@ -78,24 +78,17 @@ const SystemsExpertise: React.FC = () => {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.87vw' }}>
                 {expertiseItems.map((item, index) => (
                   <div key={index} className="flex items-center" style={{ gap: '0.6525vw' }}>
-                    <div 
-                      className="flex-shrink-0 rounded-full flex items-center justify-center" 
-                      style={{ 
-                        backgroundColor: '#EB8145',
-                        width: '2.3925vw',
-                        height: '2.3925vw'
-                      }}
-                    >
+                    <div className="flex-shrink-0 flex items-center justify-center">
                       {/* SVG icon */}
                       <Image
                         src={`/systemsexpertise${index + 1}.svg`}
                         alt={item}
-                        width={28}
-                        height={28}
+                        width={48}
+                        height={48}
                         className="object-contain"
                         style={{ 
-                          width: '1.5225vw',
-                          height: '1.5225vw'
+                          width: '2.64vw',
+                          height: '2.64vw'
                         }}
                       />
                     </div>
@@ -140,16 +133,23 @@ const SystemsExpertise: React.FC = () => {
           animation: scale-in-out 20s ease-in-out infinite;
         }
 
+        /* 2xl screens and larger - reduce container width by 10% */
+        @media (min-width: 1536px) {
+          section > div {
+            max-width: 80% !important;
+          }
+        }
+
         /* Mobile and Tablet responsive adjustments only */
         @media (max-width: 1024px) {
           section {
-            min-height: 65vw !important;
-            padding: 2vw 2vw 1vw 2vw !important;
+            min-height: 75vw !important;
+            padding: 2vw 10px 1vw 10px !important;
           }
           
           section > div {
-            max-width: 95% !important;
-            height: 65vw !important;
+            max-width: 90% !important;
+            height: 75vw !important;
             border-radius: 4vw !important;
           }
           
@@ -165,20 +165,20 @@ const SystemsExpertise: React.FC = () => {
           
           section > div > div:nth-child(2) > div > div:first-child {
             width: 50vw !important;
-            height: auto !important;
-            transform: translateX(0) translateY(0) !important;
+            height: 55vw !important;
+            transform: translateX(0) translateY(-5vw) !important;
             border-radius: 3vw !important;
             padding: 2vw !important;
             margin: 12.5vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:first-child h2 {
-            font-size: 3.2vw !important;
+            font-size: 4vw !important;
             margin-bottom: 1.2vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:first-child p {
-            font-size: 1.5vw !important;
+            font-size: 1.6vw !important;
             margin-bottom: 2vw !important;
           }
           
@@ -190,18 +190,13 @@ const SystemsExpertise: React.FC = () => {
             gap: 0.8vw !important;
           }
           
-          section > div > div:nth-child(2) > div > div:first-child > div > div > div {
-            width: 3vw !important;
-            height: 3vw !important;
-          }
-          
           section > div > div:nth-child(2) > div > div:first-child > div > div > div img {
-            width: 1.8vw !important;
-            height: 1.8vw !important;
+            width: 3.3vw !important;
+            height: 3.3vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:first-child > div > div span {
-            font-size: 1.3vw !important;
+            font-size: 1.6vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:last-child {
@@ -211,13 +206,13 @@ const SystemsExpertise: React.FC = () => {
 
         @media (max-width: 768px) {
           section {
-            min-height: 90vw !important;
-            padding: 2vw 2vw 2vw 2vw !important;
+            min-height: 100vw !important;
+            padding: 2vw 10px 2vw 10px !important;
           }
           
           section > div {
-            max-width: 100% !important;
-            height: 90vw !important;
+            max-width: 95% !important;
+            height: 100vw !important;
             border-radius: 6vw !important;
           }
           
@@ -233,20 +228,20 @@ const SystemsExpertise: React.FC = () => {
           
           section > div > div:nth-child(2) > div > div:first-child {
             width: 60vw !important;
-            height: auto !important;
-            transform: translateX(0) translateY(0) !important;
+            height: 70vw !important;
+            transform: translateX(0) translateY(-8vw) !important;
             border-radius: 4vw !important;
             padding: 3vw !important;
             margin: 15vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:first-child h2 {
-            font-size: 4.2vw !important;
+            font-size: 5vw !important;
             margin-bottom: 2vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:first-child p {
-            font-size: 2vw !important;
+            font-size: 2.2vw !important;
             margin-bottom: 2.5vw !important;
           }
           
@@ -258,18 +253,13 @@ const SystemsExpertise: React.FC = () => {
             gap: 1.2vw !important;
           }
           
-          section > div > div:nth-child(2) > div > div:first-child > div > div > div {
-            width: 4vw !important;
-            height: 4vw !important;
-          }
-          
           section > div > div:nth-child(2) > div > div:first-child > div > div > div img {
-            width: 2.2vw !important;
-            height: 2.2vw !important;
+            width: 3.96vw !important;
+            height: 3.96vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:first-child > div > div span {
-            font-size: 1.7vw !important;
+            font-size: 2.2vw !important;
           }
           
           section > div > div:nth-child(2) > div > div:last-child {
