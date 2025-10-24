@@ -30,152 +30,93 @@ const DigitalEngineeringSection: React.FC = () => {
   ];
 
   return (
-    <>
+    <section 
+      className="relative bg-white digital-section"
+      style={{ 
+        fontFamily: 'Instrument Sans, sans-serif',
+        paddingTop: '30px',
+        paddingBottom: '10px',
+        marginBottom: '10px'
+      }}
+    >
       <style jsx>{`
-        .digital-engineering-section {
-          position: relative;
-          background-color: white;
-          font-family: 'Instrument Sans, sans-serif';
-          padding-top: clamp(20px, 3vw, 30px);
-          padding-bottom: clamp(20px, 2vw, 30px);
-          margin-bottom: clamp(20px, 2vw, 30px);
-        }
-        
-        .digital-container {
-          max-width: 1200px;
-          margin: 0 auto;
-          padding-left: clamp(30px, 6vw, 80px);
-          padding-right: clamp(30px, 6vw, 80px);
-        }
-        
-        .services-wrapper {
-          margin-left: clamp(50px, 20vw, 250px);
-          width: fit-content;
-          margin-top: clamp(40px, 5vw, 60px);
-        }
-        
-        .services-grid {
-          position: relative;
-          display: grid;
-          grid-template-columns: repeat(auto-fit, minmax(clamp(280px, 40vw, 630px), 1fr));
-          column-gap: clamp(8px, 1vw, 12px);
-          row-gap: clamp(8px, 1vw, 12px);
-          justify-content: start;
-        }
-        
-        .arrow-right {
-          position: absolute;
-          top: 33.33%;
-          right: clamp(20px, 2vw, 32px);
-        }
-        
-        .arrow-bottom {
-          position: absolute;
-          bottom: 0;
-          left: 50%;
-          transform: translateX(-50%);
-        }
-        
-        @media (max-width: 1024px) {
-          .services-wrapper {
-            margin-left: clamp(30px, 15vw, 150px);
+        @media (max-width: 1023px) {
+          .digital-section {
+            padding-top: 40px !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
           }
-          
-          .arrow-right {
-            right: clamp(15px, 1.5vw, 25px);
-          }
-        }
-        
-        @media (max-width: 768px) {
-          .digital-engineering-section {
-            padding-top: clamp(15px, 2.5vw, 25px);
-          }
-          
-          .services-wrapper {
-            margin-left: clamp(20px, 8vw, 80px);
-            margin-top: clamp(30px, 4vw, 40px);
-            width: 100%;
-          }
-          
-          .services-grid {
-            grid-template-columns: 1fr;
-            justify-items: center;
-          }
-          
-          .arrow-right {
-            top: 20%;
-            right: clamp(10px, 1vw, 20px);
-          }
-        }
-        
-        @media (max-width: 480px) {
           .digital-container {
-            padding-left: clamp(16px, 4vw, 30px);
-            padding-right: clamp(16px, 4vw, 30px);
+            padding-left: 20px !important;
+            padding-right: 20px !important;
           }
-          
-          .services-wrapper {
-            margin-left: clamp(10px, 4vw, 40px);
-            margin-top: clamp(20px, 3vw, 30px);
+          .digital-grid-wrapper {
+            margin-left: 0 !important;
+            margin-top: 40px !important;
+            width: 100% !important;
+            margin-bottom: -75% !important;
           }
-          
-          .services-grid {
-            column-gap: clamp(6px, 0.8vw, 10px);
-            row-gap: clamp(6px, 0.8vw, 10px);
-          }
-          
-          .arrow-right {
-            right: clamp(8px, 0.8vw, 15px);
-            top: 15%;
+          .digital-grid {
+            grid-template-columns: 1fr !important;
+            justify-content: center !important;
+            transform: scale(0.5);
+            transform-origin: top center;
           }
         }
       `}</style>
-      
-      <section className="digital-engineering-section">
-        <div className="digital-container">
-          <SectionHeader
-            icon="/digital-engineering-icon.svg"
-            iconAlt="Digital Engineering"
-            title="Digital"
-            titleHighlight="Engineering"
-            subtitle="Designing, Building & Modernizing Enterprise-Grade Platforms"
-          />
 
-          {/* Services Grid - 2x2 Layout with responsive gaps and positioning */}
-          <div className="services-wrapper">
-            <div className="services-grid">
-              {services.map((service, index) => (
-                <ServiceCard
-                  key={index}
-                  image={service.image}
-                  title={service.title}
-                  description={service.description}
-                  imageAlt={service.title}
-                  useIconOnly={false}
-                  alignLeft={false}
-                  textSize="normal"
-                  centerText={true}
-                  titleFontSize="28px"
-                  descriptionFontSize="18px"
-                />
-              ))}
-            </div>
+      <div className="max-w-6xl mx-auto px-8 digital-container" style={{ paddingLeft: '80px', paddingRight: '80px' }}>
+        <SectionHeader
+          icon="/digital-engineering-icon.svg"
+          iconAlt="Digital Engineering"
+          title="Digital"
+          titleHighlight="Engineering"
+          subtitle="Designing, Building & Modernizing Enterprise-Grade Platforms"
+        />
+
+        {/* Services Grid - 2x2 Layout with 12px gaps and 250px right movement (100px + 50px + 100px) */}
+        <div className="digital-grid-wrapper" style={{ marginLeft: '250px', width: 'fit-content', marginTop: '60px' }}>
+          <div 
+            className="relative digital-grid"
+            style={{ 
+              display: 'grid',
+              gridTemplateColumns: 'auto auto',
+              columnGap: '12px',
+              rowGap: '12px',
+              justifyContent: 'start'
+            }}
+          >
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                image={service.image}
+                title={service.title}
+                description={service.description}
+                imageAlt={service.title}
+                useIconOnly={false}
+                alignLeft={false}
+                textSize="normal"
+                centerText={true}
+                titleFontSize="28px"
+                descriptionFontSize="18px"
+              />
+            ))}
           </div>
         </div>
+      </div>
 
-        {/* Decorative Arrow - arrowrightt beside first row cards */}
-        <ArrowDecoration 
-          type="arrowrightt" 
-          className="absolute arrow-right"
-        />
+      {/* Decorative Arrow - arrowrightt beside first row cards */}
+      <ArrowDecoration 
+        type="arrowrightt" 
+        className="absolute top-1/3 right-8"
+      />
 
-        {/* Decorative Arrow - aboutus_rightb at end */}
-        <ArrowDecoration 
-          type="aboutus_rightb" 
-          className="absolute arrow-bottom"
-        />
-      </section>
-    </>
+      {/* Decorative Arrow - aboutus_rightb at end */}
+      <ArrowDecoration 
+        type="aboutus_rightb" 
+        className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
+      />
+    </section>
   );
 };
 
