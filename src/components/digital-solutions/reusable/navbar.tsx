@@ -11,19 +11,9 @@ const Navbar: React.FC = () => {
   const [isTransparent, setIsTransparent] = useState(false);
   const pathname = usePathname();
 
-  const scrollToServices = () => {
-    const servicesSection = document.getElementById('ourservices');
-    if (servicesSection) {
-      servicesSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
-  const handleDigitalSolutionsClick = () => {
-    // If already on digital solutions page, scroll to top
-    if (pathname === '/digital-solutions') {
+  const handleHomeClick = () => {
+    // If already on home page, scroll to top
+    if (pathname === '/') {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
@@ -36,45 +26,40 @@ const Navbar: React.FC = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const handleMobileMenuClick = (sectionId: string) => {
-    setIsMobileMenuOpen(false);
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
-  };
-
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['about', 'why', 'ourservices', 'team', 'contact', 'digital-solutions'];
-      const scrollPosition = window.scrollY + 100; 
+      const sections = ['about', 'why', 'ourservices', 'team', 'contact', 'hero', 'main', 'content'];
+      const scrollPosition = window.scrollY;
       
-      let isAtSectionBoundary = false;
+      let isInSection = false;
       
-      // Check if we're at the very top
-      if (scrollPosition <= 150) {
-        isAtSectionBoundary = true;
+      // Check if we're at the very top (first 200px)
+      if (scrollPosition <= 200) {
+        isInSection = false; // Solid navbar at top
       } else {
-        // Check each section
+        // Check if we're inside any section OR if no sections exist, make it transparent after scrolling
+        let sectionsFound = false;
         sections.forEach(sectionId => {
           const section = document.getElementById(sectionId);
           if (section) {
-            const sectionTop = section.offsetTop;
-            const sectionBottom = sectionTop + section.offsetHeight;
+            sectionsFound = true;
+            const sectionTop = section.offsetTop - 100; // Add buffer
+            const sectionBottom = sectionTop + section.offsetHeight + 100; // Add buffer
             
-            // Check if we're near the start or end of a section (within 100px)
-            if (Math.abs(scrollPosition - sectionTop) <= 100 || 
-                Math.abs(scrollPosition - sectionBottom) <= 100) {
-              isAtSectionBoundary = true;
+            // Check if we're inside this section
+            if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+              isInSection = true;
             }
           }
         });
+        
+        // If no sections found, default to transparent when scrolled
+        if (!sectionsFound && scrollPosition > 200) {
+          isInSection = true;
+        }
       }
       
-      setIsTransparent(!isAtSectionBoundary);
+      setIsTransparent(isInSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -205,9 +190,6 @@ const Navbar: React.FC = () => {
             display: none !important;
           }
           .hamburger-menu {
-            display: block !important;
-          }
-          .cta-button {
             display: none !important;
           }
         }
@@ -234,23 +216,8 @@ const Navbar: React.FC = () => {
         >
           ✕
         </button>
-        <Link href="/#about" onClick={() => { handleMobileMenuClick('about'); toggleMobileMenu(); }}>
-          About Us
-        </Link>
-        <Link href="/#why" onClick={() => { handleMobileMenuClick('why'); toggleMobileMenu(); }}>
-          Why Us
-        </Link>
-        <Link href="/#ourservices" onClick={() => { handleMobileMenuClick('services'); toggleMobileMenu(); }}>
-          Our Services
-        </Link>
-        <Link href="/#team" onClick={() => { handleMobileMenuClick('team'); toggleMobileMenu(); }}>
-          Our Team
-        </Link>
-        <Link href="/#contact" onClick={() => { handleMobileMenuClick('contact'); toggleMobileMenu(); }}>
-          Contact Us
-        </Link>
-        <Link href="/digital-solutions" onClick={toggleMobileMenu}>
-          Digital Solutions
+        <Link href="/" onClick={toggleMobileMenu}>
+          Home
         </Link>
       </div>
 
@@ -268,7 +235,7 @@ const Navbar: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               {/* Logo Section with Hamburger */}
-              <Link href="/" className="flex items-center gap-3" style={{ marginLeft: '20px' ,paddingLeft: '12px' }}>
+              <Link href="/" className="flex items-center gap-3" style={{ marginLeft: '20px' ,paddingLeft: '62px' }}>
                 {/* Hamburger Menu Button */}
                 <button 
                   className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}
@@ -296,29 +263,15 @@ const Navbar: React.FC = () => {
                 <span style={{ color: '#FFFFFF', fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 600, fontFamily: 'Instrument Sans, sans-serif' }} className="whitespace-nowrap">NF Solutions</span>
               </Link>
 
-              {/* Center Navigation */}
+              {/* Center Navigation - Removed all menu items */}
               <div className="nav-links flex items-center" style={{ gap: 'clamp(24px, 3vw, 48px)' }}>
-                <Link href="/#about" style={{ color: '#FFFFFF', fontWeight: 400, fontSize: 'clamp(14px, 1.2vw, 16px)', textDecoration: 'none', fontFamily: 'Instrument Sans, sans-serif' }} className="hover:opacity-70 transition-opacity whitespace-nowrap">
-                  About Us
-                </Link>
-                <Link href="/#why" style={{ color: '#FFFFFF', fontWeight: 400, fontSize: 'clamp(14px, 1.2vw, 16px)', textDecoration: 'none', fontFamily: 'Instrument Sans, sans-serif' }} className="hover:opacity-70 transition-opacity whitespace-nowrap">
-                  Why Us
-                </Link>
-                <Link href="/#ourservices" style={{ color: '#FFFFFF', fontWeight: 400, fontSize: 'clamp(14px, 1.2vw, 16px)', textDecoration: 'none', fontFamily: 'Instrument Sans, sans-serif' }} className="hover:opacity-70 transition-opacity whitespace-nowrap">
-                  Our Services
-                </Link>
-                <Link href="/#team" style={{ color: '#FFFFFF', fontWeight: 400, fontSize: 'clamp(14px, 1.2vw, 16px)', textDecoration: 'none', fontFamily: 'Instrument Sans, sans-serif' }} className="hover:opacity-70 transition-opacity whitespace-nowrap">
-                  Our Team
-                </Link>
-                <Link href="/#contact" style={{ color: '#FFFFFF', fontWeight: 400, fontSize: 'clamp(14px, 1.2vw, 16px)', textDecoration: 'none', fontFamily: 'Instrument Sans, sans-serif' }} className="hover:opacity-70 transition-opacity whitespace-nowrap">
-                  Contact Us
-                </Link>
+                {/* Navigation items removed - keeping the container for consistency */}
               </div>
 
-              {/* Digital Solutions CTA */}
+              {/* Home CTA - Replacing Digital Solutions */}
               <Link 
-                href="/digital-solutions"
-                onClick={handleDigitalSolutionsClick}
+                href="/"
+                onClick={handleHomeClick}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 className="cta-button relative hover:shadow-xl bg-transparent border-0 cursor-pointer"
@@ -330,18 +283,18 @@ const Navbar: React.FC = () => {
               >
                 <Image
                   src={isHovered ? "/homecta2.png" : "/homecta.png"}
-                  alt="Digital Solutions"
-                  width={180}
-                  height={45}
+                  alt="Home"
+                  width={140}
+                  height={55}
                   className="object-contain"
-                  style={{ transition: 'opacity 1s ease-in-out', width: 'clamp(100px, 12vw, 180px)', height: 'auto' }}
+                  style={{ transition: 'opacity 1s ease-in-out', width: 'clamp(90px, 9vw, 140px)', height: 'auto' }}
                 />
                 <span 
                   className="cta-text absolute flex items-center justify-center" 
                   style={{ 
                     color: '#EB8145', 
                     fontWeight: 600, 
-                    fontSize: 'clamp(9px, 1vw, 14px)',
+                    fontSize: 'clamp(9px, 0.9vw, 13px)',
                     fontFamily: 'Instrument Sans, sans-serif',
                     top: '50%',
                     left: '40%',
@@ -349,7 +302,7 @@ const Navbar: React.FC = () => {
                     width: '100%'
                   }}
                 >
-                  Digital Solutions
+                  Home
                 </span>
               </Link>
             </div>
