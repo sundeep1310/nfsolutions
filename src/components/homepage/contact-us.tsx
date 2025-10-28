@@ -1,26 +1,26 @@
 'use client';
-
+ 
 import React, { useState, useEffect } from 'react';
-
+ 
 const ContactUsPage = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
-
+ 
   useEffect(() => {
     const handleScroll = () => {
       setShowScrollTop(window.scrollY > 300);
     };
-
+ 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
+ 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
   };
-
+ 
   const locations = [
     {
       country: 'India',
@@ -29,8 +29,7 @@ const ContactUsPage = () => {
       countryName: 'India',
       phone: '[Phone Number]',
       email: 'india@nfsolutions.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497699.9973874144!2d77.35074421903857!3d12.953945613398634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890&disableDefaultUI=true&gestureHandling=none'
-    },
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d497699.9973874144!2d77.35074421903857!3d12.953945613398634!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae1670c9b44e6d%3A0xf8dfc3e8517e4fe0!2sBengaluru%2C%20Karnataka!5e0!3m2!1sen!2sin!4v1234567890&disableDefaultUI=true&gestureHandling=none%27'},
     {
       country: 'Singapore',
       address: '[Street Address]',
@@ -38,7 +37,7 @@ const ContactUsPage = () => {
       countryName: 'Singapore',
       phone: '[Phone Number]',
       email: 'singapore@nfsolutions.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19036362434!2d103.67943949453125!3d1.3143393999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2ssg!4v1234567890&disableDefaultUI=true&gestureHandling=none'
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19036362434!2d103.67943949453125!3d1.3143393999999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31da11238a8b9375%3A0x887869cf52abf5c4!2sSingapore!5e0!3m2!1sen!2ssg!4v1234567890&disableDefaultUI=true&gestureHandling=none%27'
     },
     {
       country: 'UAE (Middle East Hub)',
@@ -47,16 +46,16 @@ const ContactUsPage = () => {
       countryName: 'United Arab Emirates',
       phone: '[Phone Number]',
       email: 'uae@nfsolutions.com',
-      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6828087848!2d54.29778835!3d24.453884399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e440f723ef2b9%3A0xc7cc2e9341971108!2sAbu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1234567890&disableDefaultUI=true&gestureHandling=none'
+      mapUrl: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d462560.6828087848!2d54.29778835!3d24.453884399999998!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5e440f723ef2b9%3A0xc7cc2e9341971108!2sAbu%20Dhabi%20-%20United%20Arab%20Emirates!5e0!3m2!1sen!2sae!4v1234567890&disableDefaultUI=true&gestureHandling=none%27'
     }
   ];
-
+ 
   return (
     <>
-      <div 
-      id="contact" 
-      className="min-h-screen bg-gray-100" 
-      style={{ 
+      <div
+      id="contact"
+      className="min-h-screen bg-gray-100"
+      style={{
         paddingLeft: '25px',
         paddingTop: '30px',
         backgroundImage: 'url(contactus_bg.png)',
@@ -79,27 +78,27 @@ const ContactUsPage = () => {
             </h1>
           </div>
         </header>
-
+ 
         {/* Contact line image */}
         <div style={{ width: '90%', marginLeft: '50px' }}>
           <img src="contactline.png" alt="Contact line" className="w-full h-auto" />
         </div>
-
+ 
         {/* Description */}
         <div style={{ marginLeft: '40px', marginRight: '40px', paddingTop: '32px', paddingBottom: '32px' }}>
           <p className="text-gray-700 text-base leading-relaxed" style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
-            We are here to help you navigate the complexities of the global EPC market. Whether you have a specific project in mind, a question about our services, 
+            We are here to help you navigate the complexities of the global EPC market. Whether you have a specific project in mind, a question about our services,
             or would like to explore a potential partnership, our team of experts is ready to assist you.
           </p>
         </div>
-
+ 
         {/* Location Cards */}
         <div style={{ width: '92%', marginLeft: 'auto', marginRight: 'auto', paddingRight: '40px' }} className="pb-20">
           {locations.map((location, index) => (
-            <div 
-              key={index} 
-              className="shadow-lg overflow-hidden" 
-              style={{ 
+            <div
+              key={index}
+              className="shadow-lg overflow-hidden"
+              style={{
                 backgroundColor: 'white',
                 marginBottom: '40px',
                 border: '2px solid #e5e7eb',
@@ -109,53 +108,53 @@ const ContactUsPage = () => {
               <div className="flex flex-row items-start max-[768px]:flex-col" style={{ backgroundColor: 'white' }}>
                 {/* Map Section */}
                 <div className="relative bg-gray-200 w-[70%] max-[768px]:w-full" style={{ padding: '20px' }}>
-                  <div className="absolute z-10 bg-white rounded-lg shadow-md p-2" style={{ top: '15px', left: '15px', width: '200px' }}>
+                  {/* <div className="absolute z-10 bg-white rounded-lg shadow-md p-2" style={{ top: '15px', left: '15px', width: '200px' }}>
                     <img src="contactuscard.png" alt="Contact Us Card" className="w-full h-auto" />
-                  </div>
+                  </div> */}
                   <iframe
                     src={location.mapUrl}
                     className="border-0 rounded max-[768px]:w-full"
-                    style={{ height: '220px', width: '95%' }}
+                    style={{ height: '260px', width: '95%' }}
                     allowFullScreen
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
                   ></iframe>
+                  <div className="absolute top-4 left-4 bg-[#EB8145] text-white rounded-md px-4 py-2 font-semibold shadow-md">
+    NF Solutions
+  </div>
                 </div>
-
+ 
                 {/* Contact Info Section */}
-                <div 
-                  className="p-4 sm:p-6 md:p-8 w-[30%] max-[768px]:w-full" 
-                  style={{ 
-                    textAlign: 'left', 
-                    backgroundColor: 'white'
-                  }}
+                <div
+                  className=" px-4 sm:px-6 md:px-8 w-[30%] max-[768px]:w-full text-left bg-white "
+                 
                 >
-                  <div className="flex items-center" style={{ padding: '20px' }}>
-                    <img src="location.svg" alt="Location" className="mr-2" style={{ width: '16px', height: '16px' }} />
-                    <h2 className="text-lg sm:text-xl " style={{ color: '#EB8145', fontFamily: 'Instrument Sans, sans-serif' }}>{location.country}</h2>
+                  <div className="flex items-center" style={{ paddingInline: '10px' }}>
+                    <img src="location.svg" alt="Location" className="mr-2" width={24} height={24}  />
+                    <h2 className="text-lg sm:text-xl " style={{ color: '#EB8145', fontFamily: 'Instrument Sans, sans-serif', }}>{location.country}</h2>
                   </div>
-
-                  <div className="space-y-1" style={{ padding: '20px' }}>
+ 
+                  <div className="" style={{paddingLeft: '20px',paddingRight: '20px' }}>
                     <div>
-                      <h3 className="text-base sm:text-lg font-bold text-gray-900" style={{ fontFamily: 'Instrument Sans, sans-serif' }}>NF Solutions</h3>
+                      <h3 className="text-base sm:text-lg font-bold text-gray-900" style={{ fontFamily: 'Instrument Sans, sans-serif',margin:"0px" }}>NF Solutions</h3>
                     </div>
-                    
+                   
                     <div className="text-sm sm:text-base text-gray-700">
                       <p style={{ fontFamily: 'Instrument Sans, sans-serif' }}>{location.address}</p>
                     </div>
-                    
+                   
                     <div className="text-sm sm:text-base text-gray-700">
                       <p style={{ fontFamily: 'Instrument Sans, sans-serif' }}>{location.cityState}</p>
                     </div>
-                    
+                   
                     <div className="text-sm sm:text-base text-gray-700">
                       <p style={{ fontFamily: 'Instrument Sans, sans-serif' }}>{location.countryName}</p>
                     </div>
-                    
+                   
                     <div className="text-sm sm:text-base text-gray-700">
                       <p style={{ fontFamily: 'Instrument Sans, sans-serif' }}><span className="font-semibold">Phone:</span> {location.phone}</p>
                     </div>
-                    
+                   
                     <div className="text-sm sm:text-base text-gray-700">
                       <p style={{ fontFamily: 'Instrument Sans, sans-serif' }}><span className="font-semibold">Email:</span> {location.email}</p>
                     </div>
@@ -165,24 +164,25 @@ const ContactUsPage = () => {
             </div>
           ))}
         </div>
-      </div>
-
-      {/* Footer */}
-      <footer className="py-12 mt-auto" style={{ backgroundColor: '#EB8145' }}>
-        <div className="px-4 sm:px-6 lg:px-8 text-center">
+        <footer className="py-24 bg-[#EB8145]" >
+        <div className="px-4 sm:px-6 lg:px-8 text-center py-24">
           <p style={{ color: 'white', fontFamily: 'Instrument Sans, sans-serif' }} className="text-sm">© 2025. All Rights Reserved</p>
         </div>
       </footer>
-
+      </div>
+ 
+      {/* Footer */}
+     
+ 
       {/* Scroll to Top Button */}
       {showScrollTop && (
-        <img 
-          src="arrow.png" 
-          alt="Scroll to top" 
+        <img
+          src="arrow.png"
+          alt="Scroll to top"
           onClick={scrollToTop}
           className="fixed cursor-pointer"
-          style={{ 
-            bottom: '32px',
+          style={{
+            bottom: '40px',
             right: '32px',
             width: '64px',
             height: '64px',
@@ -193,5 +193,5 @@ const ContactUsPage = () => {
     </>
   );
 };
-
+ 
 export default ContactUsPage;

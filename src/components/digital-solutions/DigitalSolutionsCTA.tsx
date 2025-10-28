@@ -82,6 +82,12 @@ const DigitalSolutionsCTA: React.FC = () => {
           }
         }
         
+        @media (min-width: 769px) and (max-width: 1200px) {
+          .cta-section .cta-content .cta-title {
+            padding-top: 40px !important;
+          }
+        }
+        
         @media (max-width: 768px) {
           .cta-section {
             background-size: cover;
