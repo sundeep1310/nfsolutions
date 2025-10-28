@@ -37,12 +37,13 @@ const DataEngineeringSection: React.FC = () => {
       if (window.innerWidth >= 1536) {
         // Target all service cards and update their max-width and height
         const serviceCards = document.querySelectorAll('.service-card-container > div');
-        serviceCards.forEach((card: any) => {
-          if (card.style.maxWidth) {
-            card.style.maxWidth = 'clamp(650px, 32vw, 1100px)';
+        serviceCards.forEach((card: Element) => {
+          const htmlCard = card as HTMLElement;
+          if (htmlCard.style.maxWidth) {
+            htmlCard.style.maxWidth = 'clamp(650px, 32vw, 1100px)';
           }
-          if (card.style.height) {
-            card.style.height = 'clamp(420px, 17vw, 580px)';
+          if (htmlCard.style.height) {
+            htmlCard.style.height = 'clamp(420px, 17vw, 580px)';
           }
         });
         setTitleMargin(undefined);
@@ -50,12 +51,13 @@ const DataEngineeringSection: React.FC = () => {
       } else if (window.innerWidth >= 1024) {
         // Reset to original size for laptop screens
         const serviceCards = document.querySelectorAll('.service-card-container > div');
-        serviceCards.forEach((card: any) => {
-          if (card.style.maxWidth) {
-            card.style.maxWidth = 'clamp(478px, 23vw, 780px)';
+        serviceCards.forEach((card: Element) => {
+          const htmlCard = card as HTMLElement;
+          if (htmlCard.style.maxWidth) {
+            htmlCard.style.maxWidth = 'clamp(478px, 23vw, 780px)';
           }
-          if (card.style.height) {
-            card.style.height = 'clamp(300px, 15vw, 440px)';
+          if (htmlCard.style.height) {
+            htmlCard.style.height = 'clamp(300px, 15vw, 440px)';
           }
         });
         setTitleMargin('-100px');
@@ -63,12 +65,13 @@ const DataEngineeringSection: React.FC = () => {
       } else if (window.innerWidth >= 501) {
         // Tablet and mobile screens - reduce height by 50px, increase width by 30px
         const serviceCards = document.querySelectorAll('.service-card-container > div');
-        serviceCards.forEach((card: any) => {
-          if (card.style.maxWidth) {
-            card.style.maxWidth = 'clamp(508px, 23vw, 810px)';
+        serviceCards.forEach((card: Element) => {
+          const htmlCard = card as HTMLElement;
+          if (htmlCard.style.maxWidth) {
+            htmlCard.style.maxWidth = 'clamp(508px, 23vw, 810px)';
           }
-          if (card.style.height) {
-            card.style.height = 'clamp(250px, 15vw, 390px)';
+          if (htmlCard.style.height) {
+            htmlCard.style.height = 'clamp(250px, 15vw, 390px)';
           }
         });
         setTitleMargin(undefined);
@@ -76,12 +79,13 @@ const DataEngineeringSection: React.FC = () => {
       } else {
         // Mobile screens below 501px - reduce height by 50px, increase width by 30px
         const serviceCards = document.querySelectorAll('.service-card-container > div');
-        serviceCards.forEach((card: any) => {
-          if (card.style.maxWidth) {
-            card.style.maxWidth = 'clamp(508px, 23vw, 810px)';
+        serviceCards.forEach((card: Element) => {
+          const htmlCard = card as HTMLElement;
+          if (htmlCard.style.maxWidth) {
+            htmlCard.style.maxWidth = 'clamp(508px, 23vw, 810px)';
           }
-          if (card.style.height) {
-            card.style.height = 'clamp(250px, 15vw, 390px)';
+          if (htmlCard.style.height) {
+            htmlCard.style.height = 'clamp(250px, 15vw, 390px)';
           }
         });
         setTitleMargin(undefined);
