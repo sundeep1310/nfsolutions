@@ -7,7 +7,8 @@ import ArrowDecoration from './reusable/ArrowDecoration';
 
 const CloudInfrastructureSection: React.FC = () => {
   const [titleMargin, setTitleMargin] = useState<string | undefined>(undefined);
-  const [cardTextSizes, setCardTextSizes] = useState({ title: "28px", description: "18px" });
+  const [cardTextSizes, setCardTextSizes] = useState({ title: "35px", description: "22px" });
+  const [iconSize, setIconSize] = useState<number>(120);
 
   const services = [
     {
@@ -47,9 +48,10 @@ const CloudInfrastructureSection: React.FC = () => {
           }
         });
         setTitleMargin(undefined);
-        setCardTextSizes({ title: "28px", description: "18px" });
-      } else if (window.innerWidth >= 1024) {
-        // Reset to original size for laptop screens
+        setCardTextSizes({ title: "35px", description: "22px" });
+        setIconSize(120);
+      } else if (window.innerWidth >= 1367) {
+        // Full size for screens 1367px - 1535px
         const serviceCards = document.querySelectorAll('.service-card-container > div');
         serviceCards.forEach((card: Element) => {
           const htmlCard = card as HTMLElement;
@@ -62,6 +64,37 @@ const CloudInfrastructureSection: React.FC = () => {
         });
         setTitleMargin('-100px');
         setCardTextSizes({ title: "28px", description: "18px" });
+        setIconSize(120);
+      } else if (window.innerWidth >= 1024) {
+        // 85% of original size for laptop screens (1024px - 1366px only)
+        const serviceCards = document.querySelectorAll('.service-card-container > div');
+        serviceCards.forEach((card: Element) => {
+          const htmlCard = card as HTMLElement;
+          if (htmlCard.style.maxWidth) {
+            htmlCard.style.maxWidth = 'clamp(406px, 19.55vw, 663px)';
+          }
+          if (htmlCard.style.height) {
+            htmlCard.style.height = 'clamp(255px, 12.75vw, 374px)';
+          }
+        });
+        setTitleMargin('-100px');
+        setCardTextSizes({ title: "clamp(13px, 1.9vw, 32px)", description: "clamp(12px, 1.1vw, 20px)" });
+        setIconSize(84);
+      } else if (window.innerWidth >= 768) {
+        // 768px screens - reduce icon size by 30%
+        const serviceCards = document.querySelectorAll('.service-card-container > div');
+        serviceCards.forEach((card: Element) => {
+          const htmlCard = card as HTMLElement;
+          if (htmlCard.style.maxWidth) {
+            htmlCard.style.maxWidth = 'clamp(508px, 23vw, 810px)';
+          }
+          if (htmlCard.style.height) {
+            htmlCard.style.height = 'clamp(250px, 15vw, 390px)';
+          }
+        });
+        setTitleMargin(undefined);
+        setCardTextSizes({ title: "20px", description: "14px" });
+        setIconSize(84); // 30% reduction from 120px
       } else if (window.innerWidth >= 501) {
         // Tablet and mobile screens - reduce height by 50px, increase width by 30px
         const serviceCards = document.querySelectorAll('.service-card-container > div');
@@ -76,6 +109,7 @@ const CloudInfrastructureSection: React.FC = () => {
         });
         setTitleMargin(undefined);
         setCardTextSizes({ title: "20px", description: "14px" });
+        setIconSize(120);
       } else {
         // Mobile screens below 501px - reduce height by 50px, increase width by 30px
         const serviceCards = document.querySelectorAll('.service-card-container > div');
@@ -90,6 +124,7 @@ const CloudInfrastructureSection: React.FC = () => {
         });
         setTitleMargin(undefined);
         setCardTextSizes({ title: "18px", description: "13px" });
+        setIconSize(120);
       }
     };
 
@@ -120,6 +155,15 @@ const CloudInfrastructureSection: React.FC = () => {
           }
           .header-section {
             margin-left: clamp(100px, 9.8vw, 250px) !important;
+          }
+        }
+        @media (min-width: 1440px) and (max-width: 1535px) {
+          .services-row {
+            gap: 20px !important;
+            margin-bottom: 20px !important;
+          }
+          .services-row:last-child {
+            margin-bottom: 0 !important;
           }
         }
         @media (min-width: 1024px) and (max-width: 1535px) {
@@ -172,7 +216,7 @@ const CloudInfrastructureSection: React.FC = () => {
           <div 
             className="w-full max-[500px]:flex max-[500px]:flex-col"
             style={{
-              marginLeft: 'clamp(100px, 9.8vw, 250px)',
+              marginLeft: typeof window !== 'undefined' && window.innerWidth >= 1440 && window.innerWidth < 1536 ? 'clamp(20px, calc(9.8vw - 80px), 170px)' : 'clamp(100px, 9.8vw, 250px)',
               marginRight: 'clamp(40px, 3.9vw, 100px)',
               maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))'
             }}
@@ -187,7 +231,7 @@ const CloudInfrastructureSection: React.FC = () => {
                   imageAlt={services[0].title}
                   useIconOnly={true}
                   alignLeft={true}
-                  iconSize={120}
+                  iconSize={iconSize}
                   titleFontSize={cardTextSizes.title}
                   descriptionFontSize={cardTextSizes.description}
                 />
@@ -200,7 +244,7 @@ const CloudInfrastructureSection: React.FC = () => {
                   imageAlt={services[1].title}
                   useIconOnly={true}
                   alignLeft={true}
-                  iconSize={120}
+                  iconSize={iconSize}
                   titleFontSize={cardTextSizes.title}
                   descriptionFontSize={cardTextSizes.description}
                 />
@@ -217,7 +261,7 @@ const CloudInfrastructureSection: React.FC = () => {
                   imageAlt={services[2].title}
                   useIconOnly={true}
                   alignLeft={true}
-                  iconSize={120}
+                  iconSize={iconSize}
                   titleFontSize={cardTextSizes.title}
                   descriptionFontSize={cardTextSizes.description}
                 />
@@ -230,7 +274,7 @@ const CloudInfrastructureSection: React.FC = () => {
                   imageAlt={services[3].title}
                   useIconOnly={true}
                   alignLeft={true}
-                  iconSize={120}
+                  iconSize={iconSize}
                   titleFontSize={cardTextSizes.title}
                   descriptionFontSize={cardTextSizes.description}
                 />
@@ -239,17 +283,6 @@ const CloudInfrastructureSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Decorative Arrow - arrowrightt beside first row cards */}
-        <ArrowDecoration 
-          type="arrowrightt" 
-          className="absolute top-1/3 right-8"
-        />
-
-        {/* Decorative Arrow - aboutus_rightb at end */}
-        <ArrowDecoration 
-          type="aboutus_rightb" 
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
-        />
       </section>
     </>
   );

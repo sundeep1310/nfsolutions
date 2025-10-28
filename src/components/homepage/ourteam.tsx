@@ -21,10 +21,10 @@ const OurTeamPage = () => {
       <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 main-content-wrapper">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-3 sm:mb-4" style={{ color: 'white' }}>
+          <h1 className="  font-bold " style={{ color: 'white', fontSize: "clamp(18px, 4vw, 70px)",margin:"0px" }}>
             Our <span style={{ color: '#EB8145' }}>Team</span>
           </h1>
-          <p style={{ color: 'white' }} className="text-xs sm:text-sm md:text-base lg:text-lg max-w-4xl mx-auto px-2">
+          <p style={{ color: 'white',fontSize: 'clamp(12px, 1.305vw, 20px)' }} className=" max-w-4xl mx-auto px-2">
             NF Solutions is powered by a team that blends deep engineering expertise with a relentless focus on client success.
           </p>
         </div>
@@ -60,34 +60,34 @@ const OurTeamPage = () => {
 
   {/* Tenacious & Professional  */}
               <div className="flex flex-row items-start border-b border-[#ffffff] py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                <h3 className="font-[500px] tracking-wide flex-shrink-0 uppercase " style={{ color: 'white',fontSize: 'clamp(14px, 1vw, 24px)', width: '320px' }}>
                   Engineer-Led and Managed
                 </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+                <p className="flex-1 " style={{ color: 'white',fontSize: 'clamp(12px, 1vw, 20px)', lineHeight: '1.6' }}>
                 Our leadership has decades of hands-on experience in machinery, packages, and complex EPC projects.
                 </p>
               </div>
               <div className="flex flex-row items-start border-b border-[#ffffff] py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                <h3 className="font-[500px] tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white',fontSize: 'clamp(14px, 1vw, 24px)', width: '320px' }}>
                   Proven Global Track Record
                 </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+                <p className="flex-1 " style={{ color: 'white',fontSize: 'clamp(12px, 1vw, 20px)', lineHeight: '1.6' }}>
                   We have proven success working alongside major EPC contractors and end-users in key markets like the Middle East, India, and Singapore.
                 </p>
               </div>
               <div className="flex flex-row items-start border-b border-[#ffffff] py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                <h3 className="font-[500px] tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: 'clamp(14px, 1vw, 24px)', width: '320px' }}>
                 Relationship-Focused
                 </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+                <p className="flex-1 " style={{ color: 'white', fontSize: 'clamp(12px, 1vw, 20px)', lineHeight: '1.6' }}>
              We leverage our extensive networks and commercial expertise to build strong, long-term partnerships.
                 </p>
               </div>
               <div className="flex flex-row items-start  py-3 team-attribute" style={{ gap: '80px' }}>
-                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                <h3 className="font-[500px] tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: 'clamp(14px, 1vw, 24px)', width: '320px' }}>
                   TENACIOUS & PROFESSIONAL
                 </h3>
-                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+                <p className="flex-1 " style={{ color: 'white',fontSize: 'clamp(12px, 1vw, 20px)', lineHeight: '1.6' }}>
                   Our approach is fair, competent, and unwavering. We are determined to achieve the best possible outcome for your business, building relationships founded on trust and excellence.
                 </p>
               </div>

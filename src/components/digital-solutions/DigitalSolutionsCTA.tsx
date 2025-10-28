@@ -18,7 +18,6 @@ const DigitalSolutionsCTA: React.FC = () => {
       <style jsx>{`
         .cta-section {
           position: relative;
-          overflow: hidden;
           margin-top: 0;
           margin-bottom: 0;
           font-family: 'Instrument Sans, sans-serif';
@@ -28,7 +27,6 @@ const DigitalSolutionsCTA: React.FC = () => {
           background-repeat: no-repeat;
           width: 100%;
           height: fit-content;
-          position: relative;
           clear: both;
           display: flex;
           align-items: center;
@@ -48,7 +46,7 @@ const DigitalSolutionsCTA: React.FC = () => {
           font-weight: bold;
           color: white;
           font-family: 'Instrument Sans, sans-serif';
-          font-size: clamp(24px, 4vw, 40px);
+          font-size: clamp(31px, 4.35vw, 74px);
           line-height: 1.1;
           margin-bottom: clamp(40px, 6vw, 80px);
         }
@@ -63,8 +61,8 @@ const DigitalSolutionsCTA: React.FC = () => {
           border: none;
           cursor: pointer;
           box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-          font-size: clamp(14px, 1.8vw, 18px);
-          padding: clamp(16px, 2.5vw, 24px) clamp(20px, 3vw, 32px);
+          font-size: clamp(10px, 1.2vw, 14px);
+          padding: clamp(10px, 1.5vw, 16px) clamp(14px, 2vw, 24px);
         }
         
         .cta-button:hover {
@@ -76,15 +74,16 @@ const DigitalSolutionsCTA: React.FC = () => {
           transform: scale(0.95);
         }
         
-        @media (min-width: 1536px) {
+        @media (min-width: 1024px) and (max-width: 1535px) {
           .cta-section {
-            background-size: 100% 100%;
+            align-items: flex-end;
+            padding-bottom: clamp(50px, 8vw, 120px);
           }
         }
         
-        @media (min-width: 769px) and (max-width: 1200px) {
-          .cta-section .cta-content .cta-title {
-            padding-top: 40px !important;
+        @media (min-width: 1536px) {
+          .cta-section {
+            background-size: 100% 100%;
           }
         }
         

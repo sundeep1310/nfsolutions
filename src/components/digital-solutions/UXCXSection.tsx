@@ -122,6 +122,15 @@ const UXCXSection: React.FC = () => {
             margin-left: clamp(100px, 9.8vw, 250px) !important;
           }
         }
+        @media (min-width: 1440px) and (max-width: 1535px) {
+          .services-row {
+            gap: 20px !important;
+            margin-bottom: 20px !important;
+          }
+          .services-row:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
         @media (min-width: 1024px) and (max-width: 1535px) {
           .header-section {
             margin-left: 60px !important;
@@ -139,6 +148,22 @@ const UXCXSection: React.FC = () => {
             padding-bottom: 40px !important;
           }
         }
+        @media (min-width: 1024px) and (max-width: 1366px) {
+          .arrow-right-image {
+            transform: scale(0.6) translateY(-50%) !important;
+            right: -45px !important;
+          }
+        }
+        @media (min-width: 1367px) {
+          .arrow-right-image {
+            transform: translateY(-50%) !important;
+          }
+        }
+        @media (max-width: 1023px) {
+          .arrow-right-image {
+            display: none !important;
+          }
+        }
       `}</style>
       
       <section 
@@ -147,6 +172,30 @@ const UXCXSection: React.FC = () => {
           fontFamily: 'Instrument Sans, sans-serif'
         }}
       >
+        {/* Arrow right image */}
+        <img 
+          src="/arrowrightt.png" 
+          alt="Arrow Right"
+          className="arrow-right-image absolute"
+          style={{
+            right: '10px',
+            top: '10%',
+            transform: 'translateY(-50%)'
+          }}
+        />
+        
+        {/* Bottom right decorative image */}
+        <img 
+          src="/aboutus_rightb.png" 
+          alt="Decorative"
+          className="absolute"
+          style={{
+            right: '10px',
+            bottom: '40px',
+            transform: 'translateY(0%)'
+          }}
+        />
+        
         <div className="max-w-7xl mx-auto px-6 sm:px-16">
           {/* Header Section */}
           <div 
@@ -169,7 +218,7 @@ const UXCXSection: React.FC = () => {
           <div 
             className="w-full max-[500px]:flex max-[500px]:flex-col"
             style={{
-              marginLeft: 'clamp(100px, 9.8vw, 250px)',
+              marginLeft: typeof window !== 'undefined' && window.innerWidth >= 1440 && window.innerWidth < 1536 ? 'clamp(20px, calc(9.8vw - 80px), 170px)' : 'clamp(100px, 9.8vw, 250px)',
               marginRight: 'clamp(40px, 3.9vw, 100px)',
               maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))'
             }}
@@ -239,19 +288,6 @@ const UXCXSection: React.FC = () => {
             </div>
           </div>
         </div>
-
-        {/* Decorative Arrow - arrowrightt at start */}
-        <ArrowDecoration 
-          type="arrowrightt" 
-          position="top-right"
-          className="absolute"
-        />
-
-        {/* Decorative Arrow - aboutus_rightb at end */}
-        <ArrowDecoration 
-          type="aboutus_rightb" 
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
-        />
       </section>
     </>
   );

@@ -3,27 +3,33 @@
 import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const Navbar: React.FC = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isTransparent, setIsTransparent] = useState(false);
   const pathname = usePathname();
+  const router = useRouter();
 
-  const handleHomeClick = () => {
-    // If already on home page, scroll to top
+  const handleHomeClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // If already on home page, refresh and scroll to top
     if (pathname === '/') {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
+      window.location.href = '/';
+    } else {
+      // Navigate to home page (will trigger a refresh)
+      window.location.href = '/';
     }
-    // Otherwise, Link will handle navigation
   };
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
+
+  const handleMobileHomeClick = () => {
+    toggleMobileMenu();
+    window.location.href = '/';
   };
 
   useEffect(() => {
@@ -216,9 +222,9 @@ const Navbar: React.FC = () => {
         >
           ✕
         </button>
-        <Link href="/" onClick={toggleMobileMenu}>
+        <a href="/" onClick={handleMobileHomeClick}>
           Home
-        </Link>
+        </a>
       </div>
 
       {/* Sticky Navbar Container */}
@@ -235,7 +241,7 @@ const Navbar: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               {/* Logo Section with Hamburger */}
-              <Link href="/" className="flex items-center gap-3" style={{ paddingLeft: '12px' }}>
+              <a href="/" onClick={handleHomeClick} className="flex items-center gap-3" style={{ paddingLeft: '12px' }}>
                 {/* Hamburger Menu Button */}
                 <button 
                   className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}
@@ -261,7 +267,7 @@ const Navbar: React.FC = () => {
                   />
                 </div>
                 <span style={{ color: '#FFFFFF', fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 600, fontFamily: 'Instrument Sans, sans-serif' }} className="whitespace-nowrap">NF Solutions</span>
-              </Link>
+              </a>
 
               {/* Center Navigation - Removed all menu items */}
               <div className="nav-links flex items-center" style={{ gap: 'clamp(24px, 3vw, 48px)' }}>
@@ -269,7 +275,7 @@ const Navbar: React.FC = () => {
               </div>
 
               {/* Home CTA - Replacing Digital Solutions */}
-              <Link 
+              <a 
                 href="/"
                 onClick={handleHomeClick}
                 onMouseEnter={() => setIsHovered(true)}
@@ -304,7 +310,7 @@ const Navbar: React.FC = () => {
                 >
                   Home
                 </span>
-              </Link>
+              </a>
             </div>
           </nav>
         </div>

@@ -109,7 +109,7 @@ export default function Partner() {
           }}>
             <div style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
               <h1 className="font-bold text-white" style={{
-                fontSize: isMobileOrTablet ? '41px' : '59px',
+               fontSize:'clamp(31px, 4.35vw, 74px)',
                 marginBottom: '-5px',
                 lineHeight: '1',
                 fontFamily: 'Instrument Sans, sans-serif',
@@ -118,7 +118,7 @@ export default function Partner() {
                 Why <span style={{ color: '#EB8145', fontFamily: 'Instrument Sans, sans-serif' }}>Partner</span>
               </h1>
               <h1 className="font-bold text-white" style={{
-                fontSize: isMobileOrTablet ? '41px' : '59px',
+               fontSize:'clamp(31px, 4.35vw, 74px)',
                 lineHeight: '1',
                 fontFamily: 'Instrument Sans, sans-serif'
               }}>
@@ -136,7 +136,7 @@ export default function Partner() {
             textAlign: isMobileOrTablet ? 'center' : 'left',
             fontFamily: 'Instrument Sans, sans-serif'
           }}>
-            <div className="text-white leading-[160%]" style={{ fontSize: '20px', fontFamily: 'Instrument Sans, sans-serif' }}>
+            <div className="text-white leading-[160%]" style={{ fontSize: 'clamp(14px, 1.305vw, 24px)', fontFamily: 'Instrument Sans, sans-serif' }}>
               <p className="mb-1" style={{color : '#4F4F4F',  fontFamily: 'Instrument Sans, sans-serif' }}>
                 <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>NF Solutions</strong> combines over <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>15 years of specialized EPC market experience</strong> with a forward-thinking global perspective. Our integrated technical and commercial support is designed for one purpose: to make your international expansion successful. We don&apos;t just advise; we <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>build the roadmap for your growth</strong>, incorporating crucial elements like project risk management to ensure success in the world&apos;s most demanding industries.
               </p>

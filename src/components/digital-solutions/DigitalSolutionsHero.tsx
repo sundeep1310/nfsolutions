@@ -124,7 +124,7 @@ const DigitalSolutionsHero: React.FC = () => {
             font-family: 'Instrument Sans, sans-serif';
             line-height: 1.1;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            font-size: clamp(28px, 5vw, 51px);
+            font-size: clamp(31px, 4.35vw, 74px);
             font-weight: bold;
             margin-bottom: clamp(16px, 2.5vw, 24px);
           }
@@ -135,7 +135,7 @@ const DigitalSolutionsHero: React.FC = () => {
             line-height: 1.6;
             max-width: clamp(280px, 80vw, 600px);
             text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
-            font-size: clamp(16px, 2.2vw, 22px);
+            font-size: clamp(14px, 1.305vw, 24px);
             margin-bottom: clamp(30px, 4vw, 40px);
           }
           
@@ -159,6 +159,20 @@ const DigitalSolutionsHero: React.FC = () => {
           
           .hero-button:active {
             transform: scale(0.95);
+          }
+          
+          @media (min-width: 1536px) {
+            .hero-content {
+              max-width: 1500px;
+            }
+            
+            .hero-title {
+              max-width: 1500px;
+            }
+            
+            .hero-subtitle {
+              max-width: 800px;
+            }
           }
           
           @media (max-width: 768px) {

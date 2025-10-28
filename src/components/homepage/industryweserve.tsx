@@ -36,7 +36,7 @@ const IndustryWeServe: React.FC = () => {
               style={{
                 backgroundColor: '#2a2a2a',
                 width: '32.625vw',
-                height: '36.5625vw',
+                height: '38.5625vw',
                 transform: 'translateX(calc(15vw + 100px))',
                 borderRadius: '1.6875vw',
                 padding: '2.25vw'
@@ -45,12 +45,12 @@ const IndustryWeServe: React.FC = () => {
               {/* Text Container with padding */}
               <div style={{ padding: '1.6875vw' }}>
                 {/* Title */}
-                <h2 className="font-bold leading-tight" style={{ color: '#ffffff', fontSize: '2.925vw' }}>
+                <h2 className="font-bold leading-tight" style={{ color: '#ffffff', fontSize: "clamp(18px, 4vw, 70px)" }}>
                   Industries We<br />Serve
                 </h2>
  
                 {/* Description */}
-                <p className="leading-relaxed" style={{ color: '#dbd6d6ff', fontSize: '1.40625vw', marginTop: '1.35vw' }}>
+                <p className="leading-relaxed" style={{ color: '#dbd6d6ff', fontSize: 'clamp(12px, 1.305vw, 20px)', marginTop: '1.35vw' }}>
                   We apply our <span className="font-bold">specialized expertise</span> to projects in the world&apos;s most demanding sectors:
                 </p>
  
@@ -70,7 +70,7 @@ const IndustryWeServe: React.FC = () => {
                           height: '2.5vw'
                         }}
                       />
-                      <span className="font-medium" style={{ color: '#ffffff', fontSize: '1.06875vw' }}>{item}</span>
+                      <span className="font-medium" style={{ color: '#ffffff', fontSize: 'clamp(14px, 1.305vw, 24px)', }}>{item}</span>
                     </div>
                   ))}
                 </div>

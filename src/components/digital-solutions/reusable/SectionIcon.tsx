@@ -19,8 +19,8 @@ const SectionIcon: React.FC<SectionIconProps> = ({ icon, alt, size = 64 }) => {
           justify-content: center;
           background-color: #EB8145;
           box-shadow: 0 4px 12px rgba(235, 129, 69, 0.3);
-          width: clamp(48px, 6vw, ${size}px);
-          height: clamp(48px, 6vw, ${size}px);
+          width: clamp(48px, 6vw, 167px);
+          height: clamp(48px, 6vw, 167px);
           position: relative;
           z-index: 3;
         }

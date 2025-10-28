@@ -9,7 +9,7 @@ const AboutUs = () => {
     <section
       id="about"
       className="relative bg-white overflow-visible"
-      style={{ fontFamily: 'Instrument Sans, sans-serif', paddingTop: '3.68rem', paddingBottom: '5.52rem' }}
+      style={{ fontFamily: 'Instrument Sans', paddingTop: '3.68rem', paddingBottom: '5.52rem' }}
     >
       <style jsx>{`
         @keyframes scaleLoop {
@@ -56,14 +56,14 @@ const AboutUs = () => {
             overflow: visible !important;
           }
           .mobile-title {
-            font-size: 1.84rem !important;
+            font-size: 31px !important;
             margin-bottom: 1.38rem !important;
-            font-family: 'Instrument Sans, sans-serif' !important;
+            font-family: 'Instrument Sans' !important;
           }
           .mobile-text {
-            font-size: 0.805rem !important;
+            font-size: 14px !important;
              gap: 0.92rem !important;
-            font-family: 'Instrument Sans, sans-serif' !important;
+            font-family: 'Instrument Sans' !important;
           }
           .mobile-image-container {
             width: 100% !important;
@@ -98,11 +98,11 @@ const AboutUs = () => {
             border-radius: 0.6rem !important;
           }
           .mobile-feature-text {
-            font-size: 0.6325rem !important;
-            font-family: 'Instrument Sans, sans-serif' !important;
+            font-size: 0.6rem !important;
+            font-family: 'Instrument Sans' !important;
           }
           .mobile-feature-items {
-            gap: 1rem !important;
+            gap: 0.1rem !important;
           }
           .mobile-arrow-left {
             left: 0.46rem !important;
@@ -138,12 +138,12 @@ const AboutUs = () => {
             overflow: visible !important;
           }
           .mobile-title {
-            font-size: 4rem !important;
-            font-family: 'Instrument Sans, sans-serif' !important;
+            font-size:31px !important;
+            font-family: 'Instrument Sans ' !important;
           }
           .mobile-text {
             font-size: 1rem !important;
-            font-family: 'Instrument Sans, sans-serif' !important;
+            font-family: 'Instrument Sans' !important;
           }
           .mobile-image-container {
             max-width: 348px !important;
@@ -214,12 +214,12 @@ const AboutUs = () => {
           {/* Left Half - Content */}
           <div className="flex flex-col justify-start pr-[9.2px] pl-[46px] content-order">
             {/* Title */}
-            <h2 className="text-[70px] font-bold mb-[40px] text-black mobile-title" style={{ fontFamily: 'Instrument Sans, sans-serif' ,marginTop:0}}>
+            <h2 className="text-[70px] font-bold mb-[40px] text-black " style={{ fontFamily: 'Instrument Sans' ,marginTop:0,fontSize:'clamp(31px, 4.35vw, 74px)'}}>
               About <span className="text-[#EB8145]">Us</span>
             </h2>
  
             {/* Paragraphs */}
-            <div className="space-y-[40px] leading-[142%]  text-[20px] mobile-text" style={{  color :'#4F4F4F', fontFamily: 'Instrument Sans, sans-serif' }}>
+            <div className="space-y-[40px] leading-[142%]  text-[20px] mobile-text" style={{  color :'#4F4F4F', fontFamily: 'Instrument Sans',fontSize: 'clamp(14px, 1.305vw, 24px)' }}>
               <p>
                 NF Solutions is a <strong className="font-#4F4F4F font-normal">premier advisory and consulting firm</strong> dedicated to navigating
                 the complexities of the <strong className="font-#4F4F4F font-normal">global Engineering, Procurement, and Construction
@@ -275,25 +275,25 @@ const AboutUs = () => {
                     {/* Proven Track Record */}
                     <div className="flex flex-col items-center text-center">
                       <div className="w-[14.72px] h-[14.72px] mb-[3.68px] bg-white rounded-[18.4px] flex items-center justify-center shadow-md mobile-feature-icon">
-                        <Image src="/trackrecord.svg" alt="Track Record" width={29.44} height={29.44} />
+                        <Image src="/trackrecord.svg" alt="Track Record" width={29} height={29} />
                       </div>
-                      <span className="text-[12.88px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans, sans-serif' }}>Proven Track Record</span>
+                      <span className="text-[12px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans' }}>Proven Track Record</span>
                     </div>
  
                     {/* EPC Market Expertise */}
                     <div className="flex flex-col items-center text-center">
                       <div className="w-[14.72px] h-[14.72px] mb-[3.68px] bg-white rounded-[18.4px] flex items-center justify-center shadow-md mobile-feature-icon">
-                        <Image src="/expertise.svg" alt="Expertise" width={29.44} height={29.44} />
+                        <Image src="/expertise.svg" alt="Expertise" width={29} height={29} />
                       </div>
-                      <span className="text-[12.88px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans, sans-serif' }}>EPC Market Expertise</span>
+                      <span className="text-[12px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans' }}>EPC Market Expertise</span>
                     </div>
  
                     {/* Global Operations */}
                     <div className="flex flex-col items-center text-center">
-                      <div className="w-[14.72px] h-[14.72px] mb-[3.68px] bg-white rounded-[18.4px] flex items-center justify-center shadow-md mobile-feature-icon">
-                        <Image src="/operations.svg" alt="Global Operations" width={29.44} height={29.44} />
+                      <div className="w-[14.72px] h-[14.72px] mb-[3px] bg-white rounded-[18.4px] flex items-center justify-center shadow-md mobile-feature-icon">
+                        <Image src="/operations.svg" alt="Global Operations" width={29} height={29} />
                       </div>
-                      <span className="text-[12.88px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans, sans-serif' }}>Global Operations</span>
+                      <span className="text-[12px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans' }}>Global Operations</span>
                     </div>
                   </div>
                 </div>

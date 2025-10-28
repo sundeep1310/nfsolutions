@@ -31,7 +31,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           display: flex;
           align-items: center;
           justify-content: center;
-          gap: clamp(15px, 2vw, 20px);
+          gap: clamp(15px, 1.39vw, 25px);
           margin-bottom: clamp(30px, 4vw, 40px);
           position: relative;
         }
@@ -83,6 +83,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         .section-content {
           flex: 1;
           text-align: left;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
           ${titleMarginLeft ? `margin-left: ${titleMarginLeft};` : ''}
         }
         
@@ -91,9 +94,10 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           color: #1a1a1a;
           font-family: 'Instrument Sans, sans-serif';
           line-height: 1.2;
-          font-size: clamp(32px, 5vw, 64px);
-          margin-bottom: clamp(12px, 1.5vw, 16px);
-          padding-left: clamp(50px, 12vw, 150px);
+          font-size: clamp(31px, 4.35vw, 74px);
+          margin-bottom: clamp(2px, 0.25vw, 3px);
+          margin-top: clamp(3px, 0.5vw, 6px);
+          padding-left: clamp(35px, 9vw, 120px);
         }
         
         .section-title-highlight {
@@ -101,10 +105,10 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         }
         
         .section-subtitle {
-          font-size: clamp(14px, 1.8vw, 18px);
+          font-size: clamp(14px, 1.305vw, 24px);
           color: #4F4F4F;
           font-family: 'Instrument Sans, sans-serif';
-          padding-left: clamp(50px, 12vw, 150px);
+          padding-left: clamp(35px, 9vw, 120px);
         }
         
         @media (min-width: 2560px) {

@@ -35,9 +35,9 @@ const SystemsExpertise: React.FC = () => {
   }, []);
  
   return (
-    <section className="relative w-full bg-white" style={{  fontFamily: 'Instrument Sans, sans-serif' }}>
+    <section className="relative w-full bg-white" style={{  fontFamily: 'Instrument Sans' }}>
       {/* Container with rounded corners - LARGER */}
-      <div className="relative mx-[20px]" style={{ maxWidth: '90%', height: '50vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
+      <div className="relative mx-[20px]" style={{ maxWidth: '100%', height: '65vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
         {/* Background Image with Scale Animation */}
         <div ref={parallaxRef} className="absolute inset-0 w-full h-full animate-scale-in-out">
           <Image
@@ -58,19 +58,19 @@ const SystemsExpertise: React.FC = () => {
               className="bg-black flex flex-col"
               style={{
                 backgroundColor: 'rgba(26, 26, 26, 0.95)',
-                width: '32.886vw',
+                width: '36vw',
                 borderRadius: '1.359375vw',
                 padding: '2.175vw',
                 transform: 'translateX(calc(8vw - 100px)) translateY(55px)'
               }}
             >
               {/* Title */}
-              <h2 className="font-bold leading-[1.1]" style={{ color: '#ffffff', fontSize: '2.61vw', marginBottom: '1.0875vw' }}>
+              <h2 className="font-semibold " style={{ color: '#ffffff',  fontSize: "clamp(18px, 4vw, 70px)", marginBottom: '1vw' }}>
                 Equipment &<br />Systems Expertise
               </h2>
  
               {/* Description */}
-              <p className="leading-relaxed" style={{ color: '#ffffff', fontSize: '0.68vw', marginBottom: '1.74vw' }}>
+              <p className="leading-relaxed" style={{ color: '#ffffff', fontSize: 'clamp(12px, 1.305vw, 20px)' , marginBottom: '1.74vw' }}>
                 Our strategic advantage is our <span className="font-bold">deep, practical knowledge</span> of the core equipment and products that define EPC projects. This familiarity enables us to provide <span className="font-bold">effective, real-world solutions</span> and strengthens our collaboration across the contractor ecosystem. Our expertise includes:
               </p>
  
@@ -87,12 +87,13 @@ const SystemsExpertise: React.FC = () => {
                         height={48}
                         className="object-contain"
                         style={{
-                          width: '2.64vw',
-                          height: '2.64vw'
+                          width: 'clamp(18px, 3.8vw, 32px) ',
+                          height: 'clamp(18px, 3.8vw, 32px) '
                         }}
+                        
                       />
                     </div>
-                    <span className="font-medium" style={{ color: '#ffffff', fontSize: '0.76125vw' }}>{item}</span>
+                    <span className="font-medium" style={{ color: '#ffffff',fontSize: 'clamp(14px, 1.305vw, 24px)' }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -116,6 +117,7 @@ const SystemsExpertise: React.FC = () => {
  
       {/* Add CSS for animations */}
       <style jsx>{`
+    
         @keyframes scale-in-out {
           0%, 100% {
             transform: scale(1);
@@ -129,23 +131,15 @@ const SystemsExpertise: React.FC = () => {
           animation: scale-in-out 20s ease-in-out infinite;
         }
  
-        /* 2xl screens and larger - reduce container width by 10% */
-        @media (min-width: 1536px) {
-          section > div {
-            max-width: 100% !important;
-          }
-        }
- 
+     
+       
+   
         /* Mobile and Tablet responsive adjustments only */
         @media (max-width: 1024px) {
-          section {
-            min-height: 75vw !important;
-       
-          }
          
           section > div {
             max-width: 100% !important;
-            height: 75vw !important;
+            height: 85vw !important;
             border-radius: 4vw !important;
           }
          
@@ -160,8 +154,8 @@ const SystemsExpertise: React.FC = () => {
           }
          
           section > div > div:nth-child(2) > div > div:first-child {
-            width: 50vw !important;
-            height: 55vw !important;
+            width: 80vw !important;
+            height: 60vw !important;
             transform: translateX(0) translateY(-5vw) !important;
             border-radius: 3vw !important;
             padding: 2vw !important;
@@ -169,97 +163,175 @@ const SystemsExpertise: React.FC = () => {
           }
          
           section > div > div:nth-child(2) > div > div:first-child h2 {
-            font-size: 4vw !important;
             margin-bottom: 1.2vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child p {
-            font-size: 1.6vw !important;
             margin-bottom: 2vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child > div {
             gap: 1vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child > div > div {
             gap: 0.8vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child > div > div > div img {
-            width: 3.3vw !important;
-            height: 3.3vw !important;
+            width: 0.3vw !important;
+            height: 0.1vh !important;
           }
-         
-          section > div > div:nth-child(2) > div > div:first-child > div > div span {
-            font-size: 1.6vw !important;
-          }
-         
           section > div > div:nth-child(2) > div > div:last-child {
             display: none !important;
           }
         }
- 
-        @media (max-width: 768px) {
+  @media (max-width: 768px) {
           section {
             min-height: 100vw !important;
-            padding: 2vw 10px 2vw 10px !important;
           }
-         
           section > div {
-            max-width: 95% !important;
-            height: 100vw !important;
+            max-width: 100% !important;
+            height: 90vw !important;
             border-radius: 6vw !important;
           }
-         
           section > div > div:nth-child(2) {
             padding: 8vw 2vw 2vw 2vw !important;
             align-items: center !important;
             justify-content: center !important;
           }
-         
           section > div > div:nth-child(2) > div {
             justify-content: center !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child {
-            width: 60vw !important;
+            width: 90vw !important;
             height: 75vw !important;
             transform: translateX(0) translateY(-8vw) !important;
             border-radius: 4vw !important;
             padding: 3vw !important;
-            margin: 15vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child h2 {
-            font-size: 5vw !important;
             margin-bottom: 2vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child p {
-            font-size: 2.2vw !important;
             margin-bottom: 2.5vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child > div {
             gap: 1.2vw !important;
           }
-         
           section > div > div:nth-child(2) > div > div:first-child > div > div {
             gap: 1.2vw !important;
           }
-         
-          section > div > div:nth-child(2) > div > div:first-child > div > div > div img {
-            width: 3.96vw !important;
-            height: 3.96vw !important;
+        }
+@media (max-width: 555px) {
+          section {
+            min-height: 100vw !important;
           }
-         
-          section > div > div:nth-child(2) > div > div:first-child > div > div span {
-            font-size: 2.2vw !important;
+          section > div {
+            max-width: 100% !important;
+            height: 135vw !important;
+            border-radius: 6vw !important;
           }
-         
-          section > div > div:nth-child(2) > div > div:last-child {
-            display: none !important;
+          section > div > div:nth-child(2) {
+            padding: 8vw 2vw 2vw 2vw !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          section > div > div:nth-child(2) > div {
+            justify-content: center !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child {
+            width: 90vw !important;
+            height: 125vw !important;
+            transform: translateX(0) translateY(-8vw) !important;
+            border-radius: 4vw !important;
+            padding: 3vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child h2 {
+            margin-bottom: 2vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child p {
+            margin-bottom: 2.5vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child > div {
+            gap: 1.2vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child > div > div {
+            gap: 1.2vw !important;
+          }
+        }
+
+          @media (max-width: 380px) {
+          section {
+            min-height: 100vw !important;
+          }
+          section > div {
+            max-width: 100% !important;
+            height: 175vw !important;
+            border-radius: 6vw !important;
+          }
+          section > div > div:nth-child(2) {
+            padding: 8vw 2vw 2vw 2vw !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          section > div > div:nth-child(2) > div {
+            justify-content: center !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child {
+            width: 90vw !important;
+            height: 165vw !important;
+            transform: translateX(0) translateY(-8vw) !important;
+            border-radius: 4vw !important;
+            padding: 3vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child h2 {
+            margin-bottom: 2vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child p {
+            margin-bottom: 2.5vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child > div {
+            gap: 1.2vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child > div > div {
+            gap: 1.2vw !important;
+          }
+        }
+
+        @media (max-width: 325px) {
+        
+          section {
+            min-height: 100vw !important;
+          }
+
+          section > div {
+            max-width: 100% !important;
+            height: 205vw !important;
+            border-radius: 6vw !important;
+          }
+          section > div > div:nth-child(2) {
+            padding: 8vw 2vw 2vw 2vw !important;
+            align-items: center !important;
+            justify-content: center !important;
+          }
+          section > div > div:nth-child(2) > div {
+            justify-content: center !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child {
+            width: 90vw !important;
+            height: 175vw !important;
+            transform: translateX(0) translateY(-8vw) !important;
+            border-radius: 4vw !important;
+            padding: 3vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child h2 {
+            margin-bottom: 2vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child p {
+            margin-bottom: 2.5vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child > div {
+            gap: 1.2vw !important;
+          }
+          section > div > div:nth-child(2) > div > div:first-child > div > div {
+            gap: 1.2vw !important;
           }
         }
       `}</style>

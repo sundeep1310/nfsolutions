@@ -122,6 +122,15 @@ const DataEngineeringSection: React.FC = () => {
             margin-left: clamp(100px, 9.8vw, 250px) !important;
           }
         }
+        @media (min-width: 1440px) and (max-width: 1535px) {
+          .services-row {
+            gap: 20px !important;
+            margin-bottom: 20px !important;
+          }
+          .services-row:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
         @media (min-width: 1024px) and (max-width: 1535px) {
           .header-section {
             margin-left: 60px !important;
@@ -138,6 +147,9 @@ const DataEngineeringSection: React.FC = () => {
             padding-top: 40px !important;
             padding-bottom: 40px !important;
           }
+          .decorative-arrow {
+            display: none !important;
+          }
         }
       `}</style>
       
@@ -147,6 +159,20 @@ const DataEngineeringSection: React.FC = () => {
           fontFamily: 'Instrument Sans, sans-serif'
         }}
       >
+        {/* Right side decorative image */}
+        <img 
+          src="/aboutus_rightb.png" 
+          alt="Decorative"
+          className="decorative-arrow"
+          style={{
+            position: 'absolute',
+            right: 0,
+            top: '-80px',
+            width: '40px',
+            height: '250px'
+          }}
+        />
+        
         <div className="max-w-7xl mx-auto px-6 sm:px-16">
           {/* Header Section */}
           <div 
@@ -169,7 +195,7 @@ const DataEngineeringSection: React.FC = () => {
           <div 
             className="w-full max-[500px]:flex max-[500px]:flex-col"
             style={{
-              marginLeft: 'clamp(100px, 9.8vw, 250px)',
+              marginLeft: typeof window !== 'undefined' && window.innerWidth >= 1440 && window.innerWidth < 1536 ? 'clamp(20px, calc(9.8vw - 80px), 170px)' : 'clamp(100px, 9.8vw, 250px)',
               marginRight: 'clamp(40px, 3.9vw, 100px)',
               maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))'
             }}
@@ -240,17 +266,6 @@ const DataEngineeringSection: React.FC = () => {
           </div>
         </div>
 
-        {/* Decorative Arrow - arrowrightt beside first row cards */}
-        <ArrowDecoration 
-          type="arrowrightt" 
-          className="absolute top-1/3 right-8"
-        />
-
-        {/* Decorative Arrow - aboutus_rightb at end */}
-        <ArrowDecoration 
-          type="aboutus_rightb" 
-          className="absolute bottom-0 left-1/2 transform -translate-x-1/2"
-        />
       </section>
     </>
   );
