@@ -9,6 +9,8 @@ interface SectionHeaderProps {
   subtitle: string;
   iconSize?: number;
   titleMarginLeft?: string;
+  isFirst?: boolean;
+  isLast?: boolean;
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ 
@@ -18,7 +20,9 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   titleHighlight,
   subtitle,
   iconSize = 80,
-  titleMarginLeft
+  titleMarginLeft,
+  isFirst = false,
+  isLast = false
 }) => {
   return (
     <>
@@ -29,6 +33,51 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           justify-content: center;
           gap: clamp(15px, 2vw, 20px);
           margin-bottom: clamp(30px, 4vw, 40px);
+          position: relative;
+        }
+        
+        .section-icon-wrapper {
+          position: relative;
+          z-index: 2;
+        }
+        
+        .connecting-line {
+          position: absolute;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 3px;
+          background-color: #EB8145;
+          z-index: 1;
+        }
+        
+        .connecting-line.top {
+          top: -100vh;
+          height: 100vh;
+        }
+        
+        .connecting-line.bottom {
+          bottom: -100vh;
+          height: calc(100vh);
+        }
+        
+        .curved-line {
+          position: absolute;
+          top: clamp(-190px, -12.5vw, -270px);
+          left: 50%;
+          transform: translateX(0%);
+          z-index: 1;
+          width: clamp(450px, 45.1vw, 650px);
+          height: clamp(195px, 19.4vw, 280px);
+        }
+        
+        .bottom-curved-line {
+          position: absolute;
+          bottom: clamp(-780px, -59.0vw, -930px);
+          left: 49%;
+          transform: translateX(0%);
+          z-index: 1;
+          width: clamp(450px, 45.1vw, 650px);
+          height: clamp(195px, 19.4vw, 280px);
         }
         
         .section-content {
@@ -58,6 +107,54 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           padding-left: clamp(50px, 12vw, 150px);
         }
         
+        @media (min-width: 2560px) {
+          .curved-line {
+            top: -230px;
+            width: 750px;
+            height: 280px;
+          }
+          
+          .bottom-curved-line {
+            bottom: -930px;
+            width: 750px;
+            height: 280px;
+          }
+          
+          .connecting-line.top {
+            top: -70vh;
+            height: 70vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: calc(-67vh);
+            height: calc(70vh + 50px);
+          }
+          
+          .section-icon-wrapper :global(.section-icon) {
+            width: 100px !important;
+            height: 100px !important;
+          }
+        }
+        
+        @media (max-width: 1024px) {
+          .curved-line {
+            top: -140px;
+            width: 400px;
+            height: 200px;
+          }
+          
+          .bottom-curved-line {
+            bottom: -730px;
+            width: 400px;
+            height: 200px;
+          }
+          
+          .connecting-line.bottom {
+            bottom: calc(-100vh - 100px);
+            height: calc(100vh + 100px);
+          }
+        }
+        
         @media (max-width: 768px) {
           .section-header-container {
             flex-direction: column;
@@ -74,6 +171,18 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           .section-subtitle {
             padding-left: 0;
           }
+          
+          .connecting-line {
+            display: none;
+          }
+          
+          .curved-line {
+            display: none;
+          }
+          
+          .bottom-curved-line {
+            display: none;
+          }
         }
         
         @media (max-width: 480px) {
@@ -84,7 +193,47 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
       `}</style>
       
       <div className="section-header-container">
-        <SectionIcon icon={icon} alt={iconAlt} size={iconSize} />
+        <div className="section-icon-wrapper">
+          {!isFirst && <div className="connecting-line top"></div>}
+          <div className="connecting-line bottom"></div>
+          {isFirst && (
+            <svg className="curved-line" width="100%" height="100%" viewBox="0 0 750 280" fill="none" preserveAspectRatio="xMidYMid meet">
+              <path 
+                d="M0 240 L0 200 Q0 160 40 160 L710 160 Q730 160 730 140 L730 100" 
+                stroke="#EB8145" 
+                strokeWidth="3" 
+                fill="none"
+                vectorEffect="non-scaling-stroke"
+              />
+              <image
+                href="/dot1.png"
+                x="720"
+                y="90"
+                width="20"
+                height="20"
+              />
+            </svg>
+          )}
+          {isLast && (
+            <svg className="bottom-curved-line" width="100%" height="100%" viewBox="0 0 750 280" fill="none" preserveAspectRatio="xMidYMid meet">
+              <path 
+                d="M0 40 L0 80 Q0 120 40 120 L710 120 Q730 120 730 140 L730 180" 
+                stroke="#EB8145" 
+                strokeWidth="3" 
+                fill="none"
+                vectorEffect="non-scaling-stroke"
+              />
+              <image
+                href="/dot2.png"
+                x="720"
+                y="170"
+                width="20"
+                height="20"
+              />
+            </svg>
+          )}
+          <SectionIcon icon={icon} alt={iconAlt} size={iconSize} />
+        </div>
         <div className="section-content">
           <h2 className="section-title">
             {title} <span className="section-title-highlight">{titleHighlight}</span>

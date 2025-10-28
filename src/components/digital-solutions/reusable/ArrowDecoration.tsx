@@ -50,7 +50,7 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
         }
         
         .arrow-image {
-          width: ${type === 'aboutus_rightb' ? 'clamp(40px, 6vw, 80px)' : 'clamp(60px, 10vw, 120px)'};
+          width: ${type === 'aboutus_rightb' ? 'clamp(40px, 6vw, 40px)' : 'clamp(60px, 10vw, 40px)'};
           height: clamp(60px, 10vw, 120px);
           object-fit: contain;
         }
@@ -60,7 +60,7 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
             opacity: 0.4;
           }
           .arrow-image {
-            width: ${type === 'aboutus_rightb' ? 'clamp(30px, 5vw, 60px)' : 'clamp(40px, 8vw, 80px)'};
+            width: ${type === 'aboutus_rightb' ? 'clamp(30px, 5vw, 20px)' : 'clamp(40px, 8vw, 20px)'};
             height: clamp(40px, 8vw, 80px);
           }
         }
@@ -70,7 +70,7 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
             opacity: 0.3;
           }
           .arrow-image {
-            width: ${type === 'aboutus_rightb' ? 'clamp(20px, 4vw, 40px)' : 'clamp(30px, 6vw, 60px)'};
+            width: ${type === 'aboutus_rightb' ? 'clamp(20px, 4vw, 20px)' : 'clamp(30px, 6vw, 20px)'};
             height: clamp(30px, 6vw, 60px);
           }
         }

@@ -130,12 +130,12 @@ const ContactUsPage = () => {
                     backgroundColor: 'white'
                   }}
                 >
-                  <div className="flex items-center">
+                  <div className="flex items-center" style={{ padding: '20px' }}>
                     <img src="location.svg" alt="Location" className="mr-2" style={{ width: '16px', height: '16px' }} />
                     <h2 className="text-lg sm:text-xl " style={{ color: '#EB8145', fontFamily: 'Instrument Sans, sans-serif' }}>{location.country}</h2>
                   </div>
 
-                  <div className="space-y-1">
+                  <div className="space-y-1" style={{ padding: '20px' }}>
                     <div>
                       <h3 className="text-base sm:text-lg font-bold text-gray-900" style={{ fontFamily: 'Instrument Sans, sans-serif' }}>NF Solutions</h3>
                     </div>

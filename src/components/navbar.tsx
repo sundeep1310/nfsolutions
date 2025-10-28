@@ -200,7 +200,7 @@ const Navbar: React.FC = () => {
           }
         }
 
-        @media (max-width: 640px) {
+        @media (max-width: 767px) {
           .nav-links {
             display: none !important;
           }
@@ -212,7 +212,7 @@ const Navbar: React.FC = () => {
           }
         }
 
-        @media (min-width: 641px) {
+        @media (min-width: 767px) {
           .hamburger-menu {
             display: none !important;
           }

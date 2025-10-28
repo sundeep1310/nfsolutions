@@ -158,6 +158,7 @@ const AIMLSection: React.FC = () => {
               titleHighlight="Intelligence & ML"
               subtitle="Integrating Intelligent Automation to Drive Growth and Efficiency"
               titleMarginLeft={titleMargin}
+              isFirst={true}
             />
           </div>
 

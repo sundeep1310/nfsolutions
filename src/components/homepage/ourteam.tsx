@@ -57,44 +57,33 @@ const OurTeamPage = () => {
 
             {/* Team Attributes  */}
             <div className="space-y-0">
-              {/* Engineer-Led  */}
-              <div className="border-t border-gray-600 py-3 team-attribute">
-                <div className="flex flex-row items-center team-attribute-with-bottom-line" style={{ gap: '80px', display: 'inline-flex' }}>
-                  <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
-                    ENGINEER-LED AND MANAGED
-                  </h3>
-                  <p className="team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>
-                    Our leadership has decades of hands-on experience in machinery, packages, and complex EPC projects.
-                  </p>
-                </div>
-              </div>
 
-              {/* Proven Track Record */}
-              <div className="border-t border-gray-600 py-3 team-attribute">
-                <div className="flex flex-row items-center team-attribute-with-bottom-line" style={{ gap: '80px', display: 'inline-flex' }}>
-                  <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
-                    PROVEN GLOBAL TRACK RECORD
-                  </h3>
-                  <p className="team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>
-                    We have proven success working alongside major EPC contractors and end-users in key markets like the Middle East, India, and Singapore.
-                  </p>
-                </div>
+  {/* Tenacious & Professional  */}
+              <div className="flex flex-row items-start border-b border-[#ffffff] py-3 team-attribute" style={{ gap: '80px' }}>
+                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                  Engineer-Led and Managed
+                </h3>
+                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+                Our leadership has decades of hands-on experience in machinery, packages, and complex EPC projects.
+                </p>
               </div>
-
-              {/* Relationship-Focused */}
-              <div className="border-t border-gray-600 py-3 team-attribute">
-                <div className="flex flex-row items-center team-attribute-with-bottom-line" style={{ gap: '80px', display: 'inline-flex' }}>
-                  <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
-                    RELATIONSHIP-FOCUSED
-                  </h3>
-                  <p className="team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6', margin: '0' }}>
-                    We leverage our extensive networks and commercial expertise to build strong, long-term partnerships.
-                  </p>
-                </div>
+              <div className="flex flex-row items-start border-b border-[#ffffff] py-3 team-attribute" style={{ gap: '80px' }}>
+                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                  Proven Global Track Record
+                </h3>
+                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+                  We have proven success working alongside major EPC contractors and end-users in key markets like the Middle East, India, and Singapore.
+                </p>
               </div>
-
-              {/* Tenacious & Professional  */}
-              <div className="flex flex-row items-start border-t border-gray-600 py-3 team-attribute" style={{ gap: '80px' }}>
+              <div className="flex flex-row items-start border-b border-[#ffffff] py-3 team-attribute" style={{ gap: '80px' }}>
+                <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
+                Relationship-Focused
+                </h3>
+                <p className="flex-1 team-attribute-text" style={{ color: 'white', fontSize: '14px', lineHeight: '1.6' }}>
+             We leverage our extensive networks and commercial expertise to build strong, long-term partnerships.
+                </p>
+              </div>
+              <div className="flex flex-row items-start  py-3 team-attribute" style={{ gap: '80px' }}>
                 <h3 className="font-bold tracking-wide flex-shrink-0 uppercase team-attribute-title" style={{ color: 'white', fontSize: '14px', width: '280px' }}>
                   TENACIOUS & PROFESSIONAL
                 </h3>

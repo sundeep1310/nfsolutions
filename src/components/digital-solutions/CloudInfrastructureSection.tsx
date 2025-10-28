@@ -160,6 +160,7 @@ const CloudInfrastructureSection: React.FC = () => {
               titleHighlight="Infrastructure"
               subtitle="Secure, Optimized, Always-On Environments for Modern Enterprises"
               titleMarginLeft={titleMargin}
+              isLast={true}
             />
           </div>
 

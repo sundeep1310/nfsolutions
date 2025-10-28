@@ -1,8 +1,8 @@
 'use client';
-
+ 
 import React from 'react';
 import Image from 'next/image';
-
+ 
 const HomepageHero: React.FC = () => {
   const scrollToServices = () => {
     const servicesSection = document.getElementById('ourservices');
@@ -13,7 +13,7 @@ const HomepageHero: React.FC = () => {
       });
     }
   };
-
+ 
   return (
     <>
       <style jsx global>{`
@@ -25,7 +25,7 @@ const HomepageHero: React.FC = () => {
           padding: 0;
           overscroll-behavior: none;
         }
-
+ 
         @keyframes slowZoom {
           0%, 100% {
             transform: scale(1);
@@ -34,14 +34,14 @@ const HomepageHero: React.FC = () => {
             transform: scale(1.1);
           }
         }
-
+ 
         @media (max-width: 1024px) {
           .hero-content {
             padding-left: 30px !important;
             padding-right: 30px !important;
           }
         }
-
+ 
         @media (max-width: 768px) {
           .hero-content {
             padding-left: 20px !important;
@@ -49,16 +49,16 @@ const HomepageHero: React.FC = () => {
           }
         }
       `}</style>
-
-      <div className="relative w-full" style={{ 
-        height: '100vh', 
-        fontFamily: 'Instrument Sans, sans-serif', 
-        margin: 0, 
+ 
+      <div className="relative w-full" style={{
+        height: '100vh',
+        fontFamily: 'Instrument Sans, sans-serif',
+        margin: 0,
         padding: 0
       }}>
         {/* Background Image */}
-        <div 
-          className="absolute inset-0 z-0"
+        <div
+          className="absolute inset-0 z-0 "
           style={{
             width: '100%',
             height: '100%',
@@ -90,31 +90,32 @@ const HomepageHero: React.FC = () => {
             />
           </div>
         </div>
-
+ 
         {/* Hero Content */}
         <div className="hero-content relative z-10 px-[60px]">
-          <div className="flex items-center min-h-[100vh] pt-8 pb-16">
-            <div style={{ maxWidth: '900px' }}>
-              <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(31px, 4.35vw, 63px)', fontWeight: 700, lineHeight: '1.2', fontFamily: 'Instrument Sans, sans-serif' }} className="mb-6">
+          <div className="flex items-center min-h-[100vh] mt-[-40px] md:mt-[-30px]  ">
+            <div style={{ maxWidth: '1200px' }}>
+              <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(31px, 4.35vw, 74px)', fontWeight: 600,lineHeight: '1.2', fontFamily: 'Instrument Sans, sans-serif', margin:0 }} >
                 Your Strategic Partner for Growth in the Global EPC Sector
               </h1>
-              
-              <p style={{ color: '#FFFFFF', fontSize: 'clamp(14px, 1.305vw, 17px)', fontWeight: 400, lineHeight: '1.6', opacity: 0.9, fontFamily: 'Instrument Sans, sans-serif', maxWidth: '600px' }} className="mb-8">
-                Driving successful international business development through expert technical and commercial advisory.
+             
+              <p style={{ color: '#FFFFFF', fontSize: 'clamp(14px, 1.305vw, 24px)', fontWeight: 400,lineHeight: '1.6', opacity: 0.9, fontFamily: 'Instrument Sans, sans-serif', maxWidth: '900px',marginTop:0,marginLeft:0 }} >
+                Driving successful international business development through expert technical <br/> and commercial advisory.
               </p>
-
+ 
               {/* Know More Button */}
               <button
                 onClick={scrollToServices}
                 className="rounded-full font-semibold transition-all ease-out hover:shadow-2xl hover:brightness-110 active:scale-95 border-0 outline-none"
-                style={{ 
+                style={{
                   backgroundColor: '#EB8145',
                   color: '#FFFFFF',
                   transitionDuration: '300ms',
-                  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+           
                   padding: 'clamp(12px, 1.5vw, 16px) clamp(40px, 5vw, 56px)',
-                  fontSize: 'clamp(12px, 1.044vw, 14px)',
-                  fontFamily: 'Instrument Sans, sans-serif'
+                  fontSize: 'clamp(14px, 1.044vw, 20px)',
+                  fontFamily: 'Instrument Sans, sans-serif',
+               
                 }}
               >
                 Know More
@@ -126,5 +127,5 @@ const HomepageHero: React.FC = () => {
     </>
   );
 };
-
+ 
 export default HomepageHero;

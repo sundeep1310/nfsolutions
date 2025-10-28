@@ -235,7 +235,7 @@ const Navbar: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               {/* Logo Section with Hamburger */}
-              <Link href="/" className="flex items-center gap-3" style={{ marginLeft: '20px' ,paddingLeft: '62px' }}>
+              <Link href="/" className="flex items-center gap-3" style={{ paddingLeft: '12px' }}>
                 {/* Hamburger Menu Button */}
                 <button 
                   className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}

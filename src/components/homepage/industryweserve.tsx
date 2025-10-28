@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
-
+ 
 const IndustryWeServe: React.FC = () => {
   const industryItems = [
     'Oil & Gas',
@@ -10,11 +10,11 @@ const IndustryWeServe: React.FC = () => {
     'Chemical & Petrochemical',
     'Renewable Industries'
   ];
-
+ 
   return (
-    <section className="relative w-full bg-white" style={{ minHeight: '50vw', paddingTop: '4vw', paddingBottom: '4vw', paddingLeft: '2vw', paddingRight: 'calc(2vw + 10px)', fontFamily: 'Instrument Sans, sans-serif' }}>
+    <section className="relative w-full bg-white" style={{ minHeight: '50vw', paddingTop: '4vw', paddingBottom: '4vw', paddingRight: 'calc(2vw + 10px)', fontFamily: 'Instrument Sans, sans-serif' }}>
       {/* Container with rounded corners */}
-      <div className="relative mx-auto" style={{ maxWidth: '88%', height: '50vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
+      <div className="relative mx-[20px]" style={{  height: '50vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
         {/* Background Image with Scale Animation */}
         <div className="absolute inset-0 w-full h-full animate-scale-in-out">
           <Image
@@ -26,15 +26,15 @@ const IndustryWeServe: React.FC = () => {
             quality={90}
           />
         </div>
-
+ 
         {/* Content Container */}
         <div className="relative h-full flex items-center justify-center z-10">
           <div className="flex w-full items-center justify-center h-full">
             {/* Black Box - Right positioned */}
-            <div 
-              className="bg-black flex flex-col justify-between" 
-              style={{ 
-                backgroundColor: '#2a2a2a', 
+            <div
+              className="bg-black flex flex-col justify-between"
+              style={{
+                backgroundColor: '#2a2a2a',
                 width: '32.625vw',
                 height: '36.5625vw',
                 transform: 'translateX(calc(15vw + 100px))',
@@ -48,14 +48,14 @@ const IndustryWeServe: React.FC = () => {
                 <h2 className="font-bold leading-tight" style={{ color: '#ffffff', fontSize: '2.925vw' }}>
                   Industries We<br />Serve
                 </h2>
-
+ 
                 {/* Description */}
                 <p className="leading-relaxed" style={{ color: '#dbd6d6ff', fontSize: '1.40625vw', marginTop: '1.35vw' }}>
                   We apply our <span className="font-bold">specialized expertise</span> to projects in the world&apos;s most demanding sectors:
                 </p>
-
+ 
                 {/* Industry List */}
-                <div className="flex flex-col justify-between" style={{ marginTop: '3.375vw', height: '15.75vw' }}>
+                <div className="flex flex-col justify-between" style={{ marginTop: '2vw', height: '15.75vw' }}>
                   {industryItems.map((item, index) => (
                     <div key={index} className="flex items-center" style={{ gap: '0.675vw' }}>
                       {/* SVG icon without orange container */}
@@ -65,7 +65,7 @@ const IndustryWeServe: React.FC = () => {
                         width={48}
                         height={48}
                         className="object-contain flex-shrink-0"
-                        style={{ 
+                        style={{
                           width: '2.5vw',
                           height: '2.5vw'
                         }}
@@ -78,7 +78,7 @@ const IndustryWeServe: React.FC = () => {
             </div>
           </div>
         </div>
-
+ 
         {/* Left Bottom - Arrow Decoration */}
         <div className="absolute z-20" style={{ bottom: '2vw', left: '2vw' }}>
           <Image
@@ -94,7 +94,7 @@ const IndustryWeServe: React.FC = () => {
           />
         </div>
       </div>
-
+ 
       {/* Add CSS for animations */}
       <style jsx>{`
         @keyframes scale-in-out {
@@ -105,42 +105,41 @@ const IndustryWeServe: React.FC = () => {
             transform: scale(1.05);
           }
         }
-
+ 
         .animate-scale-in-out {
           animation: scale-in-out 20s ease infinite;
         }
-
+ 
         /* 2xl screens and larger - reduce image width by 10% */
         @media (min-width: 1536px) {
           section > div {
-            max-width: 78.2% !important;
+            max-width: 99.2% !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div {
             transform: translateX(calc(15vw + 85px)) !important;
           }
         }
-
+ 
         /* Mobile and Tablet responsive adjustments only */
         @media (max-width: 1024px) {
           section {
             min-height: 65vw !important;
-            padding: 1vw 3vw 6vw 3vw !important;
           }
-          
+         
           section > div {
             max-width: 95% !important;
-            height: 65vw !important;
+            height: 75vw !important;
             border-radius: 4vw !important;
             padding: 0 18px !important;
           }
-          
+         
           section > div > div:nth-child(1) {
             left: 18px !important;
             right: 18px !important;
             width: calc(100% - 36px) !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div {
             width: 60vw !important;
             height: 50vw !important;
@@ -149,112 +148,111 @@ const IndustryWeServe: React.FC = () => {
             padding: 3vw !important;
             margin: 7.5vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div {
             padding: 2vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div h2 {
             font-size: 4.5vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div p {
             font-size: 2.2vw !important;
             margin-top: 2vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child {
             margin-top: 4vw !important;
             height: 22vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child > div {
             gap: 1.5vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child > div img {
             width: 3.3vw !important;
             height: 3.3vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child > div span {
             font-size: 1.8vw !important;
           }
-          
+         
           section > div > div:nth-child(3) {
             bottom: 3vw !important;
             left: 3vw !important;
           }
-          
+         
           section > div > div:nth-child(3) img {
             width: 4vw !important;
           }
         }
-
+ 
         @media (max-width: 768px) {
           section {
-            min-height: 90vw !important;
-            padding: 2vw 4vw 8vw 4vw !important;
+         
+            min-height: 120vw !important;
           }
-          
+         
           section > div {
-            max-width: 100% !important;
-            height: 90vw !important;
-            border-radius: 6vw !important;
-            padding: 0 18px !important;
+            max-width: 95% !important;
+            height: 120vw !important;
+            border-radius: 8vw !important;
           }
-          
+         
           section > div > div:nth-child(1) {
             left: 18px !important;
             right: 18px !important;
             width: calc(100% - 36px) !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div {
             width: 70vw !important;
-            height: 65vw !important;
+            height: 85vw !important;
             transform: translateX(0) !important;
-            border-radius: 4vw !important;
+            border-radius: 8vw !important;
             padding: 4vw !important;
             margin: 12.5vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div {
             padding: 3vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div h2 {
             font-size: 6vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div p {
             font-size: 3vw !important;
             margin-top: 3vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child {
             margin-top: 5vw !important;
             height: 25vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child > div {
             gap: 2vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child > div img {
             width: 3.96vw !important;
             height: 3.96vw !important;
           }
-          
+         
           section > div > div:nth-child(2) > div > div > div > div:last-child > div span {
             font-size: 2.5vw !important;
           }
-          
+         
           section > div > div:nth-child(3) {
             bottom: 4vw !important;
             left: 4vw !important;
           }
-          
+         
           section > div > div:nth-child(3) img {
             width: 6vw !important;
           }
@@ -263,5 +261,5 @@ const IndustryWeServe: React.FC = () => {
     </section>
   );
 };
-
+ 
 export default IndustryWeServe;
