@@ -30,16 +30,15 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   descriptionFontSize,
   bottomPadding = '0px'
 }) => {
-  // Use custom font sizes if provided, otherwise use default calculated sizes
   const defaultTitleSize = textSize === 'large' ? '36.96px' : '10.395px';
   const defaultDescriptionSize = textSize === 'large' ? '13.86px' : '8.085px';
   
   return (
     <div 
-      className="relative overflow-hidden group transition-transform duration-700 ease-in-out"
+      className="relative overflow-hidden group transition-transform duration-700 ease-in-out w-full max-w-full"
       style={{ 
-        height: '350px',
-        width: '630px',
+        height: 'clamp(380px, 15vw, 520px)',
+        maxWidth: 'clamp(478px, 23vw, 780px)',
         backgroundColor: useIconOnly ? 'transparent' : '#1a1a1a',
         borderRadius: '14px'
       }}

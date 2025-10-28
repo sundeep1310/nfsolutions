@@ -26,12 +26,12 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
   const getPositionStyles = () => {
     switch (position) {
       case 'top-right':
-        return { top: 'clamp(10px, 2vw, 20px)', right: 'clamp(10px, 2vw, 20px)' };
+        return 'top: clamp(10px, 2vw, 20px); right: 0 !important;';
       case 'bottom-left':
-        return { bottom: 'clamp(10px, 2vw, 20px)', left: 'clamp(10px, 2vw, 20px)' };
+        return 'bottom: clamp(10px, 2vw, 20px); right: 0 !important;';
       case 'center':
       default:
-        return {};
+        return 'right: 0 !important;';
     }
   };
 
@@ -42,10 +42,15 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
           pointer-events: none;
           opacity: 0.6;
           z-index: 5;
+          position: absolute !important;
+          ${getPositionStyles()}
+          left: auto !important;
+          transform: none !important;
+          margin: 0 !important;
         }
         
         .arrow-image {
-          width: clamp(60px, 10vw, 120px);
+          width: ${type === 'aboutus_rightb' ? 'clamp(40px, 6vw, 80px)' : 'clamp(60px, 10vw, 120px)'};
           height: clamp(60px, 10vw, 120px);
           object-fit: contain;
         }
@@ -55,7 +60,7 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
             opacity: 0.4;
           }
           .arrow-image {
-            width: clamp(40px, 8vw, 80px);
+            width: ${type === 'aboutus_rightb' ? 'clamp(30px, 5vw, 60px)' : 'clamp(40px, 8vw, 80px)'};
             height: clamp(40px, 8vw, 80px);
           }
         }
@@ -65,16 +70,13 @@ const ArrowDecoration: React.FC<ArrowDecorationProps> = ({
             opacity: 0.3;
           }
           .arrow-image {
-            width: clamp(30px, 6vw, 60px);
+            width: ${type === 'aboutus_rightb' ? 'clamp(20px, 4vw, 40px)' : 'clamp(30px, 6vw, 60px)'};
             height: clamp(30px, 6vw, 60px);
           }
         }
       `}</style>
       
-      <div 
-        className={`arrow-decoration ${className}`}
-        style={getPositionStyles()}
-      >
+      <div className={`arrow-decoration ${className}`}>
         <Image
           src={getArrowImage()}
           alt="Decorative arrow"

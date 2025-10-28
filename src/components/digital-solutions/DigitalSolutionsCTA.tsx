@@ -20,10 +20,11 @@ const DigitalSolutionsCTA: React.FC = () => {
           position: relative;
           overflow: hidden;
           margin-top: 0;
+          margin-bottom: 0;
           font-family: 'Instrument Sans, sans-serif';
           background-image: url(/future.png);
           background-size: contain;
-          background-position: center;
+          background-position: center bottom;
           background-repeat: no-repeat;
           width: 100%;
           height: fit-content;
@@ -73,6 +74,12 @@ const DigitalSolutionsCTA: React.FC = () => {
         
         .cta-button:active {
           transform: scale(0.95);
+        }
+        
+        @media (min-width: 1536px) {
+          .cta-section {
+            background-size: 100% 100%;
+          }
         }
         
         @media (max-width: 768px) {

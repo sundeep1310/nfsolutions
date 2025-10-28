@@ -23,15 +23,13 @@ export default function DigitalSolutionsPage() {
       <Navbar />
       <DigitalSolutionsHero />
       <OurApproach />
-      <AIMLSection />
-      <DigitalEngineeringSection />
+      <AIMLSection  />
+      <DigitalEngineeringSection/>
       <DataEngineeringSection />
       <UXCXSection />
       <CloudInfrastructureSection />
       <DigitalSolutionsCTA />
       <Footer/>
-      
-      {/* Add other sections here if needed */}
     </div>
   );
 }

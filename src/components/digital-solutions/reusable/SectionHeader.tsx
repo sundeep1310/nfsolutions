@@ -8,6 +8,7 @@ interface SectionHeaderProps {
   titleHighlight: string;
   subtitle: string;
   iconSize?: number;
+  titleMarginLeft?: string;
 }
 
 const SectionHeader: React.FC<SectionHeaderProps> = ({ 
@@ -16,7 +17,8 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   title, 
   titleHighlight,
   subtitle,
-  iconSize = 80
+  iconSize = 80,
+  titleMarginLeft
 }) => {
   return (
     <>
@@ -32,6 +34,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         .section-content {
           flex: 1;
           text-align: left;
+          ${titleMarginLeft ? `margin-left: ${titleMarginLeft};` : ''}
         }
         
         .section-title {
@@ -64,6 +67,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           
           .section-content {
             text-align: center;
+            margin-left: 0 !important;
           }
           
           .section-title,
