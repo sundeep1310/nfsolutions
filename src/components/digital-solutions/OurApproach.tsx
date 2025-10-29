@@ -81,7 +81,7 @@ const OurApproach: React.FC = () => {
               fontFamily: 'Instrument Sans, sans-serif',
               fontSize: 'clamp(14px, 1.305vw, 24px)'
             }}>
-              We combine <strong>deep engineering expertise</strong> with a strategic, business-first mindset. We don't just build software; we architect solutions for <strong>performance, scale</strong> and <strong>long-term value. By</strong> {' '}
+              We combine <strong>deep engineering expertise</strong> with a strategic, business-first mindset. We don&apos;t just build software; we architect solutions for <strong>performance, scale</strong> and <strong>long-term value. By</strong> {' '}
               integrating agile development, automated quality engineering, and a data-driven culture, we ensure your digital initiatives deliver <strong>measurable business outcomes.</strong> 
 
             </p>
