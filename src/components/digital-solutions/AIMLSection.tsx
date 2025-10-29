@@ -142,10 +142,24 @@ const AIMLSection: React.FC = () => {
   return (
     <>
       <style jsx>{`
+        .services-row {
+          margin-bottom: 10px;
+        }
+        .services-row:last-child {
+          margin-bottom: 0;
+        }
+        @media (min-width: 1024px) {
+          .services-row {
+            margin-bottom: 15px !important;
+          }
+          .services-row:last-child {
+            margin-bottom: 0 !important;
+          }
+        }
         @media (min-width: 1536px) {
           .services-row {
             gap: 25px !important;
-            margin-bottom: 25px !important;
+            margin-bottom: 15px !important;
           }
           .services-row:last-child {
             margin-bottom: 0 !important;
@@ -160,7 +174,7 @@ const AIMLSection: React.FC = () => {
         @media (min-width: 1440px) and (max-width: 1535px) {
           .services-row {
             gap: 20px !important;
-            margin-bottom: 20px !important;
+            margin-bottom: 15px !important;
           }
           .services-row:last-child {
             margin-bottom: 0 !important;
@@ -238,7 +252,7 @@ const AIMLSection: React.FC = () => {
             }}
           >
             {/* Top row */}
-            <div className="services-row flex gap-[10px] mb-[10px] max-[500px]:flex-col max-[500px]:gap-[10px]">
+            <div className="services-row flex gap-[10px] max-[500px]:flex-col max-[500px]:gap-[10px]">
               <div className="service-card-container flex-1 min-w-0 flex justify-end">
                 <ServiceCard
                   image={services[0].image}

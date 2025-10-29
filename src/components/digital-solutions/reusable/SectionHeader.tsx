@@ -51,13 +51,13 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         }
         
         .connecting-line.top {
-          top: -100vh;
-          height: 100vh;
+          top: clamp(-100vh, calc(-100vh + 30vw), -70vh);
+          height: clamp(70vh, calc(100vh - 30vw), 100vh);
         }
         
         .connecting-line.bottom {
-          bottom: -100vh;
-          height: calc(100vh);
+          bottom: clamp(calc(-100vh - 100px), calc(-100vh + 33vw - 50px), calc(-67vh));
+          height: clamp(calc(70vh + 50px), calc(100vh - 30vw), calc(130vh + 100px));
         }
         
         .curved-line {
@@ -111,7 +111,14 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           padding-left: clamp(35px, 9vw, 120px);
         }
         
-        @media (min-width: 2560px) {
+        @media (min-width: 1024px) and (max-width: 2000px) {
+          .connecting-line.bottom {
+            bottom: calc(-75vh);
+            height: calc(90vh);
+          }
+        }
+        
+        @media (max-width: 2560px) {
           .curved-line {
             top: -230px;
             width: 750px;
@@ -122,16 +129,6 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
             bottom: -930px;
             width: 750px;
             height: 280px;
-          }
-          
-          .connecting-line.top {
-            top: -70vh;
-            height: 70vh;
-          }
-          
-          .connecting-line.bottom {
-            bottom: calc(-67vh);
-            height: calc(70vh + 50px);
           }
           
           .section-icon-wrapper :global(.section-icon) {
@@ -151,11 +148,6 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
             bottom: -730px;
             width: 400px;
             height: 200px;
-          }
-          
-          .connecting-line.bottom {
-            bottom: calc(-100vh - 100px);
-            height: calc(100vh + 100px);
           }
         }
         
