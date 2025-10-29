@@ -3,28 +3,28 @@ import React from 'react';
 
 const OurTeamPage = () => {
   return (
-    <div 
+    <section
     id="team" 
-    className="relative min-h-screen bg-black text-white overflow-hidden"
-    style={{ fontFamily: 'Instrument Sans, sans-serif' }}>
+    className="relative  bg-black text-white overflow-hidden bg-[url('/ourteam_bg.png')] bg-cover bg-top-left bg-no-repeat"
+    >
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 w-full h-full">
+      {/* <div className="absolute inset-0 z-0 w-full h-full">
         <img
           src="/ourteam_bg.png"
           alt="Background"
           className="w-full h-full object-fill opacity-100"
           style={{ minHeight: '100%', minWidth: '100%', position: 'absolute', top: 0, left: 0, right: 0, bottom: 0 }}
         />
-      </div>
+      </div> */}
 
       {/* Main Content */}
-      <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 main-content-wrapper">
+      <div className="relative z-10 w-full px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 py-8 sm:py-12 md:py-16 lg:py-20 ">
         {/* Header */}
         <div className="text-center mb-8 sm:mb-12 md:mb-16">
-          <h1 className="  font-bold " style={{ color: 'white', fontSize: "clamp(18px, 4vw, 70px)",margin:"0px" }}>
+          <h1 className="  font-bold " style={{ color: 'white', fontSize: "clamp(18px, 4vw, 70px)", marginBottom:"0px" }}>
             Our <span style={{ color: '#EB8145' }}>Team</span>
           </h1>
-          <p style={{ color: 'white',fontSize: 'clamp(12px, 1.305vw, 20px)' }} className=" max-w-4xl mx-auto px-2">
+          <p style={{ color: 'white',fontSize: 'clamp(12px, 1.305vw, 20px)' , marginBottom:"0px" ,maxWidth:"80vw"}} className=" mx-auto px-2  ">
             NF Solutions is powered by a team that blends deep engineering expertise with a relentless focus on client success.
           </p>
         </div>
@@ -110,7 +110,19 @@ const OurTeamPage = () => {
         .animate-scale-loop {
           animation: scaleLoop 8s ease-in-out infinite;
         }
+/* Default (for mobile ≤1023px) */
+    #team {
+      background-size: contain;
+      background-position: top left;
+    }
 
+    /* For tablets and larger (≥1024px) */
+    @media (min-width: 1024px) {
+      #team {
+        background-size: cover;
+        background-position: top left;
+      }
+    }
         /* Default max-width for all screens */
         .team-container {
           max-width: 1200px;
@@ -125,6 +137,7 @@ const OurTeamPage = () => {
 
         /* Laptop screens only - 1024px to 1535px */
         @media (min-width: 1024px) and (max-width: 1535px) {
+
           .team-container {
             margin-bottom: 50px;
           }
@@ -141,7 +154,7 @@ const OurTeamPage = () => {
             flex: 1;
             display: flex;
             flex-direction: column;
-            padding-bottom: 20px !important;
+            padding: 20px !important;
           }
 
           .team-container {
@@ -234,7 +247,7 @@ const OurTeamPage = () => {
           }
         }
       `}</style>
-    </div>
+    </section>
   );
 };
 

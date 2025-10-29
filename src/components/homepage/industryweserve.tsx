@@ -45,13 +45,13 @@ const IndustryWeServe: React.FC = () => {
               {/* Text Container with padding */}
               <div style={{ padding: '1.6875vw' }}>
                 {/* Title */}
-                <h2 className="font-bold leading-tight" style={{ color: '#ffffff', fontSize: "clamp(18px, 4vw, 70px)" }}>
+                <h2 className="font-bold leading-tight" style={{ color: '#ffffff', fontSize: "clamp(18px, 4vw, 70px)",marginBottom:"0px" }}>
                   Industries We<br />Serve
                 </h2>
  
                 {/* Description */}
                 <p className="leading-relaxed" style={{ color: '#dbd6d6ff', fontSize: 'clamp(12px, 1.305vw, 20px)', marginTop: '1.35vw' }}>
-                  We apply our <span className="font-bold">specialized expertise</span> to projects in the world&apos;s most demanding sectors:
+                  We apply our <strong className="font-bold">specialized expertise</strong> to projects in the world&apos;s most demanding sectors:
                 </p>
  
                 {/* Industry List */}

@@ -51,33 +51,33 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         }
         
         .connecting-line.top {
-          top: clamp(-100vh, calc(-100vh + 30vw), -70vh);
-          height: clamp(70vh, calc(100vh - 30vw), 100vh);
+          top: -100vh;
+          height: 100vh;
         }
         
         .connecting-line.bottom {
-          bottom: clamp(calc(-100vh - 100px), calc(-100vh + 33vw - 50px), calc(-67vh));
-          height: clamp(calc(70vh + 50px), calc(100vh - 30vw), calc(130vh + 100px));
+          bottom: -100vh;
+          height: 100vh;
         }
         
         .curved-line {
           position: absolute;
-          top: clamp(-190px, -12.5vw, -270px);
+          top: clamp(-200px, -31.47vh, -270px);
           left: 50%;
           transform: translateX(0%);
           z-index: 1;
-          width: clamp(450px, 45.1vw, 650px);
-          height: clamp(195px, 19.4vw, 280px);
+          width: 650px;
+          height: 280px;
         }
         
         .bottom-curved-line {
           position: absolute;
-          bottom: clamp(-780px, -59.0vw, -930px);
+          bottom: clamp(-900px, -122.38vh, -1050px);
           left: 49%;
           transform: translateX(0%);
           z-index: 1;
-          width: clamp(450px, 45.1vw, 650px);
-          height: clamp(195px, 19.4vw, 280px);
+          width: 650px;
+          height: 280px;
         }
         
         .section-content {
@@ -111,24 +111,28 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           padding-left: clamp(35px, 9vw, 120px);
         }
         
-        @media (min-width: 1024px) and (max-width: 2000px) {
-          .connecting-line.bottom {
-            bottom: calc(-75vh);
-            height: calc(90vh);
-          }
-        }
-        
-        @media (max-width: 2560px) {
+        /* Desktop - Large screens (2560px+) */
+        @media (min-width: 2560px) {
           .curved-line {
-            top: -230px;
+            top: clamp(-220px, -31.47vh, -280px);
             width: 750px;
-            height: 280px;
+            height: 300px;
           }
           
           .bottom-curved-line {
-            bottom: -930px;
+            bottom: clamp(-950px, -122.38vh, -1040px);
             width: 750px;
-            height: 280px;
+            height: 300px;
+          }
+          
+          .connecting-line.top {
+            top: -68vh;
+            height: 82vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: -68vh;
+            height: 82vh;
           }
           
           .section-icon-wrapper :global(.section-icon) {
@@ -137,21 +141,133 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           }
         }
         
-        @media (max-width: 1024px) {
+        /* Desktop - Extra large screens (1920px - 2559px) */
+        @media (min-width: 1920px) and (max-width: 2559px) {
           .curved-line {
-            top: -140px;
-            width: 400px;
-            height: 200px;
+            top: clamp(-210px, -31.47vh, -250px);
+            width: 700px;
+            height: 290px;
           }
           
           .bottom-curved-line {
-            bottom: -730px;
-            width: 400px;
-            height: 200px;
+            bottom: clamp(-920px, -122.38vh, -970px);
+            width: 700px;
+            height: 290px;
+          }
+          
+          .connecting-line.top {
+            top: -64vh;
+            height: 98vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: -64vh;
+            height: 98vh;
           }
         }
         
-        @media (max-width: 768px) {
+        /* Desktop - Large screens (1536px - 1919px) */
+        @media (min-width: 1536px) and (max-width: 1919px) {
+          .curved-line {
+            top: clamp(-160px, -31.47vh, -180px);
+            width: 600px;
+            height: 260px;
+          }
+          
+          .bottom-curved-line {
+            bottom: clamp(-930px, -122.38vh, -980px);
+            width: 600px;
+            height: 260px;
+          }
+          
+          .connecting-line.top {
+            top: -95vh;
+            height: 104vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: clamp(-80vh, -95vh, -110vh);
+            height: clamp(90vh, 104vh, 120vh);
+          }
+        }
+        
+        /* Desktop - Large screens (1440px - 1535px) */
+        @media (min-width: 1440px) and (max-width: 1535px) {
+          .curved-line {
+            top: clamp(-160px, -31.47vh, -180px);
+            width: 600px;
+            height: 260px;
+          }
+          
+          .bottom-curved-line {
+            bottom: clamp(-780px, -122.38vh, -830px);
+            width: 600px;
+            height: 260px;
+          }
+          
+          .connecting-line.top {
+            top: -77vh;
+            height: 104vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: clamp(-62vh, -77vh, -92vh);
+            height: clamp(72vh, 104vh, 102vh);
+          }
+        }
+        
+        /* Desktop - Medium screens (1280px - 1439px) */
+        @media (min-width: 1280px) and (max-width: 1439px) {
+          .curved-line {
+            top: clamp(-140px, -31.47vh, -160px);
+            width: 550px;
+            height: 240px;
+          }
+          
+          .bottom-curved-line {
+            bottom: clamp(-700px, -122.38vh, -750px);
+            width: 550px;
+            height: 240px;
+          }
+          
+          .connecting-line.top {
+            top: -69vh;
+            height: 92vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: clamp(-54vh, -69vh, -84vh);
+            height: clamp(64vh, 92vh, 94vh);
+          }
+        }
+        
+        /* Desktop - Standard screens (1024px - 1279px) */
+        @media (min-width: 1024px) and (max-width: 1279px) {
+          .curved-line {
+            top: clamp(-140px, -31.47vh, -160px);
+            width: 500px;
+            height: 220px;
+          }
+          
+          .bottom-curved-line {
+            bottom: clamp(-680px, -122.38vh, -730px);
+            width: 500px;
+            height: 220px;
+          }
+          
+          .connecting-line.top {
+            top: -70vh;
+            height: 98vh;
+          }
+          
+          .connecting-line.bottom {
+            bottom: clamp(-55vh, -70vh, -85vh);
+            height: clamp(65vh, 98vh, 95vh);
+          }
+        }
+        
+        /* Tablet and below */
+        @media (max-width: 1023px) {
           .section-header-container {
             flex-direction: column;
             text-align: center;
@@ -195,7 +311,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
           {isFirst && (
             <svg className="curved-line" width="100%" height="100%" viewBox="0 0 750 280" fill="none" preserveAspectRatio="xMidYMid meet">
               <path 
-                d="M0 240 L0 200 Q0 160 40 160 L710 160 Q730 160 730 140 L730 100" 
+                d="M0 280 L0 200 Q0 160 40 160 L710 160 Q730 160 730 140 L730 100" 
                 stroke="#EB8145" 
                 strokeWidth="3" 
                 fill="none"

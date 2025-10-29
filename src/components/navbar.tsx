@@ -185,19 +185,10 @@ const Navbar: React.FC = () => {
           width: 100%;
         }
 
-        @media (max-width: 1024px) {
-          .nav-container {
-            padding-left: 30px !important;
-            padding-right: 30px !important;
-          }
-        }
+       
 
         @media (max-width: 768px) {
-          .nav-container {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            padding-top: 15px !important;
-          }
+          
         }
 
         @media (max-width: 767px) {
@@ -256,17 +247,17 @@ const Navbar: React.FC = () => {
 
       {/* Sticky Navbar Container */}
       <div className="sticky-navbar">
-        <div className="nav-container pt-[20px] px-[60px]">
+        <div className="  ">
           <nav 
-            className="rounded-full px-6 shadow-lg backdrop-blur-sm"
+            className=" px-6 shadow-lg backdrop-blur-sm"
             style={{ 
-              backgroundColor: isTransparent ? 'transparent' : '#000000', 
+              backgroundColor: isTransparent ? '#000000' : '#000000', 
               paddingTop: '12px', 
               paddingBottom: '12px',
               transition: 'background-color 0.3s ease'
             }}
           >
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between gap-3">
               {/* Logo Section with Hamburger */}
                <Link href="/" className="flex items-center gap-3" style={{ marginLeft: '20px' ,paddingLeft: '12px', textDecoration:"none" }}>
                 {/* Hamburger Menu Button */}
@@ -297,7 +288,7 @@ const Navbar: React.FC = () => {
               </Link>
 
               {/* Center Navigation */}
-              <div className="nav-links flex items-center" style={{ gap: 'clamp(24px, 3vw, 48px)' }}>
+              <div className="nav-links flex items-center px-[6px]" style={{ gap: 'clamp(20px, 3vw, 40px)' }}>
                 <Link href="/#about" style={{ color: '#FFFFFF', fontWeight: 400, fontSize: 'clamp(14px, 1.2vw, 16px)', textDecoration: 'none', fontFamily: 'Instrument Sans, sans-serif' }} className="hover:opacity-70 transition-opacity whitespace-nowrap">
                   About Us
                 </Link>
@@ -331,10 +322,10 @@ const Navbar: React.FC = () => {
                 <Image
                   src={isHovered ? "/homecta2.png" : "/homecta.png"}
                   alt="Digital Solutions"
-                  width={180}
+                  width={80}
                   height={45}
                   className="object-contain"
-                  style={{ transition: 'opacity 1s ease-in-out', width: 'clamp(100px, 12vw, 180px)', height: 'auto' }}
+                  style={{ transition: 'opacity 1s ease-in-out', width: 'clamp(120px, 12vw, 180px)', height: 'auto' }}
                 />
                 <span 
                   className="cta-text absolute flex items-center justify-center" 

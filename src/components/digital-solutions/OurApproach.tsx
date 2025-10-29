@@ -8,7 +8,7 @@ const OurApproach: React.FC = () => {
     { value: '50+', label: 'Digital Platforms Delivered' },
     { value: '99.9%', label: 'Client Application Uptime' },
     { value: '100+', label: 'Successful Cloud Migrations' },
-    { value: '+20%', label: 'Improvement in Customer Retention' },
+    { value: '+40%', label: 'Improvement in Customer Retention' },
     { value: '60%', label: 'Faster Data Processing & Reporting' }
   ];
 
@@ -81,8 +81,9 @@ const OurApproach: React.FC = () => {
               fontFamily: 'Instrument Sans, sans-serif',
               fontSize: 'clamp(14px, 1.305vw, 24px)'
             }}>
-              We combine deep engineering expertise with a strategic, business-first mindset. We don&apos;t just build software; we architect solutions for{' '}
-              <span className="font-bold text-[#1a1a1a]">performance, scale, and long-term value</span>. By integrating agile development, automated quality engineering, and a data-driven culture, we ensure your digital initiatives deliver measurable business outcomes.
+              We combine <strong>deep engineering expertise</strong> with a strategic, business-first mindset. We don't just build software; we architect solutions for <strong>performance, scale</strong> and <strong>long-term value. By</strong> {' '}
+              integrating agile development, automated quality engineering, and a data-driven culture, we ensure your digital initiatives deliver <strong>measurable business outcomes.</strong> 
+
             </p>
           </div>
 

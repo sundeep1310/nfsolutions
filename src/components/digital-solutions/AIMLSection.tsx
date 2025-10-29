@@ -202,6 +202,33 @@ const AIMLSection: React.FC = () => {
             display: none !important;
           }
         }
+        @media (max-width: 499px) {
+          .cards-wrapper {
+            margin-left: 60px !important;
+            margin-right: 0 !important;
+            max-width: 300px !important;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+          }
+          .services-row {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+          }
+          .service-card-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+          }
+          .service-card-container > div {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding-left: 60px;
+          }
+        }
       `}</style>
       
       <section 
@@ -244,7 +271,7 @@ const AIMLSection: React.FC = () => {
 
           {/* Services Grid - 2x2 Layout using flexbox for better spacing control */}
           <div 
-            className="w-full max-[500px]:flex max-[500px]:flex-col"
+            className="cards-wrapper w-full max-[500px]:flex max-[500px]:flex-col"
             style={{
               marginLeft: typeof window !== 'undefined' && window.innerWidth >= 1440 && window.innerWidth < 1536 ? 'clamp(20px, calc(9.8vw - 80px), 170px)' : 'clamp(100px, 9.8vw, 250px)',
               marginRight: 'clamp(40px, 3.9vw, 100px)',
@@ -319,3 +346,4 @@ const AIMLSection: React.FC = () => {
 };
 
 export default AIMLSection;
+

@@ -172,18 +172,11 @@ const Navbar: React.FC = () => {
         }
 
         @media (max-width: 1024px) {
-          .nav-container {
-            padding-left: 30px !important;
-            padding-right: 30px !important;
-          }
+          
         }
 
         @media (max-width: 768px) {
-          .nav-container {
-            padding-left: 20px !important;
-            padding-right: 20px !important;
-            padding-top: 15px !important;
-          }
+         
         }
 
         @media (max-width: 640px) {
@@ -224,9 +217,9 @@ const Navbar: React.FC = () => {
 
       {/* Sticky Navbar Container */}
       <div className="sticky-navbar">
-        <div className="nav-container pt-[20px] px-[60px]">
+        <div className="">
           <nav 
-            className="rounded-full px-6 shadow-lg backdrop-blur-sm"
+            className=" px-6 shadow-lg backdrop-blur-sm"
             style={{ 
               backgroundColor: isTransparent ? 'transparent' : '#000000', 
               paddingTop: '12px', 
@@ -236,7 +229,7 @@ const Navbar: React.FC = () => {
           >
             <div className="flex items-center justify-between">
               {/* Logo Section with Hamburger */}
-              <Link href="/" onClick={handleHomeClick} className="flex items-center gap-3" style={{ paddingLeft: '12px', textDecoration:"none" }}>
+              <Link href="/" onClick={handleHomeClick} className="flex items-center gap-3" style={{ paddingLeft: '12px' }}>
                 {/* Hamburger Menu Button */}
                 <button 
                   className={`hamburger-menu ${isMobileMenuOpen ? 'active' : ''}`}

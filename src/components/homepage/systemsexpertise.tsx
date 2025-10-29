@@ -70,8 +70,8 @@ const SystemsExpertise: React.FC = () => {
               </h2>
  
               {/* Description */}
-              <p className="leading-relaxed" style={{ color: '#ffffff', fontSize: 'clamp(12px, 1.305vw, 20px)' , marginBottom: '1.74vw' }}>
-                Our strategic advantage is our <span className="font-bold">deep, practical knowledge</span> of the core equipment and products that define EPC projects. This familiarity enables us to provide <span className="font-bold">effective, real-world solutions</span> and strengthens our collaboration across the contractor ecosystem. Our expertise includes:
+              <p className="leading-[122%] lg:leading-[162%]" style={{ color: '#ffffff', fontSize: 'clamp(12px, 1.305vw, 20px)' , marginBottom: '1.74vw' }}>
+                Our strategic advantage is our <strong className="font-bold">deep, practical knowledge</strong> of the core equipment and products that define EPC projects. This familiarity enables us to provide <strong className="font-bold">effective, real-world solutions</strong> and strengthens our collaboration across the contractor ecosystem. Our expertise includes:
               </p>
  
               {/* Expertise List */}

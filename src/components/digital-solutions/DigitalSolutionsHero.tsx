@@ -26,13 +26,7 @@ const DigitalSolutionsHero: React.FC = () => {
   }, []);
 
   const scrollToConsultation = () => {
-    const consultationSection = document.getElementById('contact');
-    if (consultationSection) {
-      consultationSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-    }
+    window.location.href = 'https://verveo.com';
   };
 
   return (

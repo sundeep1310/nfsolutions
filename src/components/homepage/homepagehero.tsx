@@ -106,12 +106,12 @@ const HomepageHero: React.FC = () => {
               {/* Know More Button */}
               <button
                 onClick={scrollToServices}
-                className="rounded-full font-semibold transition-all ease-out hover:shadow-2xl hover:brightness-110 active:scale-95 border-0 outline-none"
+                className="rounded-full font-semibold transition-all cursor-pointer ease-out hover:shadow-2xl hover:brightness-110 active:scale-95 border-0 outline-none"
                 style={{
                   backgroundColor: '#EB8145',
                   color: '#FFFFFF',
                   transitionDuration: '300ms',
-           
+          
                   padding: 'clamp(12px, 1.5vw, 16px) clamp(40px, 5vw, 56px)',
                   fontSize: 'clamp(14px, 1.044vw, 20px)',
                   fontFamily: 'Instrument Sans, sans-serif',
