@@ -1,11 +1,13 @@
 "use client";
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation';
  
 export default function Partner() {
   const [hoveredCard, setHoveredCard] = useState<number | null>(0);
   const [scrollY, setScrollY] = useState(0);
   const [isMobileOrTablet, setIsMobileOrTablet] = useState(false);
   const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
  
   useEffect(() => {
     // Set isClient to true when component mounts on client side
@@ -33,7 +35,7 @@ export default function Partner() {
     {
       title: 'Proven Expertise',
       description: 'With a track record of success since 2009, we offer the stability and deep industry knowledge that only comes with years of dedicated experience in the EPC sector.',
-      image: '/partner1.png'
+      image: '/partner1.jpg'
     },
     {
       title: 'Specialized Focus',
@@ -46,8 +48,8 @@ export default function Partner() {
       image: '/partner3.png'
     },
     {
-      title: 'Integrated Solutions',
-      description: 'We bridge the critical gap between technical feasibility and commercial viability, delivering holistic strategies that drive tangible results and sustainable growth.',
+      title: 'Digital Solutions',
+      description: 'We leverage data, cloud, and AI to build modern platforms that accelerate growth. Our business-first engineering approach ensures our solutions deliver measurable and scalable results.',
       image: '/partner4.png'
     }
   ];
@@ -72,6 +74,12 @@ export default function Partner() {
   const getMarginBottom = () => {
     if (!isClient) return '96px'; // Default margin for SSR
     return window.innerWidth >= 1536 ? '48px' : '16px';
+  };
+
+  const handleCardClick = (index: number) => {
+    if (index === 3) {
+      router.push('/digital-solutions');
+    }
   };
  
   return (
@@ -155,11 +163,12 @@ export default function Partner() {
         }}>
           {cards.map((card, index) => {
             const isExpanded = isMobileOrTablet ? true : (hoveredCard === index);
+            const isLastCard = index === 3;
            
             return (
               <div
                 key={index}
-                className="relative rounded-[32px] overflow-hidden transition-all duration-700 ease-in-out"
+                className="relative rounded-[32px] overflow-hidden transition-all duration-[1000ms] ease-in-out"
                 style={{
                   flex: isMobileOrTablet ? 'none' : (isExpanded ? '1.5' : '1'),
                   width: isMobileOrTablet ? '90%' : 'auto',
@@ -168,34 +177,38 @@ export default function Partner() {
                   backgroundImage: `linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)), url(${card.image})`,
                   backgroundSize: 'cover',
                   backgroundPosition: 'center',
-                  fontFamily: 'Instrument Sans, sans-serif'
+                  fontFamily: 'Instrument Sans, sans-serif',
+                  cursor: isLastCard ? 'pointer' : 'default'
                 }}
                 onMouseEnter={() => !isMobileOrTablet && setHoveredCard(index)}
                 onMouseLeave={() => !isMobileOrTablet && setHoveredCard(0)}
+                onClick={() => handleCardClick(index)}
               >
                 {/* Darker overlay on hover */}
                 <div className="absolute inset-0 bg-black/0 hover:bg-black/10 transition-all duration-300" style={{ fontFamily: 'Instrument Sans, sans-serif' }} />
                
                 {/* Card Content */}
                 <div className="relative h-full p-8 flex flex-col" style={{
-                  justifyContent: isMobileOrTablet ? 'center' : (isExpanded ? 'end' : 'end'),
+                  justifyContent: isMobileOrTablet ? 'end' : (isExpanded ? 'end' : 'end'),
                   fontFamily: 'Instrument Sans, sans-serif'
                 }}>
                   {/* Text wrapper */}
                   <div style={{
                     padding: '10px',
+                    paddingLeft: '18px',
+                    paddingRight: '18px',
                     marginBottom: isExpanded && !isMobileOrTablet ? '0' : (isMobileOrTablet ? '0' : '-100px'),
-                    transform: isExpanded && !isMobileOrTablet ? 'translateY(-38px)' : 'translateY(55px)',
+                    transform: isExpanded && !isMobileOrTablet ? 'translateY(0)' : 'translateY(40px)',
                     fontFamily: 'Instrument Sans, sans-serif',
-                    transition: 'all 0.5s ease-in-out'
+                    transition: 'all 0.8s ease-in-out'
                   }}>
                     <h2
-                      className={`text-2xl md:text-3xl font-bold transition-all duration-500 `}
+                      className={`text-2xl md:text-3xl font-bold transition-all duration-[800ms] `}
                       style={{
                         color: '#FFFFFF',
                         textAlign: isMobileOrTablet ? 'center' : 'left',
                         fontFamily: 'Instrument Sans, sans-serif',
-                        marginBottom: isExpanded && !isMobileOrTablet ? 3 : '45px'
+                        marginBottom: isExpanded && !isMobileOrTablet ? 3 : '3px'
                       }}
                     >
                       {card.title}
@@ -203,7 +216,7 @@ export default function Partner() {
                    
                     {/* Description - Shows when expanded */}
                     <div
-                      className={`transition-all duration-500 overflow-hidden ${
+                      className={`transition-all duration-[800ms] overflow-hidden ${
                         isExpanded
                           ? 'opacity-100 max-h-40 mb-4'
                           : 'opacity-0 max-h-0 mb-0'
@@ -220,9 +233,9 @@ export default function Partner() {
                     </div>
                   </div>
  
-                  {/* CTA Button Images  */}
-                  {!isMobileOrTablet && (
-                    <div className={`flex items-center pb-[15px] transition-all duration-500 ${
+                  {/* CTA Button Images - Only for the last card */}
+                  {!isMobileOrTablet && isLastCard && (
+                    <div className={`flex items-center pb-[15px] transition-all duration-[800ms] ${
                       isExpanded ? 'justify-start pl-[15px]' : 'justify-start pl-[15px] pt-[15px]'
                     }`} style={{
                       transform: isExpanded ? 'translateY(0)' : 'translateY(-8px)',
@@ -231,8 +244,8 @@ export default function Partner() {
                       <img
                         src={isExpanded ? '/partnercta2.png' : '/partnercta1.png'}
                         alt={isExpanded ? 'Less Details' : 'More Details'}
-                        style={{ height: isExpanded ? '30px' : '35px', fontFamily: 'Instrument Sans, sans-serif' }}
-                        className="cursor-pointer transition-all duration-500 hover:scale-105"
+                        style={{ height: isExpanded ? '38px' : '43px', fontFamily: 'Instrument Sans, sans-serif' }}
+                        className="cursor-pointer transition-all duration-[800ms] hover:scale-105"
                       />
                     </div>
                   )}
@@ -245,3 +258,4 @@ export default function Partner() {
     </div>
   );
 }
+
