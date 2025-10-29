@@ -92,7 +92,7 @@ const HomepageHero: React.FC = () => {
         </div>
  
         {/* Hero Content */}
-        <div className="hero-content relative z-10 px-[60px]">
+        <div className="hero-content relative z-10 px-[60px] py-[60px]">
           <div className="flex items-center min-h-[100vh] mt-[-40px] md:mt-[-30px]  ">
             <div style={{ maxWidth: '1200px' }}>
               <h1 style={{ color: '#FFFFFF', fontSize: 'clamp(31px, 4.35vw, 74px)', fontWeight: 600,lineHeight: '1.2', fontFamily: 'Instrument Sans, sans-serif', margin:0 }} >
