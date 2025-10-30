@@ -211,17 +211,17 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
         className="section-header-container"
         style={
           {
-            ['--line-height' as any]: lineHeight,
-            ['--curve-offset-top' as any]: `${curveOffsetTopPx}px`,
-            ['--curve-offset-bottom' as any]: `${curveOffsetBottomPx}px`,
-            ['--curve-vertical' as any]: `${curveVerticalShift}px`
+            '--line-height': lineHeight,
+            '--curve-offset-top': `${curveOffsetTopPx}px`,
+            '--curve-offset-bottom': `${curveOffsetBottomPx}px`,
+            '--curve-vertical': `${curveVerticalShift}px`
           } as React.CSSProperties
         }
       >
         <div ref={iconWrapperRef} className="section-icon-wrapper">
           {!isFirst && <div className="connecting-line top" />}
           <div className="connecting-line bottom" />
-
+{/*
           {isFirst && (
             <svg
               className="curved-line"
@@ -261,7 +261,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
               <image href="/dot2.png" x="720" y="170" width="20" height="20" />
             </svg>
           )}
-
+*/}
           <SectionIcon icon={icon} alt={iconAlt} size={iconSize} />
         </div>
 
