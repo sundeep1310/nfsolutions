@@ -8,6 +8,8 @@ import IndustryWeServe from '@/components/homepage/industryweserve';
 import Partner from '@/components/homepage/partner';
 import ContactUsPage from '@/components/homepage/contact-us';
 import Navbar from '@/components/navbar';
+import FloatingContacts from '@/components/floatingcontacts';
+import Footer from '@/components/digital-solutions/reusable/footer';
 
 
 
@@ -15,6 +17,7 @@ export default function Homepage() {
   return (
     <div>
       <Navbar/>
+      <FloatingContacts/>
       <HomepageHero />
       <AboutUs />
       <Partner />
@@ -23,6 +26,7 @@ export default function Homepage() {
       <IndustryWeServe />
       <OurTeamPage />
       <ContactUsPage />
+      <Footer/>
       
       {/* Add other sections here */}
     </div>

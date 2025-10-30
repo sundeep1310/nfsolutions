@@ -34,7 +34,7 @@ export default function Partner() {
   const cards = [
     {
       title: 'Proven Expertise',
-      description: 'With a track record of success since 2009, we offer the stability and deep industry knowledge that only comes with years of dedicated experience in the EPC sector.',
+      description: 'With a track record of success, we offer the stability and deep industry knowledge that only comes with years of dedicated experience in the EPC sector.',
       image: '/partner1.jpg'
     },
     {
@@ -198,7 +198,7 @@ export default function Partner() {
                     paddingLeft: '18px',
                     paddingRight: '18px',
                     marginBottom: isExpanded && !isMobileOrTablet ? '0' : (isMobileOrTablet ? '0' : '-100px'),
-                    transform: isExpanded && !isMobileOrTablet ? 'translateY(0)' : 'translateY(40px)',
+                    transform: isExpanded && !isMobileOrTablet ? 'translateY(0)' : 'translateY(20px)',
                     fontFamily: 'Instrument Sans, sans-serif',
                     transition: 'all 0.8s ease-in-out'
                   }}>

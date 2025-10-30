@@ -24,7 +24,7 @@ const OurServices: React.FC = () => {
         <div className="flex min-[1024px]:flex-row flex-col gap-12 min-[1024px]:gap-24  items-center">
           {/* Left Image */}
           <div className="w-[90%] ">
-            <div className="relative w-full h-[320px] xl:h-[400px] 2xl:h-[480px] md:h-[280px]  md:rounded-[40px] rounded-[20px] overflow-hidden shadow-xl ">
+            <div className="relative w-full h-[460px] xl:h-[500px] 2xl:h-[580px] md:h-[280px]  md:rounded-[40px] rounded-[20px] overflow-hidden shadow-xl ">
               <Image
                 src="/ourservices.png"
                 alt="Our Services"
@@ -49,11 +49,11 @@ const OurServices: React.FC = () => {
                 <h3 className=" font-bold" style={{ fontSize: 'clamp(20px, 1.305vw, 28px)' ,marginLeft:"10px",marginTop:"0px",marginBottom:"0px"  }}>Consultancy Services</h3>
               </div>
               <p className="leading-relaxed" style={{ color: '#4F4F4F', fontSize: 'clamp(14px, 1.305vw, 20px)' }}>
-                As part of our EPC advisory focus, we deliver <span className="font-bold text-gray-900">tailored advisory</span> for your specific technical and commercial challenges. Our experts provide <strong className="font-bold text-gray-900">in-depth analysis, strategic planning, and actionable recommendations</strong> to help you navigate complex projects, enter new markets, and optimize your operations.
+                As part of our EPC advisory focus, we deliver <strong className="font-bold text-gray-900">tailored advisory</strong> for your specific technical and commercial challenges. Our experts provide <strong className="font-bold text-gray-900">in-depth analysis, strategic planning, and actionable recommendations</strong> to help you navigate complex projects, enter new markets, and optimize your operations.
               </p>
             </div>
  
-            {/* Key Account Services */}
+            {/* Core Engineering Services */}
             <div>
               <div className="flex flex-row items-center gap-8 md:gap-8  mb-3 md:mb-3 ">
                 <div className="flex-shrink-0">
@@ -61,12 +61,28 @@ const OurServices: React.FC = () => {
                     <Image src="/account.svg" alt="Key Account" width={40} height={40} className="xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 md:w-8 md:h-8 w-6 h-6" />
                   </div>
                 </div>
-                <h3 className=" font-bold" style={{ fontSize: 'clamp(20px, 1vw, 28px)' ,marginLeft:"10px",marginTop:"0px",marginBottom:"0px" }}>Key Account Services</h3>
+                <h3 className=" font-bold" style={{ fontSize: 'clamp(20px, 1.305vw, 28px)' ,marginLeft:"10px",marginTop:"0px",marginBottom:"0px" }}>Core Engineering Services</h3>
               </div>
               <p className="leading-relaxed " style={{ color: '#4F4F4F',fontSize: 'clamp(14px, 1.305vw, 20px)'  }}>
                 We provide highly experienced engineers to act as a <strong className=" text-gray-900">seamless extension of your team</strong>. They can manage the full scope of required activities on your behalf, ensuring project objectives are met with precision and expertise.
               </p>
             </div>
+
+            {/* Digital Solutions */}
+            <div>
+              <div className="flex flex-row items-center gap-8 md:gap-8  mb-3 md:mb-3 ">
+                <div className="flex-shrink-0">
+                  <div className="w-20 h-20 xl:w-24 xl:h-24 2xl:w-28 2xl:h-28 md:w-16 md:h-16 w-12 h-12 bg-black rounded-full flex items-center justify-center">
+                    <Image src="/digital.svg" alt="Key Account" width={40} height={40} className="xl:w-12 xl:h-12 2xl:w-14 2xl:h-14 md:w-8 md:h-8 w-6 h-6" />
+                  </div>
+                </div>
+                <h3 className=" font-bold" style={{ fontSize: 'clamp(20px, 1.305vw, 28px)' ,marginLeft:"10px",marginTop:"0px",marginBottom:"0px" }}>Digital Solutions</h3>
+              </div>
+              <p className="leading-relaxed " style={{ color: '#4F4F4F',fontSize: 'clamp(14px, 1.305vw, 20px)'  }}>
+                We <strong className=" text-gray-900">integrate advanced technologies</strong> and data-driven strategies into your operations. This approach <strong className=" text-gray-900">enhances</strong> project controls, <strong className=" text-gray-900">mitigates risks,</strong> and <strong className=" text-gray-900">empowers your team</strong> with the tools for predictable and <strong className=" text-gray-900">successful project outcomes.</strong>
+              </p>
+            </div>
+
             </div>
           </div>
         </div>

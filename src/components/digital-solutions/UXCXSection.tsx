@@ -8,7 +8,36 @@ import ArrowDecoration from './reusable/ArrowDecoration';
 const UXCXSection: React.FC = () => {
   const [titleMargin, setTitleMargin] = useState<string | undefined>(undefined);
   const [cardTextSizes, setCardTextSizes] = useState({ title: "24px", description: "16px" });
-
+const [isClient, setIsClient] = useState(false);
+ 
+useEffect(() => {
+  setIsClient(true);
+}, []);
+const getContainerStyle = () => {
+  if (!isClient) {
+    // Render stable default style during SSR
+    return {
+      marginLeft: 'clamp(100px, 9.8vw, 250px)',
+      marginRight: 'clamp(40px, 3.9vw, 100px)',
+      maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))',
+    };
+ 
+  }
+ 
+  if (window.innerWidth >= 1440 && window.innerWidth < 1536) {
+    return {
+      marginLeft: 'clamp(20px, calc(9.8vw - 80px), 170px)',
+      marginRight: 'clamp(40px, 3.9vw, 100px)',
+      maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))',
+    };
+  }
+ 
+  return {
+    marginLeft: 'clamp(100px, 9.8vw, 250px)',
+    marginRight: 'clamp(40px, 3.9vw, 100px)',
+    maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))',
+  };
+};
   const services = [
     {
       image: '/ux-strategy.png',
@@ -217,11 +246,7 @@ const UXCXSection: React.FC = () => {
           {/* Services Grid - 2x2 Layout using flexbox for better spacing control */}
           <div 
             className="w-full max-[500px]:flex max-[500px]:flex-col"
-            style={{
-              marginLeft: typeof window !== 'undefined' && window.innerWidth >= 1440 && window.innerWidth < 1536 ? 'clamp(20px, calc(9.8vw - 80px), 170px)' : 'clamp(100px, 9.8vw, 250px)',
-              marginRight: 'clamp(40px, 3.9vw, 100px)',
-              maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))'
-            }}
+            style={getContainerStyle()}
           >
             {/* Top row */}
             <div className="services-row flex gap-[10px] mb-[10px] max-[500px]:flex-col max-[500px]:gap-[10px]">

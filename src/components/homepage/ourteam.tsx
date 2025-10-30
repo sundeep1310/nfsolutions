@@ -39,7 +39,7 @@ const OurTeamPage = () => {
                 <img
                   src="/ourteam1.png"
                   alt="Engineering team collaboration"
-                  className="animate-scale-loop"
+                  className="animate-scale-loop-diagonal-left"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -49,7 +49,7 @@ const OurTeamPage = () => {
                 <img
                   src="/ourteam2.png"
                   alt="Site inspection"
-                  className="animate-scale-loop"
+                  className="animate-scale-loop-diagonal-right"
                   style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                 />
               </div>
@@ -98,17 +98,30 @@ const OurTeamPage = () => {
 
       {/* Custom Animations */}
       <style jsx>{`
-        @keyframes scaleLoop {
+        @keyframes scaleLoopDiagonalLeft {
           0%, 100% {
-            transform: scale(1);
+            transform: scale(1) translate(0, 0);
           }
           50% {
-            transform: scale(1.1);
+            transform: scale(1.1) translate(-2%, -2%);
           }
         }
 
-        .animate-scale-loop {
-          animation: scaleLoop 8s ease-in-out infinite;
+        @keyframes scaleLoopDiagonalRight {
+          0%, 100% {
+            transform: scale(1.1) translate(-2%, -2%);
+          }
+          50% {
+            transform: scale(1) translate(0, 0);
+          }
+        }
+
+        .animate-scale-loop-diagonal-left {
+          animation: scaleLoopDiagonalLeft 8s ease-in-out infinite;
+        }
+
+        .animate-scale-loop-diagonal-right {
+          animation: scaleLoopDiagonalRight 8s ease-in-out infinite;
         }
 /* Default (for mobile ≤1023px) */
     #team {

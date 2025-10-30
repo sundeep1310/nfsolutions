@@ -32,7 +32,36 @@ const AIMLSection: React.FC = () => {
       description: 'Embed AI capabilities into existing platforms to automate processes and enhance decision-making.'
     }
   ];
-
+const [isClient, setIsClient] = useState(false);
+ 
+useEffect(() => {
+  setIsClient(true);
+}, []);
+const getContainerStyle = () => {
+  if (!isClient) {
+    // Render stable default style during SSR
+    return {
+      marginLeft: 'clamp(100px, 9.8vw, 250px)',
+      marginRight: 'clamp(40px, 3.9vw, 100px)',
+      maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))',
+    };
+ 
+  }
+ 
+  if (window.innerWidth >= 1440 && window.innerWidth < 1536) {
+    return {
+      marginLeft: 'clamp(20px, calc(9.8vw - 80px), 170px)',
+      marginRight: 'clamp(40px, 3.9vw, 100px)',
+      maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))',
+    };
+  }
+ 
+  return {
+    marginLeft: 'clamp(100px, 9.8vw, 250px)',
+    marginRight: 'clamp(40px, 3.9vw, 100px)',
+    maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))',
+  };
+};
   useEffect(() => {
     const updateCardSizes = () => {
       if (window.innerWidth >= 1536) {
@@ -272,14 +301,10 @@ const AIMLSection: React.FC = () => {
           {/* Services Grid - 2x2 Layout using flexbox for better spacing control */}
           <div 
             className="cards-wrapper w-full max-[500px]:flex max-[500px]:flex-col"
-            style={{
-              marginLeft: typeof window !== 'undefined' && window.innerWidth >= 1440 && window.innerWidth < 1536 ? 'clamp(20px, calc(9.8vw - 80px), 170px)' : 'clamp(100px, 9.8vw, 250px)',
-              marginRight: 'clamp(40px, 3.9vw, 100px)',
-              maxWidth: 'calc(100vw - clamp(140px, 13.7vw, 350px))'
-            }}
+            style={getContainerStyle()}
           >
             {/* Top row */}
-            <div className="services-row flex gap-[10px] max-[500px]:flex-col max-[500px]:gap-[10px]">
+            <div className="services-row flex gap-[0px] max-[500px]:flex-col max-[500px]:gap-[0px]">
               <div className="service-card-container flex-1 min-w-0 flex justify-end">
                 <ServiceCard
                   image={services[0].image}

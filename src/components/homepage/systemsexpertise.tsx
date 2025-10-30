@@ -11,7 +11,7 @@ const SystemsExpertise: React.FC = () => {
     'Static Equipment (Vessels, Heat Exchangers, etc.)',
     'Electrical Equipment & Bulk Materials',
     'Instrumentation, Control & Automation Systems',
-    'Steel Structures',
+    'Civil & Structural Analysis',
     'Piping & Associated Bulk Materials'
   ];
  

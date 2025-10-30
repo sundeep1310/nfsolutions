@@ -8,7 +8,8 @@ const IndustryWeServe: React.FC = () => {
     'Refining',
     'Power Generation',
     'Chemical & Petrochemical',
-    'Renewable Industries'
+    'Renewable Industries',
+    'Information Technology'
   ];
  
   return (
