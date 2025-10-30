@@ -22,14 +22,12 @@ const Navbar: React.FC = () => {
   };
 
   const handleDigitalSolutionsClick = () => {
-    // If already on digital solutions page, scroll to top
     if (pathname === '/digital-solutions') {
       window.scrollTo({
         top: 0,
         behavior: 'smooth'
       });
     }
-    // Otherwise, Link will handle navigation
   };
 
   const toggleMobileMenu = () => {
@@ -54,18 +52,14 @@ const Navbar: React.FC = () => {
       
       let isAtSectionBoundary = false;
       
-      // Check if we're at the very top
       if (scrollPosition <= 150) {
         isAtSectionBoundary = true;
       } else {
-        // Check each section
         sections.forEach(sectionId => {
           const section = document.getElementById(sectionId);
           if (section) {
             const sectionTop = section.offsetTop;
             const sectionBottom = sectionTop + section.offsetHeight;
-            
-            // Check if we're near the start or end of a section (within 100px)
             if (Math.abs(scrollPosition - sectionTop) <= 100 || 
                 Math.abs(scrollPosition - sectionBottom) <= 100) {
               isAtSectionBoundary = true;
@@ -86,6 +80,18 @@ const Navbar: React.FC = () => {
   return (
     <>
       <style jsx global>{`
+        #about, #why, #team {
+          scroll-margin-top: 60px;
+        }
+
+        #ourservices {
+          scroll-margin-top: 100px;
+        }
+
+        #contact {
+          scroll-margin-top: 40px;
+        }
+
         .hamburger-menu {
           display: none;
           background: transparent;
@@ -252,8 +258,8 @@ const Navbar: React.FC = () => {
             className=" px-6 shadow-lg backdrop-blur-sm"
             style={{ 
               backgroundColor: isTransparent ? '#000000' : '#000000', 
-              paddingTop: '12px', 
-              paddingBottom: '12px',
+              paddingTop: '20px', 
+              paddingBottom: '20px',
               transition: 'background-color 0.3s ease'
             }}
           >
