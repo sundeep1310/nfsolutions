@@ -14,11 +14,12 @@ const OurServices: React.FC = () => {
        
         {/* Subtitle */}
         <p className="text-center mb-16 md:mb-16 mb-8  mx-auto leading-relaxed " style={{ color: '#4F4F4F', fontSize: 'clamp(14px, 1.305vw, 24px)',maxWidth:"80vw" }}>
-          <span className="text-gray-700">NF Solutions</span> provides expert advisory and support services to ensure your success in the global EPC market. We offer both{' '}
+          <span className="text-gray-700">NF Solutions</span> provides expert advisory and support services to ensure your success in the global EPC market. We offer {' '}
           <span className="md:inline block"></span>
-          <strong className="font-bold text-gray-900">strategic guidance and hands-on EPC project management</strong> through two core offerings:
+          <strong className="font-bold text-gray-900">strategic guidance ,hands-on EPC project management, and state-of-the-art technology </strong> through three core offerings
         </p>
- 
+
+
         {/* Content Layout */}
         <div className="flex min-[1024px]:flex-row flex-col gap-12 min-[1024px]:gap-24  items-center">
           {/* Left Image */}
@@ -70,17 +71,6 @@ const OurServices: React.FC = () => {
           </div>
         </div>
       </div>
- {/* Decorative Arrow - Top Right */}
-{/* <div className="pointer-events-none relative -bottom-3 -left-3  z-[9999]">
-  <Image
-    src="/arrowrightt.png"
-    alt=""
-    width={108}
-    height={108}
-    className="opacity-100"
-    priority
-  />
-</div> */}
  
  
       <style jsx>{`

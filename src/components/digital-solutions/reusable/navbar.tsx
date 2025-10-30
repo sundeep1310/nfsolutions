@@ -254,7 +254,7 @@ const Navbar: React.FC = () => {
                     className="object-contain"
                   />
                 </div>
-                <span style={{ color: '#FFFFFF', fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 600, fontFamily: 'Instrument Sans, sans-serif' }} className="whitespace-nowrap">NF Solutions</span>
+                <span style={{ color: '#FFFFFF', fontSize: 'clamp(16px, 2vw, 22px)', fontWeight: 600, fontFamily: 'Instrument Sans, sans-serif' }} className="whitespace-nowrap">Solutions</span>
               </Link>
 
               {/* Center Navigation - Removed all menu items */}

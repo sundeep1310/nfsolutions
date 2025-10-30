@@ -223,8 +223,8 @@ const AboutUs = () => {
               <p>
                 NF Solutions is a <strong className="font-#4F4F4F font-normal">premier advisory and consulting firm</strong> dedicated to navigating
                 the complexities of the <strong className="font-#4F4F4F font-normal">global Engineering, Procurement, and Construction
-                (EPC) market</strong>. We are specialists in empowering businesses to achieve
-                sustainable international growth through expert guidance and strategic support.
+                (EPC) market</strong>. We are specialists in empowering businesses to 
+                <strong>achieve sustainable international growth</strong> through expert guidance and strategic support.
               </p>
  
               <p>
@@ -235,7 +235,7 @@ const AboutUs = () => {
               </p>
  
               <p>
-                Operating from our strategic offices in <strong className="font-#4F4F4F font-normal">Singapore, India, and the UAE</strong>, we serve a
+                Operating from our strategic offices in <strong className="font-#4F4F4F font-normal">Singapore, India, and UAE</strong>, we serve a
                 global clientele in an increasingly demanding EPC landscape. Our expertise is
                 trusted across a diverse range of critical sectors, including <strong className="font-#4F4F4F font-normal">Oil & Gas, Refining,
                 Power, Chemical & Petrochemical, and Renewable Industries</strong>.
