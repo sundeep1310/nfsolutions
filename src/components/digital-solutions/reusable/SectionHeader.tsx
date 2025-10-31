@@ -67,7 +67,6 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 
       const parentRect = parent.getBoundingClientRect();
       const iconRect = iconWrap.getBoundingClientRect();
-      const titleRect = titleEl.getBoundingClientRect();
 
       const iconCenterX = iconRect.left + iconRect.width / 2;
       const connectX = iconCenterX;
@@ -104,7 +103,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 
       // shallow compare to avoid redundant state updates
       const changed = Object.keys(next).some(
-        (k) => (next as any)[k] !== (prev as any)[k]
+        (k) => next[k as keyof typeof next] !== prev[k as keyof typeof prev]
       );
       if (changed) {
         setVars(next);
@@ -131,7 +130,7 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
 
     // If available, use ResizeObserver on the parent for layout changes
     let ro: ResizeObserver | null = null;
-    if (containerRef.current && (window as any).ResizeObserver) {
+    if (containerRef.current && typeof ResizeObserver !== "undefined") {
       ro = new ResizeObserver(() => schedule());
       ro.observe(containerRef.current);
     }
