@@ -147,14 +147,14 @@ const SectionHeader: React.FC<SectionHeaderProps> = ({
   }, []); // empty deps okay — if you use props inside, add them here
 
   // Build style object injecting CSS variables (pixel values)
-  const cssVars: React.CSSProperties = {
-    ["--line-height" as any]: vars.lineHeight,
-    ["--connect-left" as any]: `${vars.connectLeft}px`,
-    ["--curve-left-top" as any]: `${vars.curveLeftTop}px`,
-    ["--curve-left-bottom" as any]: `${vars.curveLeftBottom}px`,
-    ["--curve-top" as any]: `${vars.curveTop}px`,
-    ["--curve-bottom" as any]: `${vars.curveBottom}px`,
-  };
+  const cssVars = {
+    "--line-height": vars.lineHeight,
+    "--connect-left": `${vars.connectLeft}px`,
+    "--curve-left-top": `${vars.curveLeftTop}px`,
+    "--curve-left-bottom": `${vars.curveLeftBottom}px`,
+    "--curve-top": `${vars.curveTop}px`,
+    "--curve-bottom": `${vars.curveBottom}px`,
+  } as React.CSSProperties;
 
   return (
     <>
