@@ -12,9 +12,8 @@ import Footer from '@/components/digital-solutions/reusable/footer';
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Digital Solutions | NF Solutions',
-  description: 'Transform your business with cutting-edge AI, cloud, data engineering, and digital transformation solutions. Partner with NF Solutions for enterprise-grade platforms.',
-  keywords: 'digital transformation, AI solutions, cloud migration, data engineering, UX design, enterprise platforms, machine learning, cloud infrastructure',
+  title: 'NF Solutions | Digital Transformation Services | Cloud, AI & Data',
+  description: 'We offer expert digital engineering, cloud, data, and AI solutions to help enterprises build modern platforms, enhance customer experiences, and accelerate growth.',
 };
 
 export default function DigitalSolutionsPage() {

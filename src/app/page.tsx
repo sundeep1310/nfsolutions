@@ -1,4 +1,5 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import HomepageHero from '../components/homepage/homepagehero';
 import OurServices from '../components/homepage/ourservices';
 import AboutUs from '../components/homepage/aboutus';
@@ -11,7 +12,10 @@ import Navbar from '@/components/navbar';
 import FloatingContacts from '@/components/floatingcontacts';
 import Footer from '@/components/digital-solutions/reusable/footer';
 
-
+export const metadata: Metadata = {
+  title: 'NF Solutions | Global EPC Technical and Commercial Advisory',
+  description: 'NF Solutions: Expert technical and commercial advisory for the global EPC market. We drive international growth for clients in Oil & Gas, Power, and Renewables.',
+};
 
 export default function Homepage() {
   return (
@@ -28,8 +32,6 @@ export default function Homepage() {
       <ContactUsPage />
       <Footer/>
       
-      {/* Add other sections here */}
     </div>
   );
 }
-
