@@ -18,7 +18,7 @@ const Footer: React.FC = () => {
        
         .footer-text {
           color: #FFFFFF;
-          font-size: clamp(14px, 2vw, 24px);
+          font-size: clamp(12px, 2vw, 18px);
           font-weight: 400;
           font-family: 'Instrument Sans';
           margin: 0;

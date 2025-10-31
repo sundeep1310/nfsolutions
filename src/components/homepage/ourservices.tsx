@@ -16,7 +16,7 @@ const OurServices: React.FC = () => {
         <p className="text-center mb-16 md:mb-16 mb-8  mx-auto leading-relaxed " style={{ color: '#4F4F4F', fontSize: 'clamp(14px, 1.305vw, 24px)',maxWidth:"80vw" }}>
           <span className="text-gray-700">NF Solutions</span> provides expert advisory and support services to ensure your success in the global EPC market. We offer {' '}
           <span className="md:inline block"></span>
-          <strong className="font-bold text-gray-900">strategic guidance ,hands-on EPC project management, and state-of-the-art technology </strong> through three core offerings
+          <strong className="font-bold text-gray-900">strategic guidance ,hands-on EPC project management, and state-of-the-art technology </strong> through three core offerings:
         </p>
 
 

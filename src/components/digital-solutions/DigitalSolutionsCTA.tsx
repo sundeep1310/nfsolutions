@@ -4,7 +4,7 @@ import React from 'react';
 
 const DigitalSolutionsCTA: React.FC = () => {
   const scrollToConsultation = () => {
-    window.location.href = 'https://verveo.com';
+    window.open('https://verveo.com', '_blank');
   };
 
   return (

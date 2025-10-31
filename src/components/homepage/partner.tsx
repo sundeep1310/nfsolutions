@@ -34,7 +34,7 @@ export default function Partner() {
   const cards = [
     {
       title: 'Proven Expertise',
-      description: 'With a track record of success, we offer the stability and deep industry knowledge that only comes with years of dedicated experience in the EPC sector.',
+      description: 'With a proven track record of success, we offer the stability and deep industry knowledge that only comes with years of dedicated experience in the EPC sector.',
       image: '/partner1.jpg'
     },
     {
@@ -44,7 +44,7 @@ export default function Partner() {
     },
     {
       title: 'Global Reach, Local Insight',
-      description: 'Our strategic offices in Singapore, India, and the UAE provide the on-the-ground support and global perspective essential for navigating international markets successfully.',
+      description: 'Our strategic offices in Singapore, India, and UAE provide the on-the-ground support and global perspective essential for navigating international markets successfully.',
       image: '/partner3.png'
     },
     {
@@ -146,7 +146,7 @@ export default function Partner() {
           }}>
             <div className="text-white leading-[160%]" style={{ fontSize: 'clamp(14px, 1.305vw, 24px)', fontFamily: 'Instrument Sans, sans-serif' }}>
               <p className="mb-1" style={{color : '#4F4F4F',  fontFamily: 'Instrument Sans, sans-serif' }}>
-                <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>NF Solutions</strong> combines over <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>15 years of specialized EPC market experience</strong> with a forward-thinking global perspective. Our integrated technical and commercial support is designed for one purpose: to make your international expansion successful. We don&apos;t just advise; we <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>build the roadmap for your growth</strong>, incorporating crucial elements like project risk management to ensure success in the world&apos;s most demanding industries.
+                <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>NF Solutions</strong> combines years of <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>specialized EPC market experience</strong> with a forward-thinking global perspective. Our integrated technical and commercial support is designed for one purpose: to make your international expansion successful. We don&apos;t just advise; we <strong style={{ fontFamily: 'Instrument Sans, sans-serif' }}>build the roadmap for your growth</strong>, incorporating crucial elements like project risk management to ensure success in the world&apos;s most demanding industries.
               </p>
             </div>
           </div>
