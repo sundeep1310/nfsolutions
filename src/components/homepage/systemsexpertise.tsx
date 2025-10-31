@@ -1,9 +1,16 @@
 "use client";
 import React, { useEffect, useRef } from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
  
 const SystemsExpertise: React.FC = () => {
   const parallaxRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { 
+    once: false,
+    amount: 0.3 
+  });
  
   const expertiseItems = [
     'Machinery & Rotating Equipment',
@@ -35,7 +42,7 @@ const SystemsExpertise: React.FC = () => {
   }, []);
  
   return (
-    <section className="relative w-full bg-white" style={{  fontFamily: 'Instrument Sans' }}>
+    <section ref={sectionRef} className="relative w-full bg-white" style={{  fontFamily: 'Instrument Sans' }}>
       {/* Container with rounded corners - LARGER */}
       <div className="relative mx-[20px]" style={{ maxWidth: '100%', height: '65vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
         {/* Background Image with Scale Animation */}
@@ -53,15 +60,24 @@ const SystemsExpertise: React.FC = () => {
         {/* Content Container */}
         <div className="relative h-full flex items-start z-10" style={{ paddingLeft: '3vw', paddingTop: '3vw' }}>
           <div className="flex w-full">
-            {/* Black Box */}
-            <div
+            {/* Black Box with Framer Motion */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: isInView ? 1 : 0,
+              }}
+              transition={{ 
+                duration: 0.8, 
+                ease: "easeOut" 
+              }}
               className="bg-black flex flex-col"
               style={{
                 backgroundColor: 'rgba(26, 26, 26, 0.95)',
                 width: '36vw',
                 borderRadius: '1.359375vw',
                 padding: '2.175vw',
-                transform: 'translateX(calc(8vw - 100px)) translateY(55px)'
+                transform: `translateX(calc(8vw - 100px)) translateY(55px) translateX(${isInView ? '0px' : '-100px'})`,
+                transition: 'transform 0.8s ease-out'
               }}
             >
               {/* Title */}
@@ -97,7 +113,7 @@ const SystemsExpertise: React.FC = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
  
             {/* Right Side - Arrow Decoration */}
             <div className="flex-1 relative flex items-end justify-end">
@@ -156,7 +172,7 @@ const SystemsExpertise: React.FC = () => {
           section > div > div:nth-child(2) > div > div:first-child {
             width: 80vw !important;
             height: 60vw !important;
-            transform: translateX(0) translateY(-5vw) !important;
+            transform: translateX(0) translateY(-5vw) translateX(0px) !important;
             border-radius: 3vw !important;
             padding: 2vw !important;
             margin: 12.5vw !important;
@@ -202,7 +218,7 @@ const SystemsExpertise: React.FC = () => {
           section > div > div:nth-child(2) > div > div:first-child {
             width: 90vw !important;
             height: 75vw !important;
-            transform: translateX(0) translateY(-8vw) !important;
+            transform: translateX(0) translateY(-8vw) translateX(0px) !important;
             border-radius: 4vw !important;
             padding: 3vw !important;
           }
@@ -239,7 +255,7 @@ const SystemsExpertise: React.FC = () => {
           section > div > div:nth-child(2) > div > div:first-child {
             width: 90vw !important;
             height: 125vw !important;
-            transform: translateX(0) translateY(-8vw) !important;
+            transform: translateX(0) translateY(-8vw) translateX(0px) !important;
             border-radius: 4vw !important;
             padding: 3vw !important;
           }
@@ -277,7 +293,7 @@ const SystemsExpertise: React.FC = () => {
           section > div > div:nth-child(2) > div > div:first-child {
             width: 90vw !important;
             height: 165vw !important;
-            transform: translateX(0) translateY(-8vw) !important;
+            transform: translateX(0) translateY(-8vw) translateX(0px) !important;
             border-radius: 4vw !important;
             padding: 3vw !important;
           }
@@ -317,7 +333,7 @@ const SystemsExpertise: React.FC = () => {
           section > div > div:nth-child(2) > div > div:first-child {
             width: 90vw !important;
             height: 175vw !important;
-            transform: translateX(0) translateY(-8vw) !important;
+            transform: translateX(0) translateY(-8vw) translateX(0px) !important;
             border-radius: 4vw !important;
             padding: 3vw !important;
           }

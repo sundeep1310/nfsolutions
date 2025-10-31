@@ -1,8 +1,17 @@
 "use client";
 import React from 'react';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import { useInView } from 'framer-motion';
+import { useRef } from 'react';
  
 const IndustryWeServe: React.FC = () => {
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, { 
+    once: false,
+    amount: 0.3 
+  });
+
   const industryItems = [
     'Oil & Gas',
     'Refining',
@@ -13,7 +22,7 @@ const IndustryWeServe: React.FC = () => {
   ];
  
   return (
-    <section className="relative w-full bg-white" style={{ minHeight: '50vw', paddingTop: '4vw', paddingBottom: '4vw', paddingRight: 'calc(2vw + 10px)', fontFamily: 'Instrument Sans, sans-serif' }}>
+    <section ref={sectionRef} className="relative w-full bg-white" style={{ minHeight: '50vw', paddingTop: '4vw', paddingBottom: '4vw', paddingRight: 'calc(2vw + 10px)', fontFamily: 'Instrument Sans, sans-serif' }}>
       {/* Container with rounded corners */}
       <div className="relative mx-[20px]" style={{  height: '50vw', borderRadius: '2.5vw', overflow: 'hidden' }}>
         {/* Background Image with Scale Animation */}
@@ -31,16 +40,25 @@ const IndustryWeServe: React.FC = () => {
         {/* Content Container */}
         <div className="relative h-full flex items-center justify-center z-10">
           <div className="flex w-full items-center justify-center h-full">
-            {/* Black Box - Right positioned */}
-            <div
+            {/* Black Box - Right positioned with Framer Motion */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ 
+                opacity: isInView ? 1 : 0,
+              }}
+              transition={{ 
+                duration: 0.8, 
+                ease: "easeOut" 
+              }}
               className="bg-black flex flex-col justify-between"
               style={{
                 backgroundColor: '#2a2a2a',
                 width: '32.625vw',
                 height: '38.5625vw',
-                transform: 'translateX(calc(15vw + 100px))',
+                transform: `translateX(calc(15vw + 100px)) translateX(${isInView ? '0px' : '100px'})`,
                 borderRadius: '1.6875vw',
-                padding: '2.25vw'
+                padding: '2.25vw',
+                transition: 'transform 0.8s ease-out'
               }}
             >
               {/* Text Container with padding */}
@@ -76,7 +94,7 @@ const IndustryWeServe: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
  
@@ -118,7 +136,7 @@ const IndustryWeServe: React.FC = () => {
           }
          
           section > div > div:nth-child(2) > div > div {
-            transform: translateX(calc(15vw + 85px)) !important;
+            transform: translateX(calc(15vw + 85px)) translateX(0px) !important;
           }
         }
  
@@ -144,7 +162,7 @@ const IndustryWeServe: React.FC = () => {
           section > div > div:nth-child(2) > div > div {
             width: 60vw !important;
             height: 50vw !important;
-            transform: translateX(0) !important;
+            transform: translateX(0) translateX(0px) !important;
             border-radius: 3vw !important;
             padding: 3vw !important;
             margin: 7.5vw !important;
@@ -212,7 +230,7 @@ const IndustryWeServe: React.FC = () => {
           section > div > div:nth-child(2) > div > div {
             width: 70vw !important;
             height: 85vw !important;
-            transform: translateX(0) !important;
+            transform: translateX(0) translateX(0px) !important;
             border-radius: 8vw !important;
             padding: 4vw !important;
             margin: 12.5vw !important;

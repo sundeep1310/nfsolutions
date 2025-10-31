@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { motion, Variants } from 'framer-motion';
 
 interface ServiceCardProps {
   image: string;
@@ -32,9 +33,38 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   const defaultTitleSize = textSize === 'large' ? '36.96px' : '10.395px';
   const defaultDescriptionSize = textSize === 'large' ? '13.86px' : '8.085px';
+
+  // Motion variants
+  const containerVariants: Variants = {
+    hidden: { opacity: 0, y: 18 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+        when: 'beforeChildren',
+        staggerChildren: 0.08,
+        ease: [0.22, 1, 0.36, 1]
+      }
+    }
+  };
+
+  const bgImageVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.98 },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] }
+    }
+  };
+
+  const textChildVariant: Variants = {
+    hidden: { opacity: 0, y: 8 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+  };
   
   return (
-    <div 
+    <motion.div
       className="relative overflow-hidden group transition-transform duration-700 ease-in-out w-full max-w-full"
       style={{ 
         height: 'clamp(380px, 15vw, 520px)',
@@ -42,10 +72,18 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         backgroundColor: useIconOnly ? 'transparent' : '#1a1a1a',
         borderRadius: '14px'
       }}
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: false, amount: 0.28 }}
+      whileHover={{ scale: 1.02 }}
     >
       {/* Background Image - only show if not using icon only */}
       {!useIconOnly && (
-        <div className="absolute inset-0 w-full h-full">
+        <motion.div
+          className="absolute inset-0 w-full h-full"
+          variants={bgImageVariants}
+        >
           <Image
             src={image}
             alt={imageAlt}
@@ -61,7 +99,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               borderRadius: '14px'
             }}
           />
-        </div>
+        </motion.div>
       )}
 
       {/* Content */}
@@ -76,7 +114,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
       >
         {/* Icon above title - only show when useIconOnly is true */}
         {useIconOnly && (
-          <div className="mb-3">
+          <motion.div className="mb-3" variants={textChildVariant}>
             <Image
               src={image}
               alt={`${title}`}
@@ -84,10 +122,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
               height={iconSize}
               className="object-contain group-hover:scale-105 transition-transform duration-700"
             />
-          </div>
+          </motion.div>
         )}
         
-        <h3 
+        <motion.h3 
           className="font-bold mb-4"
           style={{ 
             color: useIconOnly ? '#1a1a1a' : '#FFFFFF',
@@ -99,10 +137,11 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             WebkitBoxOrient: 'vertical',
             overflow: 'hidden'
           }}
+          variants={textChildVariant}
         >
           {title}
-        </h3>
-        <p 
+        </motion.h3>
+        <motion.p 
           className="leading-relaxed"
           style={{ 
             color: useIconOnly ? '#4F4F4F' : '#E0E0E0',
@@ -116,9 +155,10 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             maxWidth: centerText ? '80%' : '100%',
             margin: centerText ? '0 auto' : '0'
           }}
+          variants={textChildVariant}
         >
           {description}
-        </p>
+        </motion.p>
       </div>
 
       {/* Hover Effect */}
@@ -129,7 +169,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
           borderRadius: '14px'
         }}
       />
-    </div>
+    </motion.div>
   );
 };
 

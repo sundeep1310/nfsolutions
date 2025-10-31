@@ -1,10 +1,34 @@
 'use client';
- 
+
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
- 
+import { motion, Variants } from 'framer-motion';
+
 const AboutUs = () => {
- 
+  // Only left content animations (typed variants)
+  const leftContentVariants: Variants = {
+    hidden: { opacity: 0, x: -36 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        when: 'beforeChildren',
+        staggerChildren: 0.16,
+        duration: 0.8
+      }
+    }
+  };
+
+  const titleVariant: Variants = {
+    hidden: { opacity: 0, x: -18 },
+    visible: { opacity: 1, x: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+  };
+
+  const paragraphVariant: Variants = {
+    hidden: { opacity: 0, y: 16 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } }
+  };
+
   return (
     <section
       id="about"
@@ -208,42 +232,55 @@ const AboutUs = () => {
           }
         }
       `}</style>
- 
+
       <div className="max-w-[1900px] mx-auto px-[14.72px] desktop-padding" style={{ paddingBottom: '3.68rem', overflow: 'visible' }}>
         <div className="grid grid-cols-2 gap-[18.4px] items-start desktop-grid" style={{ overflow: 'visible' }}>
           {/* Left Half - Content */}
-          <div className="flex flex-col justify-start pr-[9.2px] pl-[46px] content-order">
+          <motion.div
+            className="flex flex-col justify-start pr-[9.2px] pl-[46px] content-order"
+            variants={leftContentVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.28 }}
+          >
             {/* Title */}
-            <h2 className="text-[70px] font-bold mb-[40px] text-black " style={{ fontFamily: 'Instrument Sans' ,marginTop:0,fontSize:'clamp(31px, 4.35vw, 74px)'}}>
+            <motion.h2
+              className="text-[70px] font-bold mb-[40px] text-black "
+              style={{ fontFamily: 'Instrument Sans', marginTop: 0, fontSize: 'clamp(31px, 4.35vw, 74px)' }}
+              variants={titleVariant}
+            >
               About <span className="text-[#EB8145]">Us</span>
-            </h2>
- 
+            </motion.h2>
+
             {/* Paragraphs */}
-            <div className="space-y-[40px] leading-[142%]  text-[20px] mobile-text" style={{  color :'#4F4F4F', fontFamily: 'Instrument Sans',fontSize: 'clamp(14px, 1.305vw, 24px)' }}>
-              <p>
+            <motion.div
+              className="space-y-[40px] leading-[142%]  text-[20px] mobile-text"
+              style={{ color: '#4F4F4F', fontFamily: 'Instrument Sans', fontSize: 'clamp(14px, 1.305vw, 24px)' }}
+            >
+              <motion.p variants={paragraphVariant}>
                 NF Solutions is a <strong className="font-#4F4F4F font-normal">premier advisory and consulting firm</strong> dedicated to navigating
                 the complexities of the <strong className="font-#4F4F4F font-normal">global Engineering, Procurement, and Construction
-                (EPC) market</strong>. We are specialists in empowering businesses to 
+                (EPC) market</strong>. We are specialists in empowering businesses to
                 <strong>achieve sustainable international growth</strong> through expert guidance and strategic support.
-              </p>
- 
-              <p>
+              </motion.p>
+
+              <motion.p variants={paragraphVariant}>
                 Our core mission is to provide <strong className="font-#4F4F4F font-normal">comprehensive Technical and Commercial
                 support</strong> that bridges borders and creates opportunities. With a deep
                 understanding of the challenges and nuances of global expansion, we equip our
                 clients with the insights and strategies needed to thrive.
-              </p>
- 
-              <p>
+              </motion.p>
+
+              <motion.p variants={paragraphVariant}>
                 Operating from our strategic offices in <strong className="font-#4F4F4F font-normal">Singapore, India, and UAE</strong>, we serve a
                 global clientele in an increasingly demanding EPC landscape. Our expertise is
                 trusted across a diverse range of critical sectors, including <strong className="font-#4F4F4F font-normal">Oil & Gas, Refining,
                 Power, Chemical & Petrochemical, and Renewable Industries</strong>.
-              </p>
-            </div>
-          </div>
- 
-          {/* Right Half - Image */}
+              </motion.p>
+            </motion.div>
+          </motion.div>
+
+          {/* Right Half - Image (unchanged) */}
           <div className="relative flex justify-center pr-[46px] image-order">
             <div className="relative w-full max-w-[414px] mobile-image-container laptop-desktop-width laptop-image-offset">
               <div
@@ -259,8 +296,8 @@ const AboutUs = () => {
                   priority
                 />
               </div>
- 
-              {/* Orange Rectangle with Features */}
+
+              {/* Orange Rectangle with Features (unchanged) */}
               <div className="orange-container">
                 <div
                   className="relative px-[14.72px] h-full flex items-center mobile-orange-padding"
@@ -279,7 +316,7 @@ const AboutUs = () => {
                       </div>
                       <span className="text-[12px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans' }}>Proven Track Record</span>
                     </div>
- 
+
                     {/* EPC Market Expertise */}
                     <div className="flex flex-col items-center text-center">
                       <div className="w-[14.72px] h-[14.72px] mb-[3.68px] bg-white rounded-[18.4px] flex items-center justify-center shadow-md mobile-feature-icon">
@@ -287,7 +324,7 @@ const AboutUs = () => {
                       </div>
                       <span className="text-[12px] font-semibold whitespace-nowrap mobile-feature-text" style={{ color: '#FFFFFF', fontFamily: 'Instrument Sans' }}>EPC Market Expertise</span>
                     </div>
- 
+
                     {/* Global Operations */}
                     <div className="flex flex-col items-center text-center">
                       <div className="w-[14.72px] h-[14.72px] mb-[3px] bg-white rounded-[18.4px] flex items-center justify-center shadow-md mobile-feature-icon">
@@ -302,7 +339,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
- 
+
       {/* Decorative Arrows */}
       <div
         className="absolute left-[3.68px] -bottom-[8px] opacity-100 "
@@ -318,5 +355,5 @@ const AboutUs = () => {
     </section>
   );
 };
- 
+
 export default AboutUs;
